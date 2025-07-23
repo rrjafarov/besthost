@@ -4,6 +4,7 @@ import HeroSlider from "@/components/HomePage/HeroSlider";
 import BrandBottomHero from "@/components/HomePage/BrandBottomHero";
 import React from "react";
 import HomePageHosting from "@/components/HomePage/HomePageHosting";
+import HomePageServices from "@/components/HomePage/HomePageServices";
 
 const page = () => {
   return (
@@ -12,6 +13,7 @@ const page = () => {
       <HeroSlider />
       <BrandBottomHero />
       <HomePageHosting />
+      <HomePageServices />
     </div>
   );
 };
