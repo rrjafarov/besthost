@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -327,6 +327,7 @@ input::placeholder,
 textarea::placeholder,
 select::placeholder {
   color: #121212;
+  font-family: "Mulish", sans-serif !important;
 }
 
 input:focus::placeholder,
@@ -356,6 +357,7 @@ button {
   outline: 0;
   cursor: pointer;
   padding: 0;
+  font-family: "Mulish", sans-serif !important;
   border: none;
 }
 
@@ -370,5 +372,108 @@ ul {
   padding: 0;
   list-style-type: none;
   margin: 0;
+}
+
+// ! Ya Allah utandırma
+
+$BestHostMainColor: #4a2682;
+
+#header {
+  .headerTop {
+    .langLine {
+      background: #ff8e2b;
+      width: 0.05rem;
+      height: 0.6875rem;
+      border-radius: 1rem;
+    }
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.4rem 1.9rem 1.4rem 0;
+    span {
+      color: $BestHostMainColor;
+      font-feature-settings: "liga" off;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 300;
+      line-height: normal;
+      letter-spacing: 0.04063rem;
+    }
+  }
+  .headerMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2.1rem;
+    .headerLinks {
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3.3rem;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease-in-out;
+            span {
+              color: var(--05, #2a0d56);
+              font-size: 1.5rem;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              letter-spacing: 0.075rem;
+            }
+            .activeRotate {
+              display: flex;
+              width: 2.4rem;
+              height: 2.4rem;
+              padding: 0rem 0.3rem;
+              justify-content: center;
+              align-items: center;
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+    }
+    .headerContact {
+      border-radius: 2rem;
+      background: #eae3f5;
+      // width: 27.5rem;
+      height: 4.2rem;
+      flex-shrink: 0;
+      .headerContactItem {
+        padding: 1.2rem 2.2rem;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          span {
+            color: var(--05, #2a0d56);
+            font-size: 1.4rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.07rem;
+          }
+          strong {
+            color: var(--05, #2a0d56);
+            font-size: 1.4rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.07rem;
+          }
+        }
+      }
+    }
+  }
 }
 

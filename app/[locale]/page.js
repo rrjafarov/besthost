@@ -1,8 +1,13 @@
+import Footer from '@/components/Footer/Footer'
+import Header from '@/components/Header/Header'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>Home Page ye xosh geldiniz</div>
+    <div>
+      <Header />
+      {/* <Footer /> */}
+    </div>
   )
 }
 
