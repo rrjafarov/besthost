@@ -1,14 +1,19 @@
-import Footer from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
-import React from 'react'
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import HeroSlider from "@/components/HomePage/HeroSlider";
+import BrandBottomHero from "@/components/HomePage/BrandBottomHero";
+import React from "react";
+import HomePageHosting from "@/components/HomePage/HomePageHosting";
 
 const page = () => {
   return (
-    <div>
+    <div className="background">
       <Header />
-      {/* <Footer /> */}
+      <HeroSlider />
+      <BrandBottomHero />
+      <HomePageHosting />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

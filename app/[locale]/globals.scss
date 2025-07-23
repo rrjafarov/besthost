@@ -377,7 +377,9 @@ ul {
 // ! Ya Allah utandırma
 
 $BestHostMainColor: #4a2682;
-
+.background {
+  background: #faf9f9 !important;
+}
 #header {
   .headerTop {
     .langLine {
@@ -477,3 +479,329 @@ $BestHostMainColor: #4a2682;
   }
 }
 
+// ! HomePage HeroSlider.jsx  ---START---
+.heroSlider {
+  width: 100%;
+  position: relative;
+  .heroSliderImage {
+    width: 100%;
+    height: 59.6rem;
+    flex-shrink: 0;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .heroSliderOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, #2a5a8e 12.68%, #cdd0ef 78.06%);
+      background-blend-mode: multiply;
+      mix-blend-mode: multiply;
+    }
+  }
+  .heroSliderContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-40%, -50%);
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    h4 {
+      color: #fcfcfc;
+      font-size: 6.4rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 118%; /* 7.552rem */
+      letter-spacing: 0.32rem;
+      width: 55rem;
+    }
+    span {
+      // width: 45.1rem;
+      color: #fcfcfc;
+      font-feature-settings: "liga" off;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 144%; /* 2.304rem */
+      letter-spacing: 0.16rem;
+    }
+    .heroSliderContentHost {
+      padding-top: 3.2rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 2rem;
+      span {
+        color: #fcfcfc;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.18rem;
+      }
+      .heroSliderContentHostDomain {
+        border-radius: 3rem;
+        background: #f2f2f2;
+        height: 6.3rem;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          padding: 2rem 4.4rem;
+          color: var(--03, #0a001e);
+          text-align: center;
+          font-kerning: none;
+          font-size: 1.8rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.18rem;
+        }
+      }
+      .heroSliderContentHostIcon {
+        border-radius: 3rem;
+        border: 1px solid #f2f2f2;
+        width: 12.5rem;
+        height: 6.3rem;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+// ! HomePage HeroSlider.jsx  ---FINISH---
+
+// ! HomePage BrandBottomHero.jsx  ---START---
+.brandsHeroBotoom {
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+// ! HomePage BrandBottomHero.jsx  ---FINISH---
+
+// ! HomePage HomePageHosting.jsx  ---START---
+.homePageHosting {
+  .homePageHostingHeaderText {
+    padding: 1.2rem 0 5.82rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.6rem;
+    span {
+      color: var(--01, #4a2682);
+      font-feature-settings: "liga" off;
+      font-size: 3.6rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      letter-spacing: 0.18rem;
+    }
+    p {
+      width: 61.5rem;
+      flex-shrink: 0;
+      color: #12022a;
+      text-align: center;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 146.5%; /* 2.344rem */
+      letter-spacing: 0.08rem;
+    }
+  }
+  .homePageHostingHeaderButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .homePageHostingSelectButtons {
+    border-radius: 3rem;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 58.2rem;
+    height: 5.6rem;
+    flex-shrink: 0;
+    box-shadow: 0px 4px 15px 0px rgba(185, 183, 183, 0.35);
+    .homePageHostingSelectButton {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3rem;
+      width: 98%;
+      height: 5rem;
+
+      span {
+        color: var(--01, #4a2682);
+        text-align: center;
+        font-feature-settings: "liga" off;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.075rem;
+        // padding: 2rem 4rem;
+      }
+    }
+    .homePageHostingSelectButton.active {
+      background: #eae3f5;
+    }
+  }
+  .homePageHostingForWebsite {
+    padding: 2.4rem 0 4rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    span {
+      color: var(--01, #4a2682);
+      font-feature-settings: "liga" off;
+      font-size: 3.6rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      letter-spacing: 0.18rem;
+    }
+    p {
+      flex-shrink: 0;
+      color: #12022a;
+      text-align: center;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 146.5%; /* 2.344rem */
+      letter-spacing: 0.08rem;
+    }
+  }
+}
+// ! HomePage HomePageHosting.jsx  ---FINISH---
+
+// ! HomePage HomePageSelectHosting.jsx  ---START---
+.homePageHostingCard {
+  border-radius: 0.8rem;
+  background: #fff;
+  width: 100%;
+  height: 56rem;
+  flex-shrink: 0;
+  .homePageHostingCardTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5.3rem 0 2.4rem;
+    .homePageHostingCardTopText {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      span {
+        color: var(--01, #4a2682);
+        text-align: center;
+        font-feature-settings: "liga" off;
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.12rem;
+      }
+      p {
+        color: var(--c2, #0a001e);
+        font-feature-settings: "liga" off;
+        font-size: 1.3rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.065rem;
+      }
+    }
+    .homePageHostingCardTopPriceArea {
+      margin-top: 2.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.2rem;
+      .homePageHostingCardTopOldPrice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          color: #9d99a5;
+          text-decoration: line-through;
+          color: var(--c2, #0a001e);
+          color: #9d99a5;
+          font-size: 1.3rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.065rem;
+        }
+      }
+      .homePageHostingCardTopNewPrice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          color: var(--01, #4a2682);
+          font-family: Mulish;
+          font-size: 3.6rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.18rem;
+          position: relative;
+          .topManat {
+            position: absolute;
+            top: 0;
+          }
+        }
+      }
+      .homePageHostingCardTopMonth {
+        span {
+          color: var(--04, #12022a);
+          font-size: 1.2rem;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+          letter-spacing: 0.06rem;
+        }
+      }
+      .hostPriceLine {
+        width: 0.08rem;
+        height: 2.2rem;
+        background: #4a2682;
+      }
+    }
+    .homePageHostingCardTopSelectPlanButton {
+      margin: 1.6rem 0 2.4rem 0;
+      border-radius: 3rem;
+      border: 1px solid #4a2682;
+      button {
+        padding: 1.8rem 5rem;
+        border-radius: 3rem;
+        background: transparent;
+        color: var(--01, #4a2682);
+        text-align: center;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.24rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+// ! HomePage HomePageSelectHosting.jsx  ---FINISH---
