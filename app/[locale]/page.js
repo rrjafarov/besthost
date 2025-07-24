@@ -5,6 +5,9 @@ import BrandBottomHero from "@/components/HomePage/BrandBottomHero";
 import React from "react";
 import HomePageHosting from "@/components/HomePage/HomePageHosting";
 import HomePageServices from "@/components/HomePage/HomePageServices";
+import HomePageGridCards from "@/components/HomePage/HomePageGridCards";
+import HomePageOurClients from "@/components/HomePage/HomePageOurClients";
+import HomePageSeo from "@/components/HomePage/HomePageSeo";
 
 const page = () => {
   return (
@@ -14,6 +17,10 @@ const page = () => {
       <BrandBottomHero />
       <HomePageHosting />
       <HomePageServices />
+      <HomePageGridCards />
+      <HomePageOurClients />
+      <HomePageSeo />
+      <Footer />
     </div>
   );
 };

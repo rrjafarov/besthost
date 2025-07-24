@@ -941,8 +941,455 @@ $BestHostMainColor: #4a2682;
       line-height: normal;
       letter-spacing: 0.12rem;
       text-decoration: underline;
-      text-decoration-color: #FF8E2B;
+      text-decoration-color: #ff8e2b;
     }
   }
 }
 // ! HomePage HomePageServices.jsx  ---FINISH---
+
+// ! HomePage HomePageGridCards.jsx  ---START---
+.homeGridSection {
+  padding: 7rem 0 4rem;
+}
+.homeGridImagesRight {
+  // width: 57.4rem;
+  width: 100%;
+  height: 57.4rem;
+  background-image: url("/icons/homeGrid.svg");
+  background-position: 230px center; /* sola 50px sürüşdürülüb */
+  background-repeat: no-repeat;
+  background-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homeGridImages {
+  // width: 57.4rem;
+  width: 100%;
+  height: 57.4rem;
+  background-image: url("/icons/homeGrid.svg");
+  background-position: -50px center; /* sola 50px sürüşdürülüb */
+  background-repeat: no-repeat;
+  background-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homeGridContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.6rem;
+  span {
+    color: var(--01, #4a2682);
+    font-feature-settings: "liga" off;
+    font-size: 4.8rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.24rem;
+    width: 39.3rem;
+  }
+  p {
+    width: 39.3rem;
+    color: #250951;
+    font-feature-settings: "liga" off;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 149%; /* 2.682rem */
+    letter-spacing: 0.09rem;
+  }
+  a {
+    span {
+      color: var(--01, #4a2682);
+      font-feature-settings: "liga" off;
+      font-size: 2.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.12rem;
+      text-decoration: underline;
+      text-decoration-color: #ff8e2b;
+    }
+  }
+}
+// ! HomePage HomePageGridCards.jsx  ---FINISH---
+
+// ! HomePage HomePageOurClients.jsx  ---START---
+#homePageOurClients {
+  padding: 6rem 0 12rem;
+  .homePageOurClientsHeaderText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    span {
+      color: var(--01, #4a2682);
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 4.8rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      letter-spacing: 0.24rem;
+    }
+    p {
+      width: 61.5rem;
+      flex-shrink: 0;
+      color: #12022a;
+      text-align: center;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 146.5%; /* 2.344rem */
+      letter-spacing: 0.08rem;
+    }
+  }
+  .homePageOurClientCards {
+    padding-top: 2.2rem;
+    .homePageOurClientCard {
+      border-radius: 2rem;
+      background: #fff;
+      box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+      .homePageOurClientCardImg {
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+// ! HomePage HomePageOurClients.jsx  ---FINISH---
+
+// ! HomePage HomePageOurClients.jsx  ---START---
+#homePageSeo {
+  padding-bottom: 7.6rem;
+  .homePageSeoContent {
+    span {
+      color: var(--02, #ff8e2b);
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.09rem;
+      text-transform: uppercase;
+    }
+    p {
+      color: var(--05, #2a0d56);
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.07rem;
+      margin-top: 1rem;
+    }
+    .seoViewMore {
+      padding-top: 2.4rem;
+      color: var(--01, #4a2682);
+      font-feature-settings: "liga" off;
+      font-size: 2.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.12rem;
+      text-decoration: underline;
+      text-decoration-color: #ff8e2b;
+      text-underline-offset: 2px;
+      strong {
+        color: var(--02, #ff8e2b);
+        font-feature-settings: "liga" off;
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.12rem;
+      }
+    }
+  }
+}
+// ! HomePage HomePageOurClients.jsx  ---FINISH---
+
+// ! HomePage Footer.jsx  ---START---
+#footer {
+  background-color: #f2edf9;
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem;
+  .footerItem {
+    padding: 8.3rem 0 6.5rem;
+    .footerLeft {
+      p {
+        padding-top: 2.9rem;
+        color: var(--05, #2a0d56);
+        font-feature-settings: "liga" off;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 142%; /* 1.988rem */
+        letter-spacing: 0.07rem;
+        width: 29.1rem;
+      }
+      .footerSocialNetwork {
+        display: flex;
+        gap: 1.7rem;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 1.6rem;
+        .wpdi {
+          padding-left: 1rem;
+        }
+      }
+      .footerPaymentMethods {
+        padding-top: 3.2rem;
+        width: 27rem;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        div {
+          width: 4.8rem;
+          height: 3rem;
+          flex-shrink: 0;
+          border-radius: 1rem;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .footerContacts {
+        padding-top: 4rem;
+        .footerContact {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 2rem;
+
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.3rem;
+            span {
+              width: 24.1rem;
+              color: var(--05, #2a0d56);
+              font-size: 1.3rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              letter-spacing: 0.13rem;
+            }
+          }
+        }
+      }
+    }
+    .footerLinks {
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        span {
+          color: var(--01, #4a2682);
+          font-size: 1.5rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.075rem;
+          text-transform: uppercase;
+          padding-bottom: 2rem;
+        }
+        li {
+          a {
+            color: var(--05, #2a0d56);
+            font-size: 1.4rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.07rem;
+          }
+          transition: all 0.4s ease-in-out;
+          &:hover {
+            opacity: 0.5;
+            transition: all 0.4s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+  .footLine {
+    height: 0.08rem;
+    width: 100%;
+    background: #fff;
+  }
+  .footerBottom {
+    padding: 2.5rem 0;
+    .footerBottomItem {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.6rem;
+      span {
+        color: var(--05, #2a0d56);
+        font-size: 1.1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.11rem;
+      }
+      .footerVerticalLine {
+        width: 0.08rem;
+        height: 2.2rem;
+        background: #ff8e2b;
+      }
+      .siteByONE {
+        span {
+          color: var(--05, #2a0d56);
+          font-size: 1.1rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.055rem;
+        }
+        strong {
+          color: var(--05, #2a0d56);
+          font-size: 1.1rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          letter-spacing: 0.055rem;
+        }
+      }
+    }
+  }
+}
+// ! HomePage Footer.jsx  ---FINISH---
+
+// ? ABOUT PAGE
+// ! HomePage AboutPageBanner.jsx  ---START---
+#aboutPageBanner {
+  background: linear-gradient(
+    270deg,
+    #182281 3.45%,
+    #5f69c7 50.56%,
+    #bbb1e3 95.97%
+  );
+  background-blend-mode: multiply;
+  mix-blend-mode: multiply;
+  height: 41.4rem;
+  flex-shrink: 0;
+  .aboutPageBannerContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.6rem;
+    span {
+      color: #fcfcfc;
+      font-feature-settings: "liga" off;
+      font-size: 6.4rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 118%; /* 7.552rem */
+      letter-spacing: 0.32rem;
+    }
+    p {
+      color: #fcfcfc;
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 144%; /* 2.304rem */
+      letter-spacing: 0.16rem;
+    }
+  }
+}
+
+// ! HomePage AboutPageBanner.jsx  ---FINISH---
+
+// ! HomePage AboutPageBreadCrumbs.jsx  ---START---
+.aboutPageBreadCrumbs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 4rem 0 4.3rem;
+  span {
+    color: var(--05, #2a0d56);
+    text-align: center;
+    font-feature-settings: "liga" off;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.065rem;
+    opacity: 0.5;
+  }
+  strong {
+    color: var(--05, #2a0d56);
+    text-align: center;
+    font-feature-settings: "liga" off;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.065rem;
+  }
+  .breadCrumbsArrow {
+    transform: rotate(270deg);
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+.aboutPageForHosting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+  span {
+    color: var(--01, #4a2682);
+    font-feature-settings: "liga" off;
+    font-size: 3.6rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.18rem;
+  }
+  p {
+    width: 61.5rem;
+    flex-shrink: 0;
+    color: var(--05, #2a0d56);
+    text-align: center;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 146.5%; /* 2.344rem */
+    letter-spacing: 0.08rem;
+  }
+}
+
+// ! HomePage AboutPageBreadCrumbs.jsx  ---FINISH---
+
+
+
+// ! HomePage AboutPageWhyUs.jsx  ---START---
+
+
+// ! HomePage AboutPageWhyUs.jsx  ---FINISH---
+// ? ABOUT PAGE
