@@ -1328,7 +1328,7 @@ $BestHostMainColor: #4a2682;
   justify-content: flex-start;
   align-items: center;
   gap: 1.5rem;
-  padding: 4rem 0 4.3rem;
+  padding: 6rem 0 4.3rem;
   span {
     color: var(--05, #2a0d56);
     text-align: center;
@@ -1357,6 +1357,7 @@ $BestHostMainColor: #4a2682;
   }
 }
 .aboutPageForHosting {
+  padding-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1386,10 +1387,128 @@ $BestHostMainColor: #4a2682;
 
 // ! HomePage AboutPageBreadCrumbs.jsx  ---FINISH---
 
-
-
 // ! HomePage AboutPageWhyUs.jsx  ---START---
 
+#aboutPageWhyUs {
+  background-image: url("/images/interBack.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 125.4rem;
+  flex-shrink: 0;
+  .aboutPageWhyUsItem {
+    padding-top: 10.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    span {
+      color: var(--05, #2a0d56);
+      font-size: 3.6rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      letter-spacing: 0.36rem;
+    }
+    .aboutPageWhyUsCards {
+      padding-top: 4.4rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
 
+      .aboutPageWhyUsCard {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        align-items: center;
+        .aboutPageWhyUsCardIMG {
+          width: 6.4rem;
+          height: 6.2rem;
+          flex-shrink: 0;
+        }
+      }
+      strong {
+        color: var(--05, #2a0d56);
+        font-size: 3.6rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.36rem;
+      }
+      p {
+        color: var(--05, #2a0d56);
+        text-align: center;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.16rem;
+        width: 20.8rem;
+      }
+    }
+  }
+  .aboutPageMiddleGrid {
+    padding-top: 12rem;
+    .aboutPageMiddleGridItem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      span {
+        color: var(--05, #2a0d56);
+        font-size: 3.6rem;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: 0.36rem;
+      }
+      p {
+        color: var(--05, #2a0d56);
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.18rem;
+      }
+    }
+    #aboutMidleGrid {
+      height: 60rem;
+    }
+    .aboutPageMiddleGridLeft {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        width: 42.3rem;
+        flex-shrink: 0;
+        color: var(--05, #2a0d56);
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 144%; /* 2.304rem */
+        letter-spacing: 0.16rem;
+      }
+    }
+    .aboutPageMiddleGridRight {
+      background-image: url("/icons/homeGrid.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.shareAboutComponents{
+  padding: 0rem !important;
+}
 // ! HomePage AboutPageWhyUs.jsx  ---FINISH---
 // ? ABOUT PAGE

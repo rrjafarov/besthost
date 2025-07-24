@@ -3,7 +3,7 @@ import React from "react";
 
 const HomePageOurClients = () => {
   return (
-    <div id="homePageOurClients">
+    <div id="homePageOurClients" className="shareAboutComponents">
       <div className="container">
         <div className="homePageOurClientsHeaderText">
           <span>Our Clients</span>
