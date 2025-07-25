@@ -8,6 +8,7 @@ import HomePageServices from "@/components/HomePage/HomePageServices";
 import HomePageGridCards from "@/components/HomePage/HomePageGridCards";
 import HomePageOurClients from "@/components/HomePage/HomePageOurClients";
 import HomePageSeo from "@/components/HomePage/HomePageSeo";
+import HomePageLastGrid from "@/components/HomePage/HomePageLastGrid";
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
       <HomePageHosting />
       <HomePageServices />
       <HomePageGridCards />
+      <HomePageLastGrid />
       <HomePageOurClients />
       <HomePageSeo />
       <Footer />

@@ -1017,6 +1017,65 @@ $BestHostMainColor: #4a2682;
     }
   }
 }
+.homePageLastGrid {
+  // padding: 3rem 0;
+  .homePageLastGridImg {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .homePageLastGridContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 6rem;
+    span {
+      color: var(--01, #4a2682);
+      font-size: 4.8rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.24rem;
+      width: 46.1rem;
+    }
+    p {
+      color: var(--04, #12022a);
+      font-size: 2.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.12rem;
+      width: 46.1rem;
+    }
+    a {
+      span {
+        color: var(--01, #4a2682);
+        font-feature-settings: "liga" off;
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.12rem;
+        text-decoration: underline;
+        text-decoration-color: #ff8e2b;
+      }
+    }
+    .homePageLastGridContentIcons {
+      padding: 4rem 1rem;
+      display: flex;
+      gap: 6.8rem;
+    }
+  }
+}
+#lastPadding{
+  margin: 10rem 0 6rem !important;
+}
 // ! HomePage HomePageGridCards.jsx  ---FINISH---
 
 // ! HomePage HomePageOurClients.jsx  ---START---
@@ -1075,6 +1134,7 @@ $BestHostMainColor: #4a2682;
 // ! HomePage HomePageOurClients.jsx  ---START---
 #homePageSeo {
   padding-bottom: 7.6rem;
+  padding-top: 7rem;
   .homePageSeoContent {
     span {
       color: var(--02, #ff8e2b);
@@ -1507,7 +1567,7 @@ $BestHostMainColor: #4a2682;
     }
   }
 }
-.shareAboutComponents{
+.shareAboutComponents {
   padding: 0rem !important;
 }
 // ! HomePage AboutPageWhyUs.jsx  ---FINISH---

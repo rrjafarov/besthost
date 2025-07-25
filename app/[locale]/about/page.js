@@ -5,6 +5,7 @@ import AboutPageBanner from "@/components/AboutPage/AboutPageBanner";
 import AboutPageBreadCrumbs from "@/components/AboutPage/AboutPageBreadCrumbs";
 import AboutPageWhyUs from "@/components/AboutPage/AboutPageWhyUs";
 import HomePageOurClients from "@/components/HomePage/HomePageOurClients";
+import HomePageLastGrid from "@/components/HomePage/HomePageLastGrid";
 
 const page = () => {
   return (
@@ -15,6 +16,7 @@ const page = () => {
         <AboutPageBreadCrumbs />
         <AboutPageWhyUs />
         <HomePageOurClients />
+        <HomePageLastGrid  />
 
         <Footer />
       </div>
