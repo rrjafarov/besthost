@@ -111,7 +111,6 @@ const BlogPage = () => {
             </div>
           </div>
 
-          {/* Kartların altında pagination */}
           <BasicPagination /> {/* ② */}
         </div>
       </div>

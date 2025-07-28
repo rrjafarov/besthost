@@ -1782,7 +1782,45 @@ $BestHostMainColor: #4a2682;
     text-decoration-color: #ff8e2b;
   }
 }
+
 // * SERVİCES PAGE<><><><><><><><<>
+// * SERVİCES DETAIL PAGE<><><><><><><><<>
+#servicesDetailPage {
+  .aboutPageBreadCrumbs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 6rem 0 4.3rem;
+    span {
+      color: var(--05, #2a0d56);
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.065rem;
+      opacity: 0.5;
+    }
+    strong {
+      color: var(--05, #2a0d56);
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.065rem;
+    }
+    .breadCrumbsArrow {
+      transform: rotate(270deg);
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+}
+// * SERVİCES DETAIL PAGE<><><><><><><><<>
 
 // * BLOG PAGE<><><><><><><><<>
 .blogPageBreadCrumbs {
@@ -1845,12 +1883,13 @@ $BestHostMainColor: #4a2682;
     letter-spacing: 0.08rem;
   }
 }
+
 .blogPageCards {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3.2rem 0 6.9rem;
+  padding: 3.3rem 0 6.9rem;
   .blogPageCard {
     display: flex;
     flex-direction: column;
@@ -1903,5 +1942,9 @@ $BestHostMainColor: #4a2682;
       }
     }
   }
+}
+
+.css-1l5xwdx-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: transparent !important;
 }
 // * BLOG PAGE<><><><><><><><<>
