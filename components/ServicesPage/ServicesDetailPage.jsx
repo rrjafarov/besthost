@@ -17,7 +17,7 @@ const ServicesDetailPage = () => {
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="#">
-            <strong>Lorem ipsum</strong>
+            <strong>Lorem ipsummmm</strong>
           </Link>
         </div>
       </div>
