@@ -4,6 +4,7 @@ import "./globals.scss";
 
 export const metadata = {
   title: "Best Host",
+  
   description: "Best Host",
 };
 
