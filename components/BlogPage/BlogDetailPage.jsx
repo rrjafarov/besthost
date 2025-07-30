@@ -6,9 +6,9 @@ import Twitter from "@/public/icons/twitterWhite.svg";
 import Instagram from "@/public/icons/instagramWhite.svg";
 import Wp from "@/public/icons/wpWhite.svg";
 
-const ServicesDetailPage = () => {
+const BlogDetailPage = () => {
   return (
-    <div id="servicesDetailPage">
+    <div id="blogDetailPage">
       <div className="container">
         <div className="aboutPageBreadCrumbs">
           <Link href="/">
@@ -23,33 +23,33 @@ const ServicesDetailPage = () => {
             <strong>Lorem ipsumm</strong>
           </Link>
         </div>
-        <div className="servicesDetailPageMain">
+        <div className="blogDetailPageMain">
           <div className="row">
             <div className="xl-8 lg-8 md-12 sm-12">
-              <div className="servicesDetailPageMainLeft">
-                <div className="servicesDetailPageMainLeftShareIcons">
-                  <div className="servicesDetailPageMainLeftShareIcon">
+              <div className="blogDetailPageMainLeft">
+                <div className="blogDetailPageMainLeftShareIcons">
+                  <div className="blogDetailPageMainLeftShareIcon">
                     <button>
                       <Facebook />
                     </button>
                   </div>
-                  <div className="servicesDetailPageMainLeftShareIcon">
+                  <div className="blogDetailPageMainLeftShareIcon">
                     <button>
                       <Twitter />
                     </button>
                   </div>
-                  <div className="servicesDetailPageMainLeftShareIcon">
+                  <div className="blogDetailPageMainLeftShareIcon">
                     <button>
                       <Instagram />
                     </button>
                   </div>
-                  <div className="servicesDetailPageMainLeftShareIcon">
+                  <div className="blogDetailPageMainLeftShareIcon">
                     <button>
                       <Wp />
                     </button>
                   </div>
                 </div>
-                <div className="servicesDetailPageMainLeftContent">
+                <div className="blogDetailPageMainLeftContent">
                   <span>
                     How to Choose an Affordable SEO Package for Your Startup
                   </span>
@@ -61,8 +61,8 @@ const ServicesDetailPage = () => {
                       <Link href="#">Lorem ipsum</Link>
                     </span>
                   </div>
-                  <div className="servicesDPline"></div>
-                  <div className="servicesDetailPageMainLeftContentDesc">
+                  <div className="blogDPline"></div>
+                  <div className="blogDetailPageMainLeftContentDesc">
                     <span>Why entrepreneurial diversity matters</span>
                     <p>
                       Imagine coming to the office every day and opening your
@@ -82,7 +82,7 @@ const ServicesDetailPage = () => {
                       Optimization, you could end up with more customers than
                       you really need.
                     </p>
-                    <div className="servicesDetailPageMainLeftContentImages">
+                    <div className="blogDetailPageMainLeftContentImages">
                       <img src="/icons/serviceDPLeft.png" alt="" />
                     </div>
                     <p>
@@ -94,16 +94,16 @@ const ServicesDetailPage = () => {
                       fraction of those users to reach your website through
                       Search Engine
                     </p>
-                    <div className="servicesDetailPageMainLeftContentImages">
+                    <div className="blogDetailPageMainLeftContentImages">
                       <img src="/icons/serviceDPLeft.png" alt="" />
                     </div>
 
-                    <div className="servicesDetailPageMainLeftContentParanthez">
-                      <div className="servicesDetailPageMainLeftContentParanthezIcon">
+                    <div className="blogDetailPageMainLeftContentParanthez">
+                      <div className="blogDetailPageMainLeftContentParanthezIcon">
                         <img src="/icons/paranthez.svg" alt="" />
                         <img src="/icons/paranthez.svg" alt="" />
                       </div>
-                      <div className="servicesDetailPageMainLeftContentParanthezDesc">
+                      <div className="blogDetailPageMainLeftContentParanthezDesc">
                         <p>
                           Est tation latine aliquip id, mea ad tale illud
                           definitiones. Periculis omittantur necessitatibus eum
@@ -117,32 +117,36 @@ const ServicesDetailPage = () => {
               </div>
             </div>
             <div className="xl-4 lg-4 md-12 sm-12">
-              <div className="servicesDetailPageMainRight">
-                <div className="servicesDetailPageMainRightTopImg">
-                  <img src="/images/servicesDP.png" alt="" />
+              <div className="blogDetailPageMainRight">
+                <div className="blogDetailPageMainRightTopImg">
+                  <img src="/images/servicesDP2.png" alt="" />
                 </div>
 
-                <div className="servicesDetailPageMainRightOtherServices">
-                  <div className="servicesDetailPageMainRightOtherServiceCard">
-                    <Link href="/services/id">
-                      <div className="servicesDetailPageMainRightOtherServiceCardItem">
-                        <div className="servicesDetailPageMainRightOtherServiceCardImg">
-                          <img src="/icons/service.svg" alt="" />
-                        </div>
-                        <div className="servicesDetailPageMainRightOtherServiceCardContent">
-                          <h2>Trending Products</h2>
-                          <span>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit.
-                          </span>
-                          <div className="dprihtline"></div>
-                          <div className="servicesDetailPageMainRightOtherServiceCardBottom">
-                            <span>2 min read </span>
-                            <img src="/icons/rightServiceArrow.svg" alt="" />
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+                <div className="blogDetailPageMainRightOtherBlogs">
+                  <span className="allBlogs">All Blogs</span>
+                  <div className="blogDetailPageMainRightOtherBlogsCards">
+                    <div className="blogDetailPageMainRightOtherBlogsCard">
+                      <Link href="/blog/id">
+                        <span className="otherBlogTitle">
+                          Trending Products
+                        </span>
+                        <span className="otherBlogSubTitle">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.
+                        </span>
+                      </Link>
+                    </div>
+                    <div className="blogDetailPageMainRightOtherBlogsCard">
+                      <Link href="/blog/id">
+                        <span className="otherBlogTitle">
+                          Trending Products
+                        </span>
+                        <span className="otherBlogSubTitle">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit.
+                        </span>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -154,4 +158,4 @@ const ServicesDetailPage = () => {
   );
 };
 
-export default ServicesDetailPage;
+export default BlogDetailPage;

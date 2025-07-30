@@ -1819,6 +1819,207 @@ $BestHostMainColor: #4a2682;
       height: 1.6rem;
     }
   }
+  .servicesDetailPageMain {
+    .servicesDetailPageMainLeft {
+      background-color: #fff;
+      position: relative;
+      border-radius: 1rem;
+      width: 100%;
+      margin-bottom: 5rem;
+      .servicesDetailPageMainLeftShareIcons {
+        position: absolute;
+        top: -1.5rem;
+        right: 0rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.5rem;
+        .servicesDetailPageMainLeftShareIcon {
+          button {
+            width: 4.4rem;
+            height: 4.4rem;
+            flex-shrink: 0;
+            background: #4a2682;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      .servicesDetailPageMainLeftContent {
+        padding: 5rem;
+        span {
+          color: var(--05, #2a0d56);
+          font-feature-settings: "liga" off;
+          font-size: 3.2rem;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+          letter-spacing: 0.32rem;
+          width: 56.4rem;
+        }
+        .div {
+          display: flex;
+          width: 25rem;
+        }
+        .middleLink {
+          a {
+            color: var(--05, #2a0d56);
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.07rem;
+            text-decoration: underline;
+            text-decoration-color: #ff8e2b;
+          }
+        }
+        .servicesDPline {
+          opacity: 0.7;
+          background: #4a2682;
+          height: 0.08rem;
+          margin: 2.4rem 0 3rem;
+        }
+        .servicesDetailPageMainLeftContentDesc {
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem;
+          span {
+            color: var(--01, #4a2682);
+            width: 61.7rem;
+            font-feature-settings: "liga" off;
+            font-size: 2.8rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.28rem;
+          }
+          p {
+            color: var(--05, #2a0d56);
+            font-feature-settings: "liga" off;
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 3.2rem; /* 177.778% */
+            letter-spacing: 0.02rem;
+          }
+        }
+        .servicesDetailPageMainLeftContentImages {
+          width: 100%;
+          height: 35.5rem;
+          flex-shrink: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .servicesDetailPageMainLeftContentParanthez {
+          display: flex;
+          gap: 5rem;
+          padding-top: 3rem;
+          .servicesDetailPageMainLeftContentParanthezIcon {
+            display: flex;
+            width: 2.7429rem;
+            height: 5.4857rem;
+            flex-shrink: 0;
+          }
+          .servicesDetailPageMainLeftContentParanthezDesc {
+            p {
+              color: var(--05, #2a0d56);
+              font-feature-settings: "liga" off;
+              font-size: 2.6rem;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 3.2rem;
+              letter-spacing: 0.02rem;
+            }
+          }
+        }
+      }
+    }
+    .servicesDetailPageMainRight {
+      width: 100%;
+      .servicesDetailPageMainRightTopImg {
+        margin-top: 3rem;
+        background-image: url("/icons/homeGrid.svg");
+        background-repeat: no-repeat;
+        background-size: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+        top: 0;
+        flex-shrink: 0;
+        width: 100%;
+        width: 56.9rem;
+        // height: 35rem;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .servicesDetailPageMainRightOtherServices {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .servicesDetailPageMainRightOtherServiceCard {
+          width: 36rem;
+          height: 28.8rem;
+          border-radius: 0.8rem;
+          background: #fff;
+          box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+          flex-shrink: 0;
+          .servicesDetailPageMainRightOtherServiceCardItem {
+            padding: 4.3rem 3.81rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.81rem;
+          }
+          .servicesDetailPageMainRightOtherServiceCardContent {
+            display: flex;
+            flex-direction: column;
+            h2 {
+              color: var(--05, #2a0d56);
+              font-feature-settings: "liga" off;
+              font-size: 1.6rem;
+              font-style: normal;
+              font-weight: 800;
+              line-height: 3.2rem;
+              letter-spacing: 0.02rem;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+            span {
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              color: var(--05, #2a0d56);
+              font-feature-settings: "liga" off;
+              font-size: 1.3rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 1.7rem;
+              letter-spacing: 0.07rem;
+            }
+            .dprihtline {
+              opacity: 0.5;
+              background: #ff8e2b;
+              height: 0.08rem;
+              width: 100%;
+              margin: 1.2rem 0 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 // * SERVİCES DETAIL PAGE<><><><><><><><<>
 
@@ -1947,4 +2148,249 @@ $BestHostMainColor: #4a2682;
 .css-1l5xwdx-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
   background-color: transparent !important;
 }
+
+#blogDetailPage {
+  .aboutPageBreadCrumbs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 6rem 0 4.3rem;
+    span {
+      color: var(--05, #2a0d56);
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.065rem;
+      opacity: 0.5;
+    }
+    strong {
+      color: var(--05, #2a0d56);
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.065rem;
+    }
+    .breadCrumbsArrow {
+      transform: rotate(270deg);
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+  .blogDetailPageMain {
+    .blogDetailPageMainLeft {
+      background-color: #fff;
+      position: relative;
+      border-radius: 1rem;
+      width: 100%;
+      margin-bottom: 5rem;
+      .blogDetailPageMainLeftShareIcons {
+        position: absolute;
+        top: -1.5rem;
+        right: 0rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.5rem;
+        .blogDetailPageMainLeftShareIcon {
+          button {
+            width: 4.4rem;
+            height: 4.4rem;
+            flex-shrink: 0;
+            background: #4a2682;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      .blogDetailPageMainLeftContent {
+        padding: 5rem;
+        span {
+          color: var(--05, #2a0d56);
+          font-feature-settings: "liga" off;
+          font-size: 3.2rem;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+          letter-spacing: 0.32rem;
+          width: 56.4rem;
+        }
+        .div {
+          display: flex;
+          width: 25rem;
+        }
+        .middleLink {
+          a {
+            color: var(--05, #2a0d56);
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.07rem;
+            text-decoration: underline;
+            text-decoration-color: #ff8e2b;
+          }
+        }
+        .blogDPline {
+          opacity: 0.7;
+          background: #4a2682;
+          height: 0.08rem;
+          margin: 2.4rem 0 3rem;
+        }
+        .blogDetailPageMainLeftContentDesc {
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem;
+          span {
+            color: var(--01, #4a2682);
+            width: 61.7rem;
+            font-feature-settings: "liga" off;
+            font-size: 2.8rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.28rem;
+          }
+          p {
+            color: var(--05, #2a0d56);
+            font-feature-settings: "liga" off;
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 3.2rem; /* 177.778% */
+            letter-spacing: 0.02rem;
+          }
+        }
+        .blogDetailPageMainLeftContentImages {
+          width: 100%;
+          height: 35.5rem;
+          flex-shrink: 0;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .blogDetailPageMainLeftContentParanthez {
+          display: flex;
+          gap: 5rem;
+          padding-top: 3rem;
+          .blogDetailPageMainLeftContentParanthezIcon {
+            display: flex;
+            width: 2.7429rem;
+            height: 5.4857rem;
+            flex-shrink: 0;
+          }
+          .blogDetailPageMainLeftContentParanthezDesc {
+            p {
+              color: var(--05, #2a0d56);
+              font-feature-settings: "liga" off;
+              font-size: 2.6rem;
+              font-style: normal;
+              font-weight: 600;
+              line-height: 3.2rem;
+              letter-spacing: 0.02rem;
+            }
+          }
+        }
+      }
+    }
+    .blogDetailPageMainRight {
+      width: 100%;
+      .blogDetailPageMainRightTopImg {
+        margin-top: 3rem;
+        background-image: url("/icons/homeGrid.svg");
+        background-repeat: no-repeat;
+        background-size: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+        top: 0;
+        flex-shrink: 0;
+        width: 100%;
+        width: 56.9rem;
+        // height: 35rem;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .blogDetailPageMainRightOtherBlogs {
+        .allBlogs {
+          color: var(--c2, #0a001e);
+          font-size: 2.4rem;
+          font-style: normal;
+          font-weight: 800;
+          line-height: normal;
+          letter-spacing: 0.24rem;
+          text-transform: uppercase;
+          margin-top: 3rem;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        width: 36rem;
+        flex-shrink: 0;
+        border-radius: 0.8rem;
+        background: #fff;
+        box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+        .blogDetailPageMainRightOtherBlogsCards {
+          margin:0 0 1.5rem 0;
+          border-radius: 0.8rem;
+          background: #f0f2ff;
+          width: 31.5rem;
+          flex-shrink: 0;
+          box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+          .blogDetailPageMainRightOtherBlogsCard {
+            border-radius: 0.08rem;
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            border: 0.08rem solid #e5e5e5;
+            .otherBlogTitle {
+              color: var(--Light-Black, #373f41);
+              font-feature-settings: "liga" off;
+              font-size: 1.4rem;
+              font-style: normal;
+              font-weight: 800;
+              line-height: 3.2rem;
+              letter-spacing: 0.02rem;
+              text-transform: capitalize;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+            .otherBlogSubTitle {
+              color: var(--Light-Black, #373f41);
+              font-feature-settings: "liga" off;
+              font-size: 1.3rem;
+              font-style: normal;
+              text-transform: capitalize;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              font-weight: 400;
+              line-height: 1.7rem; /* 130.769% */
+              letter-spacing: 0.07rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // * BLOG PAGE<><><><><><><><<>
