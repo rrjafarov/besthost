@@ -2346,7 +2346,7 @@ $BestHostMainColor: #4a2682;
         background: #fff;
         box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
         .blogDetailPageMainRightOtherBlogsCards {
-          margin:0 0 1.5rem 0;
+          margin: 0 0 1.5rem 0;
           border-radius: 0.8rem;
           background: #f0f2ff;
           width: 31.5rem;
@@ -2394,3 +2394,148 @@ $BestHostMainColor: #4a2682;
 }
 
 // * BLOG PAGE<><><><><><><><<>
+
+// * SupportPages PAGE<><><><><><><><<>
+.besthostSupportPages {
+  .besthostSupportPagesBreadCrumbs {
+    .aboutPageBreadCrumbs {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 6rem 0 4.3rem;
+      span {
+        color: var(--05, #2a0d56);
+        text-align: center;
+        font-feature-settings: "liga" off;
+        font-size: 1.3rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.065rem;
+        opacity: 0.5;
+      }
+      strong {
+        color: var(--05, #2a0d56);
+        text-align: center;
+        font-feature-settings: "liga" off;
+        font-size: 1.3rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.065rem;
+      }
+      .breadCrumbsArrow {
+        transform: rotate(270deg);
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+  .supportPrivacyTitle {
+    color: var(--05, #2a0d56);
+    font-feature-settings: "liga" off;
+    font-size: 3.6rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.36rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .supportPrivacyContent {
+    margin-top: 5.8rem;
+    .supportPrivacyContentLeft {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .supportPrivacyContentLeftItem {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 36rem;
+      // height: 31.8rem;
+      flex-shrink: 0;
+      border-radius: 0.8rem;
+      background: #fff;
+      box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+      ul {
+        width: 31.5rem;
+        // height: 27.2rem;
+        flex-shrink: 0;
+        margin: 2rem;
+        border-radius: 0.8rem;
+        background: #f0f2ff;
+        box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+        li {
+          display: flex;
+          gap: 1.7rem;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 2.5rem;
+          width: 100%;
+          border-bottom: 0.8px solid #ccd1ee;
+          a {
+            color: var(--05, #2a0d56);
+            font-feature-settings: "liga" off;
+            font-size: 2.2rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 3.2rem; /* 133.333% */
+            letter-spacing: 0.02rem;
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
+.supportFixedTextBox {
+  width: 100%;
+  border-radius: 0.8rem;
+  background: #fff;
+  box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+  p {
+    padding: 3.5rem 5rem;
+    color: var(--05, #2a0d56);
+    font-feature-settings: "liga" off;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 171.875% */
+    letter-spacing: 0.02rem;
+  }
+}
+.supportTextBox {
+  padding: 3.2rem 9.5rem 0rem 5.6rem;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  span {
+    color: var(--05, #2a0d56);
+    font-feature-settings: "liga" off;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 2.75rem; /* 91.667% */
+    letter-spacing: 0.02rem;
+  }
+  p {
+    color: var(--05, #2a0d56);
+    font-feature-settings: "liga" off;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 171.875% */
+    letter-spacing: 0.02rem;
+  }
+}
+.supportTextBox2{
+  padding-top: 2rem;
+}
+// * SupportPages PAGE<><><><><><><><<>
