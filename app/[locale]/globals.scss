@@ -2535,7 +2535,245 @@ $BestHostMainColor: #4a2682;
     letter-spacing: 0.02rem;
   }
 }
-.supportTextBox2{
+.supportTextBox2 {
   padding-top: 2rem;
 }
 // * SupportPages PAGE<><><><><><><><<>
+
+// * contact PAGE<><><><><><><><<>
+
+.contactPage {
+  .aboutPageBreadCrumbs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 4rem 0 4.3rem;
+    span {
+      color: var(--05, #2a0d56);
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.065rem;
+      opacity: 0.5;
+    }
+    strong {
+      color: var(--05, #2a0d56);
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.065rem;
+    }
+    .breadCrumbsArrow {
+      transform: rotate(270deg);
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+  .contactLetsTalk {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    span {
+      color: var(--05, #2a0d56);
+      font-feature-settings: "liga" off;
+      font-size: 3.6rem;
+      font-style: normal;
+      font-weight: 800;
+      line-height: normal;
+      letter-spacing: 0.36rem;
+    }
+    p {
+      color: var(--05, #2a0d56);
+      font-feature-settings: "liga" off;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 0.15rem;
+    }
+    .contactLetsTalkIcons {
+      padding: 3rem 0;
+      display: flex;
+      gap: 11rem;
+      .contactLetsTalkIcon {
+        width: 5rem;
+        height: 5rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+  .contactLinksLeft {
+    padding-top: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    .contactLinksLeftItems {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      .contactLinksLeftItem {
+        border-radius: 0.8rem;
+        background: #fff;
+        box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+        width: 45.5rem;
+        height: 7.1rem;
+        flex-shrink: 0;
+        a {
+          width: 100%;
+          height: 100%;
+          div {
+            padding: 0 3rem 0 5rem;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 2.7rem;
+            justify-content: flex-start;
+            align-items: center;
+            span {
+              color: var(--05, #2a0d56);
+              font-size: 1.6rem;
+              font-style: normal;
+              font-weight: 600;
+              line-height: normal;
+              letter-spacing: 0.18rem;
+            }
+          }
+        }
+      }
+    }
+    .contactSocialLinks {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6.5rem;
+      .contactSocialLink {
+        a {
+          width: 4.4rem;
+          height: 4.4rem;
+          flex-shrink: 0;
+          background-color: #4a2682;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .contactForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10.5rem;
+    .contactFormItems {
+      width: 74rem;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      // gap: 2.5rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.8rem;
+      background: #f8f5f3;
+      box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+      .contactFormItem {
+        padding: 5.8rem 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6rem;
+        span {
+          color: var(--05, #2a0d56);
+          text-align: center;
+          font-size: 2.8rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.14rem;
+          text-transform: uppercase;
+        }
+        p {
+          color: var(--05, #2a0d56);
+          text-align: center;
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 171.5%; /* 2.744rem */
+          letter-spacing: 0.08rem;
+        }
+      }
+      form {
+        ::placeholder {
+          fcolor: var(--boz-01, #2d2c2d);
+          font-feature-settings: "liga" off;
+          font-family: Mulish;
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          letter-spacing: 0.08rem;
+          opacity: 0.5;
+        }
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        input {
+          width: 38.7rem;
+          height: 6.3rem;
+          border-radius: 0.8rem;
+          background: var(--02, #fcfcfc);
+          flex-shrink: 0;
+          padding: 2.1rem 3rem;
+          border: none;
+          outline: none;
+        }
+        textarea {
+          display: flex;
+          width: 38.7rem;
+          height: 24.9rem;
+          padding: 2.1rem 2.4rem 1.9rem 2.4rem;
+          align-items: flex-start;
+          gap: 1rem;
+          border-radius: 0.8rem;
+          flex-shrink: 0;
+          border: none;
+          outline: none;
+        }
+        button {
+          display: flex;
+          width: 38.7rem;
+          height: 6.3rem;
+          padding: 2.2rem 14.8rem;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          flex-shrink: 0;
+          border-radius: 0.8rem;
+          background: var(--01, #4a2682);
+          color: var(--03, #fff6f3);
+          text-align: center;
+          font-family: Mulish;
+          font-size: 1.8rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.27rem;
+        }
+      }
+    }
+  }
+}
+// * contact PAGE<><><><><><><><<>
