@@ -31,6 +31,8 @@ const HomePageGridCards = () => {
             </div>
           </div>
         </div>
+
+        
         <div className="row">
           <div className="xl-5 lg-6 md-6 sm-12">
             <div className="homeGridContent">
