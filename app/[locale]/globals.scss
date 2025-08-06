@@ -478,6 +478,99 @@ $BestHostMainColor: #4a2682;
     }
   }
 }
+// .dropdownMenu {
+//   display: none;
+// }
+// .headerLinks {
+//   ul {
+//     li {
+//       a {
+//         :hover {
+//           .dropdownMenu {
+//             display: flex;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+   left: -8rem;
+  width: 19.4rem;
+  display: none;
+  z-index: 999999999999999999999999999;
+
+  ul {
+    margin-top: 3rem;
+    display: flex !important;
+    flex-direction: column;
+    // justify-content: flex-start !important;
+    // align-items: flex-start !important;
+    gap: 1.4rem !important;
+    width: 24rem;
+    // height: 27.1rem;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    background: #f1efff;
+    padding: 1rem 0;
+
+    li {
+      margin: 0rem 1rem;
+      &:hover {
+        border-radius: 1rem;
+        background: #fff;
+        box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+      }
+      // padding: 1rem;
+      a {
+        padding: 0.5rem 1rem;
+        display: flex;
+        gap: 2rem;
+        .linkTextDrop {
+          display: flex;
+          flex-direction: column;
+          span {
+            color: var(--05, #2a0d56);
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.075rem;
+          }
+          strong {
+            color: var(--05, #2a0d56);
+            font-size: 1.2rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.05rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropdown:hover .dropdownMenu {
+  display: block !important;
+}
+
+// .rotateDrop {
+//  transition: transform 0.3s ease;
+//  transform: rotate(0deg);
+// }
+
+// .dropdown:hover .rotateDrop {
+//  transform: rotate(180deg);
+//  transition: transform 0.3s ease;
+// }
 
 // ! HomePage HeroSlider.jsx  ---START---
 .heroSlider {
@@ -3206,7 +3299,7 @@ $BestHostMainColor: #4a2682;
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    div{
+    div {
       display: flex;
       gap: 0.5rem;
     }
@@ -3246,3 +3339,5 @@ $BestHostMainColor: #4a2682;
   margin-top: 1.5rem; /* 15px */
   color: #999;
 }
+
+// ! bardaggggggggggggg

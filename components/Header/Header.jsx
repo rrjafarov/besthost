@@ -19,10 +19,59 @@ const Header = () => {
           </div>
           <div className="headerLinks">
             <ul>
-              <li>
+              <li className="dropdown">
                 <Link href="/">
                   <span>Hosting</span> <Arrow className="activeRotate" />
                 </Link>
+
+                <div className="dropdownMenu">
+                  <ul>
+                    <li>
+                      <Link href="/">
+                        <div className="linkIconDrop">
+                          <Arrow />
+                        </div>
+                        <div className="linkTextDrop">
+                          <span>Cloud Hosting</span>
+                          <strong>For large scale projects</strong>
+                        </div>
+                      </Link>
+                    </li>
+                     <li>
+                      <Link href="/">
+                        <div className="linkIconDrop">
+                          <Arrow />
+                        </div>
+                        <div className="linkTextDrop">
+                          <span>Cloud Hosting</span>
+                          <strong>For large scale projects</strong>
+                        </div>
+                      </Link>
+                    </li>
+                     <li>
+                      <Link href="/">
+                        <div className="linkIconDrop">
+                          <Arrow />
+                        </div>
+                        <div className="linkTextDrop">
+                          <span>Cloud Hosting</span>
+                          <strong>For large scale projects</strong>
+                        </div>
+                      </Link>
+                    </li>
+                     <li>
+                      <Link href="/">
+                        <div className="linkIconDrop">
+                          <Arrow />
+                        </div>
+                        <div className="linkTextDrop">
+                          <span>Cloud Hosting</span>
+                          <strong>For large scale projects</strong>
+                        </div>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li>
                 <Link href="/">
@@ -49,7 +98,7 @@ const Header = () => {
           <div className="headerContact">
             <div className="headerContactItem">
               <Link href="#">
-                <span>Dəstək xətti :</span> 
+                <span>Dəstək xətti :</span>
                 <strong>+994 55 475 24 00</strong>
               </Link>
             </div>
