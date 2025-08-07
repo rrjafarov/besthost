@@ -6,7 +6,7 @@ const HomePageGridCards = () => {
   return (
     <div className="homeGridSection">
       <div className="container">
-        <div className="row">
+        <div className="row" id="homeGridContent01">
           <div className="xl-7 lg-6 md-6 sm-12">
             <div className="homeGridImages">
               <Image
@@ -33,8 +33,8 @@ const HomePageGridCards = () => {
         </div>
 
         
-        <div className="row">
-          <div className="xl-5 lg-6 md-6 sm-12">
+        <div className="row" id="homeGridContent01" >
+          <div className="xl-5 lg-6 md-6 sm-12" id="order1">
             <div className="homeGridContent">
               <span>Why choose Best Host?</span>
               <p>
@@ -47,7 +47,7 @@ const HomePageGridCards = () => {
               </Link>
             </div>
           </div>
-          <div className="xl-7 lg-6 md-6 sm-12">
+          <div className="xl-7 lg-6 md-6 sm-12" id="order2">
             <div className="homeGridImagesRight">
               <Image
                 src="/images/homeGridX7.png"
@@ -58,6 +58,8 @@ const HomePageGridCards = () => {
             </div>
           </div>
         </div>
+
+
         <div className="row">
           <div className="xl-7 lg-6 md-6 sm-12">
             <div className="homeGridImages">

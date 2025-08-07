@@ -25,7 +25,7 @@ const Footer = () => {
                   their customers. We do it by offering easy to use, fast and
                   reliable web hosting services.
                 </p>
-                <div className="footerSocialNetwork">
+                <div className="footerSocialNetwork footerNotMobile">
                   <Link href="#">
                     {" "}
                     <Facebook />{" "}
@@ -43,7 +43,7 @@ const Footer = () => {
                     <Wp />{" "}
                   </Link>
                 </div>
-                <div className="footerPaymentMethods">
+                <div className="footerPaymentMethods footerNotMobile">
                   <div>
                     <img src="/icons/visa.svg" alt="Visa" />
                   </div>
@@ -63,7 +63,7 @@ const Footer = () => {
                     <img src="/icons/coinUp.png" alt="Visa" />
                   </div>
                 </div>
-                <div className="footerContacts">
+                <div className="footerContacts footerNotMobile">
                   <div className="footerContact">
                     <Link href="#">
                       <Phone /> <span>+994 50 404 50 04</span>
@@ -82,9 +82,10 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+
             <div className="xl-9 lg-9 md-6 sm-12">
               <div className="row">
-                <div className="xl-3 lg-4 md-6 sm-12">
+                <div className="xl-3 lg-4 md-6 sm-6">
                   <div className="footerLinks">
                     <ul>
                       <span>HOSTING</span>
@@ -115,7 +116,7 @@ const Footer = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="xl-3 lg-2 md-6 sm-12">
+                <div className="xl-3 lg-2 md-6 sm-6">
                   <div className="footerLinks">
                     <ul>
                       <span>Website</span>
@@ -152,7 +153,7 @@ const Footer = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="xl-3 lg-4 md-6 sm-12">
+                <div className="xl-3 lg-4 md-6 sm-6">
                   <div className="footerLinks">
                     <ul>
                       <span>Services</span>
@@ -180,7 +181,7 @@ const Footer = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="xl-3 lg-4 md-6 sm-12">
+                <div className="xl-3 lg-4 md-6 sm-6">
                   <div className="footerLinks">
                     <ul>
                       <span>Support</span>
@@ -212,6 +213,60 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="footerSocialNetwork footerYesMobile">
+          <Link href="#">
+            {" "}
+            <Facebook />{" "}
+          </Link>
+          <Link href="#">
+            {" "}
+            <Twitter />{" "}
+          </Link>
+          <Link href="#">
+            {" "}
+            <Instagram />{" "}
+          </Link>
+          <Link className="wpdi" href="#">
+            {" "}
+            <Wp />{" "}
+          </Link>
+        </div>
+        <div className="footerPaymentMethods footerYesMobile">
+          <div>
+            <img src="/icons/visa.svg" alt="Visa" />
+          </div>
+          <div>
+            <img src="/icons/masterCard.svg" alt="mastercart" />
+          </div>
+          <div>
+            <img src="/icons/amazon.svg" alt="amazon" />
+          </div>
+          <div>
+            <img src="/icons/1kart.png" alt="1cart" />
+          </div>
+          <div>
+            <img src="/icons/googePay.png" alt="googlepay" />
+          </div>
+          <div>
+            <img src="/icons/coinUp.png" alt="Visa" />
+          </div>
+        </div>
+        <div className="footerContacts footerYesMobile">
+          <div className="footerContact">
+            <Link href="#">
+              <Phone /> <span>+994 50 404 50 04</span>
+            </Link>
+            <Link href="#">
+              <Email /> <span>besthost@info.az</span>
+            </Link>
+            <Link href="#">
+              <Location />
+              <span>
+                Bakı şəhəri, Badamdar qəsəbəsi, A. Abbaszadə küç. 13a, AZ1073
+              </span>
+            </Link>
+          </div>
+        </div>
       </div>
       <div className="footLine"></div>
       <div className="footerBottom">
@@ -224,7 +279,7 @@ const Footer = () => {
             <div className="footerVerticalLine"></div>
             <div className="siteByONE">
               <Link href="https://one.az/">
-              <span>Site by</span> <strong>One Studio</strong>
+                <span>Site by</span> <strong>One Studio</strong>
               </Link>
             </div>
           </div>

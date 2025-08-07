@@ -22,6 +22,7 @@ const Contact = () => {
             <strong>Contact us</strong>
           </Link>
         </div>
+
         <div className="contactLetsTalk">
           <span>Let`s Talk</span>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -105,7 +106,7 @@ const Contact = () => {
             </div>
 
             <div className="xl-6 lg-6 md-6 sm-12">
-              <img src="/images/lastGridLeft.png" alt="" />
+              <img className="notMobileContact" src="/images/lastGridLeft.png" alt="" />
             </div>
           </div>
         </div>

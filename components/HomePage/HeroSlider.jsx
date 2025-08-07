@@ -38,29 +38,7 @@ const HeroSlider = () => {
                   />
                   <div className="heroSliderOverlay"></div>
                 </div>
-                <div className="container">
-                  <div className="heroSliderContent">
-                    <h4>Web Hosting for Your Mission</h4>
-                    <span>
-                      Get a Free .COM domain with Premium Plan for 12+ months.
-                      Free SSL included.
-                    </span>
-                    <div className="heroSliderContentHost">
-                      <span>https://</span>
-                      <div className="heroSliderContentHostDomain">
-                        <span>yourdoctor.az</span>
-                      </div>
-                      <div className="heroSliderContentHostIcon">
-                        <HostIcon />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li className="splide__slide">
-              <div className="heroSlider">
-                <div className="heroSliderImage">
+                <div className="heroSliderImage heroSliderImageMobile">
                   <Image
                     src="/images/heroBanner.png"
                     alt="banner"
@@ -72,9 +50,9 @@ const HeroSlider = () => {
                 <div className="container">
                   <div className="heroSliderContent">
                     <h4>Web Hosting for Your Mission</h4>
-                    <span>
-                      Get a Free .COM domain with Premium Plan for 12+ months.
-                      Free SSL included.
+                    <span className="heroSliderContentSubText">
+                      Get a Free .COM domain with Premium Plan
+                      
                     </span>
                     <div className="heroSliderContentHost">
                       <span>https://</span>
@@ -82,7 +60,7 @@ const HeroSlider = () => {
                         <span>yourdoctor.az</span>
                       </div>
                       <div className="heroSliderContentHostIcon">
-                        <HostIcon />
+                        <HostIcon id="host" />
                       </div>
                     </div>
                   </div>

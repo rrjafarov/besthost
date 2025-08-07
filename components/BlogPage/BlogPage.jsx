@@ -95,7 +95,49 @@ const BlogPage = () => {
 
         <div className="blogPageCards">
           <div className="row">
-            <div className="xl-3 lg-3 md-4 sm-12">
+            <div className="xl-3 lg-3 md-4 sm-6">
+              <Link href="#">
+                <div className="blogPageCard">
+                  <div className="blogPageCardImg"></div>
+                  <div className="blogPageCardContent">
+                    <span>Ad eos saepe lucilius</span>
+                    <p>
+                      At eripuit signiferumque sea, vel ad mucius molestie, cu
+                      labitur.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="xl-3 lg-3 md-4 sm-6">
+              <Link href="#">
+                <div className="blogPageCard">
+                  <div className="blogPageCardImg"></div>
+                  <div className="blogPageCardContent">
+                    <span>Ad eos saepe lucilius</span>
+                    <p>
+                      At eripuit signiferumque sea, vel ad mucius molestie, cu
+                      labitur.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="xl-3 lg-3 md-4 sm-6">
+              <Link href="#">
+                <div className="blogPageCard">
+                  <div className="blogPageCardImg"></div>
+                  <div className="blogPageCardContent">
+                    <span>Ad eos saepe lucilius</span>
+                    <p>
+                      At eripuit signiferumque sea, vel ad mucius molestie, cu
+                      labitur.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="xl-3 lg-3 md-4 sm-6">
               <Link href="#">
                 <div className="blogPageCard">
                   <div className="blogPageCardImg"></div>
@@ -111,7 +153,7 @@ const BlogPage = () => {
             </div>
           </div>
 
-          <BasicPagination /> {/* ② */}
+          <BasicPagination /> 
         </div>
       </div>
     </div>

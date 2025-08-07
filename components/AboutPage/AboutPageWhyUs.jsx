@@ -42,11 +42,14 @@ const AboutPageWhyUs = () => {
             </div>
           </div>
         </div>
+
         <div className="aboutPageMiddleGrid">
           <div className="aboutPageMiddleGridItem">
             <span>BestHost around the world</span>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
+
+          
           <div className="row">
             <div className="xl-6 lg-6 md-6 sm-12" id="aboutMidleGrid"   >
               <div className="aboutPageMiddleGridLeft">

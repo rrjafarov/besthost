@@ -14,7 +14,7 @@ const HomePageServices = () => {
         </div>
         <div className="homePageServicesCards">
           <div className="row">
-            <div className="xl-3 lg-3 md-6 sm-12">
+            <div className="xl-3 lg-3 md-6 sm-6">
               <Link href="#">
                 <div className="homePageServicesCard">
                   <div className="homePageServicesCardItem">
@@ -26,7 +26,7 @@ const HomePageServices = () => {
                 </div>
               </Link>
             </div>
-            <div className="xl-3 lg-3 md-6 sm-12">
+            <div className="xl-3 lg-3 md-6 sm-6">
               <Link href="#">
                 <div className="homePageServicesCard">
                   <div className="homePageServicesCardItem">
@@ -38,7 +38,7 @@ const HomePageServices = () => {
                 </div>
               </Link>
             </div>
-            <div className="xl-3 lg-3 md-6 sm-12">
+            <div className="xl-3 lg-3 md-6 sm-6">
               <Link href="#">
                 <div className="homePageServicesCard">
                   <div className="homePageServicesCardItem">
@@ -50,7 +50,7 @@ const HomePageServices = () => {
                 </div>
               </Link>
             </div>
-            <div className="xl-3 lg-3 md-6 sm-12">
+            <div className="xl-3 lg-3 md-6 sm-6">
               <Link href="#">
                 <div className="homePageServicesCard">
                   <div className="homePageServicesCardItem">
@@ -62,7 +62,7 @@ const HomePageServices = () => {
                 </div>
               </Link>
             </div>
-            <div className="xl-3 lg-3 md-6 sm-12">
+            <div className="xl-3 lg-3 md-6 sm-6">
               <Link href="#">
                 <div className="homePageServicesCard">
                   <div className="homePageServicesCardItem">
@@ -74,7 +74,7 @@ const HomePageServices = () => {
                 </div>
               </Link>
             </div>
-            <div className="xl-3 lg-3 md-6 sm-12">
+            <div className="xl-3 lg-3 md-6 sm-6">
               <Link href="#">
                 <div className="homePageServicesCard">
                   <div className="homePageServicesCardItem">
@@ -86,7 +86,7 @@ const HomePageServices = () => {
                 </div>
               </Link>
             </div>
-            <div className="xl-3 lg-3 md-6 sm-12">
+            <div className="xl-3 lg-3 md-6 sm-6">
               <Link href="#">
                 <div className="homePageServicesCard">
                   <div className="homePageServicesCardItem">
@@ -98,7 +98,7 @@ const HomePageServices = () => {
                 </div>
               </Link>
             </div>
-            <div className="xl-3 lg-3 md-6 sm-12">
+            <div className="xl-3 lg-3 md-6 sm-6">
               <Link href="#">
                 <div className="homePageServicesCard">
                   <div className="homePageServicesCardItem">
