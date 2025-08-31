@@ -38,6 +38,15 @@
 
 // export default HostingSlider;
 
+
+
+
+
+
+
+
+
+
 "use client";
 import React, { useEffect, useRef } from "react";
 import Splide from "@splidejs/splide";

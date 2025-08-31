@@ -6,7 +6,7 @@ import Twitter from "@/public/icons/twitterWhite.svg";
 import Instagram from "@/public/icons/instagramWhite.svg";
 import Wp from "@/public/icons/wpWhite.svg";
 
-const BlogDetailPage = () => {
+const BlogDetailPage = ({ blog, otherBlogs }) => {
   return (
     <div id="blogDetailPage">
       <div className="container">
@@ -15,14 +15,15 @@ const BlogDetailPage = () => {
             <span>BestHost</span>
           </Link>
           <Arrow className="breadCrumbsArrow" />
-          <Link href="/services">
-            <strong>Services</strong>
+          <Link href="/blog">
+            <strong>Blogs</strong>
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="#">
-            <strong>Lorem ipsumm</strong>
+            <strong>{blog.title}</strong>
           </Link>
         </div>
+
         <div className="blogDetailPageMain">
           <div className="row">
             <div className="xl-8 lg-8 md-12 sm-12">
@@ -53,39 +54,32 @@ const BlogDetailPage = () => {
                   <span>
                     How to Choose an Affordable SEO Package for Your Startup
                   </span>
-                  <div className="div">
+                  {/* <div className="div">
                     <span className="middleLink">
                       <Link href="#">Lorem ipsum</Link>
                     </span>
                     <span className="middleLink">
                       <Link href="#">Lorem ipsum</Link>
                     </span>
-                  </div>
+                  </div> */}
                   <div className="blogDPline"></div>
                   <div className="blogDetailPageMainLeftContentDesc">
                     <span>Why entrepreneurial diversity matters</span>
-                    <p>
-                      Imagine coming to the office every day and opening your
-                      laptop to find hundreds of emails from prospects who are
-                      hungry to do business with your startup. While this can be
-                      a dream for many startups, the reality is that millions of
-                      searches happen every day on Google and if you can get a
-                      fraction of those users to reach your website through
-                      Search Engine Optimization, you could end up with more
-                      customers than you really need. Imagine coming to the
-                      office every day and opening your laptop to find hundreds
-                      of emails from prospects who are hungry to do business
-                      with your startup.While this can be a dream for many
-                      startups, the reality is that millions of searches happen
-                      every day on Google and if you can get a fraction of those
-                      users to reach your website through Search Engine
-                      Optimization, you could end up with more customers than
-                      you really need.
-                    </p>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: blog.content,
+                      }}
+                    ></div>
                     <div className="blogDetailPageMainLeftContentImages">
-                      <img src="/icons/serviceDPLeft.png" alt="" />
+                      <img
+                        src={`https://admin-besthost.onestudio.az/storage/${blog.image}`}
+                        alt=""
+                      />
                     </div>
-                    <p>
+
+
+                    
+                    {/* <p>
                       Imagine coming to the office every day and opening your
                       laptop to find hundreds of emails from prospects who are
                       hungry to do business with your startup. While this can be
@@ -93,11 +87,14 @@ const BlogDetailPage = () => {
                       searches happen every day on Google and if you can get a
                       fraction of those users to reach your website through
                       Search Engine
-                    </p>
-                    <div className="blogDetailPageMainLeftContentImages">
-                      <img src="/icons/serviceDPLeft.png" alt="" />
-                    </div>
+                    </p> */}
 
+
+
+                    {/* <div className="blogDetailPageMainLeftContentImages">
+                      <img src="/icons/serviceDPLeft.png" alt="" />
+                    </div> */}
+                    {/* 
                     <div className="blogDetailPageMainLeftContentParanthez">
                       <div className="blogDetailPageMainLeftContentParanthezIcon">
                         <img src="/icons/paranthez.svg" alt="" />
@@ -111,7 +108,7 @@ const BlogDetailPage = () => {
                           prompta reformidans.
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -125,28 +122,21 @@ const BlogDetailPage = () => {
                 <div className="blogDetailPageMainRightOtherBlogs">
                   <span className="allBlogs">All Blogs</span>
                   <div className="blogDetailPageMainRightOtherBlogsCards">
-                    <div className="blogDetailPageMainRightOtherBlogsCard">
-                      <Link href="/blog/id">
-                        <span className="otherBlogTitle">
-                          Trending Products
-                        </span>
-                        <span className="otherBlogSubTitle">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit.
-                        </span>
-                      </Link>
-                    </div>
-                    <div className="blogDetailPageMainRightOtherBlogsCard">
-                      <Link href="/blog/id">
-                        <span className="otherBlogTitle">
-                          Trending Products
-                        </span>
-                        <span className="otherBlogSubTitle">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit.
-                        </span>
-                      </Link>
-                    </div>
+                    {otherBlogs.map((other) => (
+                      <div
+                        className="blogDetailPageMainRightOtherBlogsCard"
+                        key={other.id}
+                      >
+                        <Link
+                          href={`/blog/${other.url_slug}-${other.id}`}
+                        >
+                          <span className="otherBlogTitle">{other.title}</span>
+                          <span className="otherBlogSubTitle">
+                            {other.sub_title}
+                          </span>
+                        </Link>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

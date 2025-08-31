@@ -9,7 +9,7 @@ import Phone from "@/public/icons/phone.svg";
 import Email from "@/public/icons/email.svg";
 import Location from "@/public/icons/location.svg";
 
-const Contact = () => {
+const Contact = ({ contact }) => {
   return (
     <div className="contactPage">
       <div className="container">
@@ -47,22 +47,22 @@ const Contact = () => {
               <div className="contactLinksLeft">
                 <div className="contactLinksLeftItems">
                   <div className="contactLinksLeftItem">
-                    <Link href="#">
+                    <Link href={`tel:${contact.phone}`}>
                       <div>
                         <strong>
                           <Phone />
                         </strong>
-                        <span>+994 50 404 50 04</span>
+                        <span>{contact.phone}</span>
                       </div>
                     </Link>
                   </div>
                   <div className="contactLinksLeftItem">
-                    <Link href="#">
+                    <Link href={`mailto:${contact.email}`}>
                       <div>
                         <strong>
                           <Email />
                         </strong>
-                        <span>besthost@info.az</span>
+                        <span>{contact.email}</span>
                       </div>
                     </Link>
                   </div>
@@ -72,33 +72,46 @@ const Contact = () => {
                         <strong>
                           <Location />
                         </strong>
-                        <span>
-                          Bakı şəhəri, Badamdar qəsəbəsi, A. Abbaszadə küç. 13a,
-                          AZ1073
-                        </span>
+                        <span>{contact.address}</span>
                       </div>
                     </Link>
                   </div>
                   <div className="contactSocialLinks">
                     <div className="contactSocialLink">
-                      <Link href="#">
+                      <a
+                        href={contact.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Facebook />
-                      </Link>
+                      </a>
                     </div>
                     <div className="contactSocialLink">
-                      <Link href="#">
+                      <a
+                        href={contact.x}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Twitter />
-                      </Link>
+                      </a>
                     </div>
                     <div className="contactSocialLink">
-                      <Link href="#">
+                      <a
+                        href={contact.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Instagram />
-                      </Link>
+                      </a>
                     </div>
                     <div className="contactSocialLink">
-                      <Link href="#">
+                      <a
+                        href={contact.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Wp />
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -106,7 +119,11 @@ const Contact = () => {
             </div>
 
             <div className="xl-6 lg-6 md-6 sm-12">
-              <img className="notMobileContact" src="/images/lastGridLeft.png" alt="" />
+              <img
+                className="notMobileContact"
+                src="/images/lastGridLeft.png"
+                alt=""
+              />
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import Twitter from "@/public/icons/twitterWhite.svg";
 import Instagram from "@/public/icons/instagramWhite.svg";
 import Wp from "@/public/icons/wpWhite.svg";
 
-const ServicesDetailPage = () => {
+const ServicesDetailPage = ({ service, otherServices }) => {
   return (
     <div id="servicesDetailPage">
       <div className="container">
@@ -20,7 +20,7 @@ const ServicesDetailPage = () => {
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="#">
-            <strong>Lorem ipsumm</strong>
+            <strong>{service.title}</strong>
           </Link>
         </div>
         <div className="servicesDetailPageMain">
@@ -53,52 +53,38 @@ const ServicesDetailPage = () => {
                   <span>
                     How to Choose an Affordable SEO Package for Your Startup
                   </span>
-                  <div className="div">
+
+                  {/* <div className="div">
                     <span className="middleLink">
                       <Link href="#">Lorem ipsum</Link>
                     </span>
                     <span className="middleLink">
                       <Link href="#">Lorem ipsum</Link>
                     </span>
-                  </div>
+                  </div> */}
+
                   <div className="servicesDPline"></div>
                   <div className="servicesDetailPageMainLeftContentDesc">
                     <span>Why entrepreneurial diversity matters</span>
-                    <p>
-                      Imagine coming to the office every day and opening your
-                      laptop to find hundreds of emails from prospects who are
-                      hungry to do business with your startup. While this can be
-                      a dream for many startups, the reality is that millions of
-                      searches happen every day on Google and if you can get a
-                      fraction of those users to reach your website through
-                      Search Engine Optimization, you could end up with more
-                      customers than you really need. Imagine coming to the
-                      office every day and opening your laptop to find hundreds
-                      of emails from prospects who are hungry to do business
-                      with your startup.While this can be a dream for many
-                      startups, the reality is that millions of searches happen
-                      every day on Google and if you can get a fraction of those
-                      users to reach your website through Search Engine
-                      Optimization, you could end up with more customers than
-                      you really need.
-                    </p>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: service.content,
+                      }}
+                    ></div>
                     <div className="servicesDetailPageMainLeftContentImages">
-                      <img src="/icons/serviceDPLeft.png" alt="" />
+                      {/* <img src="/icons/serviceDPLeft.png" alt="" /> */}
+                      <img
+                        src={`https://admin-besthost.onestudio.az/storage/${service.image}`}
+                        alt=""
+                      />
                     </div>
-                    <p>
-                      Imagine coming to the office every day and opening your
-                      laptop to find hundreds of emails from prospects who are
-                      hungry to do business with your startup. While this can be
-                      a dream for many startups, the reality is that millions of
-                      searches happen every day on Google and if you can get a
-                      fraction of those users to reach your website through
-                      Search Engine
-                    </p>
-                    <div className="servicesDetailPageMainLeftContentImages">
-                      <img src="/icons/serviceDPLeft.png" alt="" />
-                    </div>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: service.content,
+                      }}
+                    ></div>
 
-                    <div className="servicesDetailPageMainLeftContentParanthez">
+                    {/* <div className="servicesDetailPageMainLeftContentParanthez">
                       <div className="servicesDetailPageMainLeftContentParanthezIcon">
                         <img src="/icons/paranthez.svg" alt="" />
                         <img src="/icons/paranthez.svg" alt="" />
@@ -111,7 +97,7 @@ const ServicesDetailPage = () => {
                           prompta reformidans.
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -123,27 +109,30 @@ const ServicesDetailPage = () => {
                 </div>
 
                 <div className="servicesDetailPageMainRightOtherServices">
-                  <div className="servicesDetailPageMainRightOtherServiceCard">
-                    <Link href="/services/id">
-                      <div className="servicesDetailPageMainRightOtherServiceCardItem">
-                        <div className="servicesDetailPageMainRightOtherServiceCardImg">
-                          <img src="/icons/service.svg" alt="" />
-                        </div>
-                        <div className="servicesDetailPageMainRightOtherServiceCardContent">
-                          <h2>Trending Products</h2>
-                          <span>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit.
-                          </span>
-                          <div className="dprihtline"></div>
-                          <div className="servicesDetailPageMainRightOtherServiceCardBottom">
-                            <span>2 min read </span>
-                            <img src="/icons/rightServiceArrow.svg" alt="" />
+                  {otherServices.map((other) => (
+                    <div className="servicesDetailPageMainRightOtherServiceCard">
+                      <Link href={`/services/${other.url_slug}-${other.id}`}>
+                        <div className="servicesDetailPageMainRightOtherServiceCardItem">
+                          <div className="servicesDetailPageMainRightOtherServiceCardImg">
+                            <img
+                               src="/icons/service.svg" 
+                              // src={`https://admin-besthost.onestudio.az/storage/${other.icon}`}  
+                              alt=""
+                            />
+                          </div>
+                          <div className="servicesDetailPageMainRightOtherServiceCardContent">
+                            <h2>{other.title}</h2>
+                            <span>{other.sub_title}</span>
+                            <div className="dprihtline"></div>
+                            <div className="servicesDetailPageMainRightOtherServiceCardBottom">
+                              <span>2 min read </span>
+                              <img src="/icons/rightServiceArrow.svg" alt="" />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  </div>
+                      </Link>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

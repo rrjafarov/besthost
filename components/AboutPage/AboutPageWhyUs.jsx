@@ -4,7 +4,7 @@ import Statistic from "@/public/icons/statistic.svg";
 import ServicePath from "@/public/icons/sevicePath.svg";
 import Image from "next/image";
 
-const AboutPageWhyUs = () => {
+const AboutPageWhyUs = ({ about }) => {
   return (
     <div id="aboutPageWhyUs">
       <div className="container">
@@ -15,28 +15,37 @@ const AboutPageWhyUs = () => {
               <div className="xl-4 lg-4 md-6 sm-12">
                 <div className="aboutPageWhyUsCard">
                   <div className="aboutPageWhyUsCardIMG">
-                    <img src="/icons/globe.svg" alt="de" />
+                    <img
+                      src={`https://admin-besthost.onestudio.az/storage/${about?.data?.statistica_1_icon}`}
+                      alt="de"
+                    />
                   </div>
-                  <strong>15K</strong>
-                  <p>New websites installed on average</p>
+                  <strong>{about?.data?.statistica_1}</strong>
+                  <p>{about?.data?.statistica_1_title}</p>
                 </div>
               </div>
               <div className="xl-4 lg-4 md-6 sm-12">
                 <div className="aboutPageWhyUsCard">
                   <div className="aboutPageWhyUsCardIMG">
-                    <img src="/icons/statistic.svg" alt="de" />
+                    <img
+                      src={`https://admin-besthost.onestudio.az/storage/${about?.data?.statistica_2_icon}`}
+                      alt="de"
+                    />
                   </div>
-                  <strong>15K</strong>
-                  <p>New websites installed on average</p>
+                  <strong>{about?.data?.statistica_2}</strong>
+                  <p>{about?.data?.statistica_2_title}</p>
                 </div>
               </div>
               <div className="xl-4 lg-4 md-6 sm-12">
                 <div className="aboutPageWhyUsCard">
                   <div className="aboutPageWhyUsCardIMG">
-                    <img src="/icons/sevicePath.svg" alt="de" />
+                    <img
+                      src={`https://admin-besthost.onestudio.az/storage/${about?.data?.statistica_3_icon}`}
+                      alt="de"
+                    />
                   </div>
-                  <strong>15K</strong>
-                  <p>New websites installed on average</p>
+                  <strong>{about?.data?.statistica_3}</strong>
+                  <p>{about?.data?.statistica_3_title}</p>
                 </div>
               </div>
             </div>
@@ -45,15 +54,17 @@ const AboutPageWhyUs = () => {
 
         <div className="aboutPageMiddleGrid">
           <div className="aboutPageMiddleGridItem">
-            <span>BestHost around the world</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <span>{about?.data?.title_2}</span>
+            <p>{about?.data?.sub_title}</p>
           </div>
-
-          
           <div className="row">
-            <div className="xl-6 lg-6 md-6 sm-12" id="aboutMidleGrid"   >
+            <div className="xl-6 lg-6 md-6 sm-12" id="aboutMidleGrid">
               <div className="aboutPageMiddleGridLeft">
-                <p>
+                <div
+                  dangerouslySetInnerHTML={{ __html: about?.data?.content_2 }}
+                ></div>
+
+                {/* <p>
                   We were bootstrapped in 2004 and we’ve been on an epic ride
                   ever since. We had a simple idea to let you create a website
                   for FREE. With no-limits PHP, MySQL, cPanel & no ads -
@@ -62,7 +73,7 @@ const AboutPageWhyUs = () => {
                   since. We had a simple idea to let you create a website for
                   FREE. With no-limits PHP, MySQL, cPanel & no ads - complete
                   freedom to express yourself online.
-                </p>
+                </p> */}
               </div>
             </div>
             <div className="xl-6 lg-6 md-6 sm-12 " id="aboutMidleGrid">

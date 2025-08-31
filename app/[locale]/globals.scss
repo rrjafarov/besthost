@@ -2354,7 +2354,7 @@ $BestHostMainColor: #4a2682;
         overflow: hidden;
         width: 21rem;
       }
-      p {
+      .serviceSub {
         width: 28.5rem;
         color: var(--05, #2a0d56);
         text-align: center;
@@ -2371,6 +2371,7 @@ $BestHostMainColor: #4a2682;
     }
   }
 }
+
 .servicesPageCardImg {
   width: 11rem;
   height: 11rem;
@@ -2627,7 +2628,11 @@ $BestHostMainColor: #4a2682;
           background: #fff;
           box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
           flex-shrink: 0;
+          a {
+            width: 100%;
+          }
           .servicesDetailPageMainRightOtherServiceCardItem {
+            width: 100%;
             padding: 4.3rem 3.81rem;
             display: flex;
             flex-direction: column;
@@ -2636,6 +2641,7 @@ $BestHostMainColor: #4a2682;
             gap: 1.81rem;
           }
           .servicesDetailPageMainRightOtherServiceCardContent {
+            width: 100%;
             display: flex;
             flex-direction: column;
             h2 {
@@ -2677,9 +2683,81 @@ $BestHostMainColor: #4a2682;
     }
   }
 }
+@media only screen and (max-width: 767.9px) {
+  .servicesDetailPageMainRightTopImg {
+    display: none !important;
+  }
+  .servicesDetailPageMainRightOtherServices {
+    .servicesDetailPageMainRightOtherServiceCard {
+      width: 100% !important;
+      height: 30.8rem !important;
+      .servicesDetailPageMainRightOtherServiceCardItem {
+        padding: 4.3rem 3.81rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.81rem;
+      }
+      .servicesDetailPageMainRightOtherServiceCardContent {
+        display: flex;
+        flex-direction: column;
+        h2 {
+          color: var(--05, #2a0d56);
+          font-feature-settings: "liga" off;
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 800;
+          line-height: 3.2rem;
+          letter-spacing: 0.02rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        span {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          color: var(--05, #2a0d56);
+          font-feature-settings: "liga" off;
+          font-size: 1.3rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1.7rem;
+          letter-spacing: 0.07rem;
+        }
+        .dprihtline {
+          opacity: 0.5;
+          background: #ff8e2b;
+          height: 0.08rem;
+          width: 100%;
+          margin: 1.2rem 0 1rem;
+        }
+      }
+    }
+  }
+  .servicesDetailPageMainLeftContent {
+    padding: 5rem 2rem !important;
+    .servicesDetailPageMainLeftContentDesc {
+      span {
+        width: 100% !important;
+      }
+    }
+  }
+}
 // * SERVİCES DETAIL PAGE<><><><><><><><<>
 
 // * BLOG PAGE<><><><><><><><<>
+// .rowdure{
+//   width: 100%;
+//   display: flex;
+//   gap: 2rem;
+//   .rowdures{
+//     width: 32%;
+//   }
+// }
 .blogPageBreadCrumbs {
   display: flex;
   justify-content: flex-start;
@@ -2747,24 +2825,26 @@ $BestHostMainColor: #4a2682;
   justify-content: center;
   align-items: center;
   padding: 3.3rem 0 6.9rem;
+  #filldersting {
+    width: 100%;
+  }
   .blogPageCard {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     border-radius: 1rem;
-    gap: 3.2rem;
+    // gap: 3.2rem;
     .blogPageCardImg {
       width: 100%;
       height: 26rem;
       flex-shrink: 0;
-      background-color: red;
       border-radius: 1rem;
-      background: #e3dee9;
+      // background: #e3dee9;
     }
     .blogPageCardContent {
       height: 12rem;
-
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -2784,7 +2864,7 @@ $BestHostMainColor: #4a2682;
         overflow: hidden;
         width: 100%;
       }
-      p {
+      strong {
         color: var(--05, #2a0d56);
         font-feature-settings: "liga" off;
         font-size: 1.4rem;
@@ -3066,6 +3146,35 @@ $BestHostMainColor: #4a2682;
       font-size: 1.6rem;
     }
   }
+
+  .blogDetailPageMainRight {
+    width: 100%;
+    .blogDetailPageMainRightTopImg {
+      display: none !important;
+    }
+    .blogDetailPageMainRightOtherBlogs {
+      width: 100% !important;
+      .blogDetailPageMainRightOtherBlogsCards {
+        width: 90% !important;
+      }
+    }
+  }
+  .blogDetailPageMainRightOtherBlogsCards {
+    .blogDetailPageMainRightOtherBlogsCard {
+      padding: 2.6rem !important;
+      .otherBlogTitle {
+        font-size: 1.8rem !important;
+      }
+      .otherBlogSubTitle {
+        font-size: 1.6rem !important;
+      }
+    }
+  }
+  .blogDetailPageMainLeftContentDesc {
+    span {
+      width: 100% !important;
+    }
+  }
 }
 
 // * BLOG PAGE<><><><><><><><<>
@@ -3174,6 +3283,16 @@ $BestHostMainColor: #4a2682;
   border-radius: 0.8rem;
   background: #fff;
   box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+  .termos {
+    padding: 3.5rem 5rem;
+    color: var(--05, #2a0d56);
+    font-feature-settings: "liga" off;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.75rem; /* 171.875% */
+    letter-spacing: 0.02rem;
+  }
   p {
     padding: 3.5rem 5rem;
     color: var(--05, #2a0d56);
@@ -3186,8 +3305,8 @@ $BestHostMainColor: #4a2682;
   }
 }
 .supportTextBox {
-  padding: 3.2rem 9.5rem 0rem 5.6rem;
-  margin-bottom: 10rem;
+  padding: 3.2rem 9.5rem 0rem 3.6rem;
+  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   gap: 1.7rem;
@@ -3473,7 +3592,7 @@ $BestHostMainColor: #4a2682;
       }
     }
   }
-  .notMobileContact{
+  .notMobileContact {
     display: none !important;
   }
   .contactForm {

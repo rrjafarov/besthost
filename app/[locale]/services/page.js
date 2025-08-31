@@ -4,16 +4,36 @@ import ServicesPageBanner from "@/components/ServicesPage/ServicesPageBanner";
 import ServicesPageCards from "@/components/ServicesPage/ServicesPageCards";
 import React from "react";
 import HomePageLastGrid from "@/components/HomePage/HomePageLastGrid";
+import { cookies } from "next/headers";
+import axiosInstance from "@/lib/axios";
 
-const page = () => {
+async function fetchServicesData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+
+  try {
+    const { data: services } = await axiosInstance.get(`/page-data/services`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return services;
+  } catch (error) {
+    console.error("Failed to fetch services data", error);
+    throw error;
+  }
+}
+
+const page = async () => {
+  const services = await fetchServicesData();
+  const servicesData = services.data.data;
+
   return (
     <div>
       <div className="background">
         <Header />
         <ServicesPageBanner />
-        <ServicesPageCards />
+        <ServicesPageCards services={servicesData} />
         <HomePageLastGrid />
-
         <Footer />
       </div>
     </div>

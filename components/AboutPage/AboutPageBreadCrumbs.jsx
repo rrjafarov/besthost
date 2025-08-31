@@ -2,7 +2,7 @@ import React from "react";
 import Arrow from "@/public/icons/arrow.svg";
 import Link from "next/link";
 
-const AboutPageBreadCrumbs = () => {
+const AboutPageBreadCrumbs = ({about}) => {
   return (
     <div>
       <div className="container">
@@ -17,12 +17,13 @@ const AboutPageBreadCrumbs = () => {
         </div>
 
         <div className="aboutPageForHosting">
-          <span>The Best Hosting For your Websites</span>
-          <p>
+          <span>{about?.data?.title_1}</span>
+          {/* <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem arcu
             urna dolor sit amet, consectetursuspenet, consectetursusdisse sit in
             or sit amet, consectetursuspendisse sit in eetiam venenatis.
-          </p>
+          </p> */}
+           <div dangerouslySetInnerHTML={{ __html: about?.data?.content_1 }}></div>
         </div>
       </div>
     </div>
