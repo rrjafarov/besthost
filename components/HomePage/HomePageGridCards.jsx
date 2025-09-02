@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const HomePageGridCards = () => {
+const HomePageGridCards = ({ home }) => {
   return (
     <div className="homeGridSection">
       <div className="container">
@@ -10,7 +10,8 @@ const HomePageGridCards = () => {
           <div className="xl-7 lg-6 md-6 sm-12">
             <div className="homeGridImages">
               <Image
-                src="/images/homeGridX7.png"
+                // src="/images/homeGridX7.png"
+                src={`https://admin-besthost.onestudio.az/storage/${home.image_1}`}
                 alt="grid"
                 width={550}
                 height={350}
@@ -19,12 +20,14 @@ const HomePageGridCards = () => {
           </div>
           <div className="xl-5 lg-6 md-6 sm-12">
             <div className="homeGridContent">
-              <span>Why choose Best Host?</span>
-              <p>
+              <span>{home.title_1}</span>
+              <div dangerouslySetInnerHTML={{ __html: home?.content_1 }}></div>
+
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. tetur
                 adipiscin Luctus facilisis cursus ctus facilisis cursusut
                 pellentesque sit volutpat ut.
-              </p>
+              </p> */}
               <Link href="#">
                 <span>Learn more</span>
               </Link>
@@ -32,16 +35,17 @@ const HomePageGridCards = () => {
           </div>
         </div>
 
-        
-        <div className="row" id="homeGridContent01" >
+        <div className="row" id="homeGridContent01">
           <div className="xl-5 lg-6 md-6 sm-12" id="order1">
             <div className="homeGridContent">
-              <span>Why choose Best Host?</span>
-              <p>
+              <span>{home.title_2}</span>
+              <div dangerouslySetInnerHTML={{ __html: home?.content_2 }}></div>
+
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. tetur
                 adipiscin Luctus facilisis cursus ctus facilisis cursusut
                 pellentesque sit volutpat ut.
-              </p>
+              </p> */}
               <Link href="#">
                 <span>Learn more</span>
               </Link>
@@ -50,7 +54,8 @@ const HomePageGridCards = () => {
           <div className="xl-7 lg-6 md-6 sm-12" id="order2">
             <div className="homeGridImagesRight">
               <Image
-                src="/images/homeGridX7.png"
+                // src="/images/homeGridX7.png"
+                src={`https://admin-besthost.onestudio.az/storage/${home.image_2}`}
                 alt="grid"
                 width={550}
                 height={350}
@@ -59,12 +64,12 @@ const HomePageGridCards = () => {
           </div>
         </div>
 
-
         <div className="row">
           <div className="xl-7 lg-6 md-6 sm-12">
             <div className="homeGridImages">
               <Image
-                src="/images/homeGridX7.png"
+                // src="/images/homeGridX7.png"
+                src={`https://admin-besthost.onestudio.az/storage/${home.image_3}`}
                 alt="grid"
                 width={550}
                 height={350}
@@ -73,12 +78,14 @@ const HomePageGridCards = () => {
           </div>
           <div className="xl-5 lg-6 md-6 sm-12">
             <div className="homeGridContent">
-              <span>Why choose Best Host?</span>
-              <p>
+              <span>{home.title_3}</span>
+              <div dangerouslySetInnerHTML={{ __html: home?.content_3 }}></div>
+
+              {/* <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. tetur
                 adipiscin Luctus facilisis cursus ctus facilisis cursusut
                 pellentesque sit volutpat ut.
-              </p>
+              </p> */}
               <Link href="#">
                 <span>Learn more</span>
               </Link>

@@ -23,18 +23,35 @@ async function fetchServicesData() {
   }
 }
 
+async function fetchTermsPageData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+
+  try {
+    const { data: contact } = await axiosInstance.get(`/page-data/contact`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return contact;
+  } catch (error) {
+    throw error;
+  }
+}
+
 const page = async () => {
   const services = await fetchServicesData();
   const servicesData = services.data.data;
+  const contact = await fetchTermsPageData();
+
 
   return (
     <div>
       <div className="background">
-        <Header />
+        <Header contact={contact.data}  />
         <ServicesPageBanner />
         <ServicesPageCards services={servicesData} />
         <HomePageLastGrid />
-        <Footer />
+        <Footer contact={contact.data} />
       </div>
     </div>
   );

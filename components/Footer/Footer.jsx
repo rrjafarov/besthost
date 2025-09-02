@@ -9,7 +9,7 @@ import Phone from "@/public/icons/phone.svg";
 import Email from "@/public/icons/email.svg";
 import Location from "@/public/icons/location.svg";
 
-const Footer = () => {
+const Footer = ({ contact }) => {
   return (
     <div id="footer">
       <div className="footerItem">
@@ -26,21 +26,17 @@ const Footer = () => {
                   reliable web hosting services.
                 </p>
                 <div className="footerSocialNetwork footerNotMobile">
-                  <Link href="#">
-                    {" "}
-                    <Facebook />{" "}
+                  <Link href={contact.facebook}>
+                    <Facebook />
                   </Link>
-                  <Link href="#">
-                    {" "}
-                    <Twitter />{" "}
+                  <Link href={contact.x}>
+                    <Twitter />
                   </Link>
-                  <Link href="#">
-                    {" "}
-                    <Instagram />{" "}
+                  <Link href={contact.instagram}>
+                    <Instagram />
                   </Link>
-                  <Link className="wpdi" href="#">
-                    {" "}
-                    <Wp />{" "}
+                  <Link className="wpdi" href={contact.whatsapp}>
+                    <Wp />
                   </Link>
                 </div>
                 <div className="footerPaymentMethods footerNotMobile">
@@ -65,18 +61,15 @@ const Footer = () => {
                 </div>
                 <div className="footerContacts footerNotMobile">
                   <div className="footerContact">
-                    <Link href="#">
-                      <Phone /> <span>+994 50 404 50 04</span>
+                    <Link href={`tel:${contact.phone}`}>
+                      <Phone /> <span> {contact.phone}</span>
                     </Link>
-                    <Link href="#">
-                      <Email /> <span>besthost@info.az</span>
+                    <Link href={`mailto:${contact.email}`}>
+                      <Email /> <span>{contact.email}</span>
                     </Link>
                     <Link href="#">
                       <Location />
-                      <span>
-                        Bakı şəhəri, Badamdar qəsəbəsi, A. Abbaszadə küç. 13a,
-                        AZ1073
-                      </span>
+                      <span>{contact.address}</span>
                     </Link>
                   </div>
                 </div>
@@ -214,19 +207,19 @@ const Footer = () => {
           </div>
         </div>
         <div className="footerSocialNetwork footerYesMobile">
-          <Link href="#">
+          <Link href={contact.facebook}>
             {" "}
             <Facebook />{" "}
           </Link>
-          <Link href="#">
+          <Link href={contact.x}>
             {" "}
             <Twitter />{" "}
           </Link>
-          <Link href="#">
+          <Link href={contact.instagram}>
             {" "}
             <Instagram />{" "}
           </Link>
-          <Link className="wpdi" href="#">
+          <Link className="wpdi" href={contact.whatsapp}>
             {" "}
             <Wp />{" "}
           </Link>
@@ -253,16 +246,16 @@ const Footer = () => {
         </div>
         <div className="footerContacts footerYesMobile">
           <div className="footerContact">
-            <Link href="#">
-              <Phone /> <span>+994 50 404 50 04</span>
+            <Link href={`tel:${contact.phone}`}>
+              <Phone /> <span>{contact.phone}</span>
             </Link>
-            <Link href="#">
-              <Email /> <span>besthost@info.az</span>
+            <Link href={`mailto:${contact.email}`}>
+              <Email /> <span>{contact.email}</span>
             </Link>
             <Link href="#">
               <Location />
-              <span>
-                Bakı şəhəri, Badamdar qəsəbəsi, A. Abbaszadə küç. 13a, AZ1073
+              <span>  
+                {contact.address}
               </span>
             </Link>
           </div>

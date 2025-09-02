@@ -1,7 +1,7 @@
 import React from "react";
 import Service from "@/public/icons/service.svg";
 import Link from "next/link";
-const HomePageServices = () => {
+const HomePageServices = ({ servicesData }) => {
   return (
     <div className="homePageServices">
       <div className="container">
@@ -14,106 +14,24 @@ const HomePageServices = () => {
         </div>
         <div className="homePageServicesCards">
           <div className="row">
-            <div className="xl-3 lg-3 md-6 sm-6">
-              <Link href="#">
-                <div className="homePageServicesCard">
-                  <div className="homePageServicesCardItem">
-                    <span>
-                      <img src="/icons/service.svg" alt="ded" />
-                    </span>
-                    <p>Lorem ipsum adipiscing elit.</p>
+            {servicesData.slice(0,8).map((service) => (
+              <div className="xl-3 lg-3 md-6 sm-6" key={service.id}>
+                <Link href={`/services/${service.url_slug}-${service.id}`}>
+                  <div className="homePageServicesCard">
+                    <div className="homePageServicesCardItem">
+                      <span>
+                        <img src={`https://admin-besthost.onestudio.az/storage/${service.icon}`} alt="ded" />
+                      </span>
+                      <p>{service.title}</p>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-            <div className="xl-3 lg-3 md-6 sm-6">
-              <Link href="#">
-                <div className="homePageServicesCard">
-                  <div className="homePageServicesCardItem">
-                    <span>
-                      <img src="/icons/service.svg" alt="ded" />
-                    </span>
-                    <p>Lorem ipsum adipiscing elit.</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="xl-3 lg-3 md-6 sm-6">
-              <Link href="#">
-                <div className="homePageServicesCard">
-                  <div className="homePageServicesCardItem">
-                    <span>
-                      <img src="/icons/service.svg" alt="ded" />
-                    </span>
-                    <p>Lorem ipsum adipiscing elit.</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="xl-3 lg-3 md-6 sm-6">
-              <Link href="#">
-                <div className="homePageServicesCard">
-                  <div className="homePageServicesCardItem">
-                    <span>
-                      <img src="/icons/service.svg" alt="ded" />
-                    </span>
-                    <p>Lorem ipsum adipiscing elit.</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="xl-3 lg-3 md-6 sm-6">
-              <Link href="#">
-                <div className="homePageServicesCard">
-                  <div className="homePageServicesCardItem">
-                    <span>
-                      <img src="/icons/service.svg" alt="ded" />
-                    </span>
-                    <p>Lorem ipsum adipiscing elit.</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="xl-3 lg-3 md-6 sm-6">
-              <Link href="#">
-                <div className="homePageServicesCard">
-                  <div className="homePageServicesCardItem">
-                    <span>
-                      <img src="/icons/service.svg" alt="ded" />
-                    </span>
-                    <p>Lorem ipsum adipiscing elit.</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="xl-3 lg-3 md-6 sm-6">
-              <Link href="#">
-                <div className="homePageServicesCard">
-                  <div className="homePageServicesCardItem">
-                    <span>
-                      <img src="/icons/service.svg" alt="ded" />
-                    </span>
-                    <p>Lorem ipsum adipiscing elit.</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="xl-3 lg-3 md-6 sm-6">
-              <Link href="#">
-                <div className="homePageServicesCard">
-                  <div className="homePageServicesCardItem">
-                    <span>
-                      <img src="/icons/service.svg" alt="ded" />
-                    </span>
-                    <p>Lorem ipsum adipiscing elit.</p>
-                  </div>
-                </div>
-              </Link>
-            </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
         <div className="homePageServicesCardsViewMore">
-          <Link href="#">
+          <Link href="/services">
             <span>View more</span>
           </Link>
         </div>

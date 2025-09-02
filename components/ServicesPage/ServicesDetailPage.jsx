@@ -115,8 +115,8 @@ const ServicesDetailPage = ({ service, otherServices }) => {
                         <div className="servicesDetailPageMainRightOtherServiceCardItem">
                           <div className="servicesDetailPageMainRightOtherServiceCardImg">
                             <img
-                               src="/icons/service.svg" 
-                              // src={`https://admin-besthost.onestudio.az/storage/${other.icon}`}  
+                              //  src="/icons/service.svg" 
+                              src={`https://admin-besthost.onestudio.az/storage/${other.icon}`}  
                               alt=""
                             />
                           </div>

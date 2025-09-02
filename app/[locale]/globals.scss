@@ -1179,6 +1179,9 @@ $BestHostMainColor: #4a2682;
         width: 9.4rem;
         height: 9.4rem;
         flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
@@ -1530,6 +1533,15 @@ $BestHostMainColor: #4a2682;
       letter-spacing: 0.09rem;
       text-transform: uppercase;
     }
+    div{
+      color: var(--05, #2a0d56);
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.07rem;
+      margin-top: 1rem;
+    }
     p {
       color: var(--05, #2a0d56);
       font-size: 1.4rem;
@@ -1551,6 +1563,7 @@ $BestHostMainColor: #4a2682;
       text-decoration: underline;
       text-decoration-color: #ff8e2b;
       text-underline-offset: 2px;
+      cursor: pointer;
       strong {
         color: var(--02, #ff8e2b);
         font-feature-settings: "liga" off;
@@ -2633,12 +2646,20 @@ $BestHostMainColor: #4a2682;
           }
           .servicesDetailPageMainRightOtherServiceCardItem {
             width: 100%;
-            padding: 4.3rem 3.81rem;
+            padding: 4.3rem 3.81rem 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 1.81rem;
+            .servicesDetailPageMainRightOtherServiceCardImg {
+              height: 9.6rem;
+              img {
+                width: 100%;
+                height: 100%;
+                padding: 1rem 0;
+              }
+            }
           }
           .servicesDetailPageMainRightOtherServiceCardContent {
             width: 100%;

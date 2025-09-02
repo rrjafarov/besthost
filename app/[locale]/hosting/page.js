@@ -7,12 +7,30 @@ import WordpressFeatures from "@/components/HostingPage/WordpressFeatures";
 import HomePageLastGrid from "@/components/HomePage/HomePageLastGrid";
 import HostingGrid from "@/components/HostingPage/HostingGrid";
 import HostingSlider from "@/components/HostingPage/HostingSlider";
+import { cookies } from "next/headers";
+import axiosInstance from "@/lib/axios";
 
-const page = () => {
+async function fetchTermsPageData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+
+  try {
+    const { data: contact } = await axiosInstance.get(`/page-data/contact`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return contact;
+  } catch (error) {
+    throw error;
+  }
+}
+
+const page = async () => {
+  const contact = await fetchTermsPageData();
   return (
     <div>
       <div className="hostingPageBannerVector">
-        <Header />
+        <Header contact={contact.data}  />
         <Hosting />
       </div>
       <HostingPagePlans />
@@ -20,7 +38,7 @@ const page = () => {
       <HostingGrid />
       <HostingSlider />
       <HomePageLastGrid />
-      <Footer />
+      <Footer  contact={contact.data}  />
     </div>
   );
 };
