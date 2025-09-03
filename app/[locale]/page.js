@@ -28,7 +28,6 @@ async function fetchContactPageData() {
   }
 }
 
-
 async function fetchServicesData() {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
@@ -44,8 +43,6 @@ async function fetchServicesData() {
     throw error;
   }
 }
-
-
 
 async function fetchHomePageData() {
   const cookieStore = await cookies();
@@ -64,14 +61,70 @@ async function fetchHomePageData() {
 
 
 
+async function fetchBackageData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: backage } = await axiosInstance.get(`/page-data/packages`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return backage;
+  } catch (error) {
+    console.error("Failed to fetch backage data", error);
+    throw error;
+  }
+}
+
+
+export async function generateMetadata() {
+  const home = await fetchHomePageData();
+  const imageUrl = home?.data.banner; // Using banner image from homepage data
+  const imageAlt = home?.data.meta_title || "Gipstar";
+  const canonicalUrl = "https://gipstar.az";
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+
+  return {
+    title: home?.data.meta_title || "Gipstar",
+    description: home?.data.meta_description || "",
+    openGraph: {
+      title: home?.data.meta_title || "Gipstar",
+      description: home?.data.meta_description || "",
+      url: canonicalUrl,
+      images: [
+        {
+          url: imageUrl ? `https://admin.gipstar.az/storage${imageUrl}` : "",
+          alt: imageAlt,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      site_name: "gipstar.az",
+      type: "website",
+      locale: lang?.value,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: home?.data.meta_title || "Gipstar",
+      description: home?.data.meta_description || "Gipstar",
+      creator: "@gipstar",
+      site: "@gipstar",
+      images: [imageUrl],
+    },
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
+}
 
 const page = async () => {
   const contact = await fetchContactPageData();
   const home = await fetchHomePageData();
   const services = await fetchServicesData();
   const servicesData = services.data.data;
-  console.log(home , "homeresponse")
-
+  const backage = await fetchBackageData();
+  // console.log(backage.data.data.data.title, "homeresponse");
 
   return (
     <div className="background">
@@ -80,7 +133,7 @@ const page = async () => {
       <BrandBottomHero />
       <HomePageHosting />
       <HomePageServices servicesData={servicesData} />
-      <HomePageGridCards home={home.data}  />
+      <HomePageGridCards home={home.data} />
       <HomePageLastGrid />
       <HomePageOurClients />
       <HomePageSeo home={home.data} />
