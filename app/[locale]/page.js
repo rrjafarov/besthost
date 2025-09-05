@@ -124,7 +124,7 @@ const page = async () => {
   const services = await fetchServicesData();
   const servicesData = services.data.data;
   const backage = await fetchBackageData();
-  // console.log(backage.data.data.data.title, "homeresponse");
+  console.log(backage.data.data[0].price , "price")
 
   return (
     <div className="background">
