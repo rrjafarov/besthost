@@ -75,6 +75,20 @@ async function fetchBackageData() {
     throw error;
   }
 }
+async function fetchCategoryData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: category } = await axiosInstance.get(`/page-data/categories`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return category;
+  } catch (error) {
+    console.error("Failed to fetch category data", error);
+    throw error;
+  }
+}
 
 
 export async function generateMetadata() {
@@ -124,14 +138,14 @@ const page = async () => {
   const services = await fetchServicesData();
   const servicesData = services.data.data;
   const backage = await fetchBackageData();
-  console.log(backage.data.data[0].price , "price")
+  const category = await fetchCategoryData();
 
   return (
     <div className="background">
       <Header contact={contact.data} />
       <HeroSlider home={home.data} />
       <BrandBottomHero />
-      <HomePageHosting />
+      <HomePageHosting category={category} backage ={backage.data.data} />
       <HomePageServices servicesData={servicesData} />
       <HomePageGridCards home={home.data} />
       <HomePageLastGrid />
