@@ -7,8 +7,10 @@
 // import Check from "@/public/icons/check.svg";
 // import Ques from "@/public/icons/ques.svg";
 // import Link from "next/link";
+// import { TbCurrencyManat } from "react-icons/tb";
+  
 
-// const HomePageSelectHosting = ({ backage }) => {
+// const HomePageSelectHosting = ({ backage, selected }) => {
 //   const adjustSlideHeights = (splide) => {
 //     const activeIndex = splide.index;
 //     const slides = splide.Components.Slides.getSlides();
@@ -22,6 +24,18 @@
 //       slideEl.style.zIndex = isActive ? "2" : "1";
 //     });
 //   };
+
+
+//   const calculateDiscountedPrice = (price, discount) => {
+//     const numericPrice = parseFloat(price);
+//     const numericDiscount = parseFloat(discount);
+//     const discountedPrice = numericPrice - (numericPrice * numericDiscount / 100);
+//     return Math.round(discountedPrice);
+//   };
+
+//   const filteredPackages = backage?.filter(item => 
+//     item.category?.some(cat => cat.category_name === selected)
+//   ) || [];
 
 //   useEffect(() => {
 //     const splide = new Splide("#hosting-slider", {
@@ -44,14 +58,14 @@
 //     splide.mount();
 
 //     return () => splide.destroy();
-//   }, []);
+//   }, [filteredPackages]);
 
 //   return (
 //     <div style={{ overflow: "visible" }}>
 //       <div id="hosting-slider" className="splide">
 //         <div className="splide__track">
 //           <ul className="splide__list">
-//             {backage?.map((item) => (
+//             {filteredPackages?.map((item) => (
 //               <li className="splide__slide" key={item.id}>
 //                 <div className="homePageHostingCard">
 //                   <div className="homePageHostingCardTop">
@@ -61,12 +75,12 @@
 //                     </div>
 //                     <div className="homePageHostingCardTopPriceArea">
 //                       <div className="homePageHostingCardTopOldPrice">
-//                         <span>{item.price}</span>
+//                         <span>{item.price} <TbCurrencyManat /></span>
 //                       </div>
 //                       <div className="hostPriceLine" />
 //                       <div className="homePageHostingCardTopNewPrice">
 //                         <span>
-//                           {item.discount} <Manat className="topManat" />
+//                           {calculateDiscountedPrice(item.price, item.discount)} <Manat className="topManat" />
 //                         </span>
 //                       </div>
 //                       <div className="hostPriceLine" />
@@ -100,8 +114,7 @@
 //                   </div>
 //                 </div>
 //               </li>
-//             ))}
-
+//             ))} 
 //           </ul>
 //         </div>
 //       </div>
@@ -110,6 +123,8 @@
 // };
 
 // export default HomePageSelectHosting;
+
+
 
 
 
@@ -144,7 +159,7 @@ import Link from "next/link";
 import { TbCurrencyManat } from "react-icons/tb";
   
 
-const HomePageSelectHosting = ({ backage }) => {
+const HomePageSelectHosting = ({ backage, selected }) => {
   const adjustSlideHeights = (splide) => {
     const activeIndex = splide.index;
     const slides = splide.Components.Slides.getSlides();
@@ -159,13 +174,17 @@ const HomePageSelectHosting = ({ backage }) => {
     });
   };
 
-  // Discount hesablama funksiyası
+
   const calculateDiscountedPrice = (price, discount) => {
     const numericPrice = parseFloat(price);
     const numericDiscount = parseFloat(discount);
     const discountedPrice = numericPrice - (numericPrice * numericDiscount / 100);
     return Math.round(discountedPrice);
   };
+
+  const filteredPackages = backage?.filter(item => 
+    item.category?.some(cat => cat.category_name === selected)
+  ) || [];
 
   useEffect(() => {
     const splide = new Splide("#hosting-slider", {
@@ -188,64 +207,75 @@ const HomePageSelectHosting = ({ backage }) => {
     splide.mount();
 
     return () => splide.destroy();
-  }, []);
+  }, [filteredPackages]);
 
   return (
     <div style={{ overflow: "visible" }}>
       <div id="hosting-slider" className="splide">
         <div className="splide__track">
           <ul className="splide__list">
-            {backage?.map((item) => (
-              <li className="splide__slide" key={item.id}>
-                <div className="homePageHostingCard">
-                  <div className="homePageHostingCardTop">
-                    <div className="homePageHostingCardTopText">
-                      <span>{item.card_title}</span>
-                      <p>{item.card_sub_title}</p>
-                    </div>
-                    <div className="homePageHostingCardTopPriceArea">
-                      <div className="homePageHostingCardTopOldPrice">
-                        <span>{item.price} <TbCurrencyManat /></span>
-                      </div>
-                      <div className="hostPriceLine" />
-                      <div className="homePageHostingCardTopNewPrice">
-                        <span>
-                          {calculateDiscountedPrice(item.price, item.discount)} <Manat className="topManat" />
-                        </span>
-                      </div>
-                      <div className="hostPriceLine" />
-                      <div className="homePageHostingCardTopMonth">
-                        <span>month</span>
-                      </div>
-                    </div>
-                    <div className="homePageHostingCardTopSelectPlanButton">
-                      <button>SELECT PLAN</button>
-                    </div>
-                  </div>
-                  <div id="cartTopBottomLine" />
-                  <div className="homePageHostingCardBottom">
-                    <div className="homePageHostingCardSpesificationsList">
-                      <ul>
-                        {item.package_parametrs?.map((param) => (
-                          <li key={param.id}>
-                            <Check />
-                            <span>{param.title}</span>
-                            <Ques />
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div id="cartTopBottomLine" />
-                  <div className="homePageHostingCardSeeMore">
-                    <Link href="#">
-                      <span>See More</span>
-                    </Link>
-                  </div>
-                </div>
-              </li>
-            ))}
+            {filteredPackages?.map((item) => {
+              // uyğun kateqoriyanı tap (ilk öncə `selected` ilə uyuşanı, yoxsa ilkini)
+              const matchedCategory = Array.isArray(item.category)
+                ? item.category.find(c => c.category_name === selected) || item.category[0]
+                : item.category;
+              const categoryId = matchedCategory?.id;
+              
+              const hostingHref = categoryId
+                ? `/hosting?per_page=12&filters[0][key]=category&filters[0][operator]=IN&filters[0][value][]=${categoryId}`
+                : `/hosting`;
 
+              return (
+                <li className="splide__slide" key={item.id}>
+                  <div className="homePageHostingCard">
+                    <div className="homePageHostingCardTop">
+                      <div className="homePageHostingCardTopText">
+                        <span>{item.card_title}</span>
+                        <p>{item.card_sub_title}</p>
+                      </div>
+                      <div className="homePageHostingCardTopPriceArea">
+                        <div className="homePageHostingCardTopOldPrice">
+                          <span>{item.price} <TbCurrencyManat /></span>
+                        </div>
+                        <div className="hostPriceLine" />
+                        <div className="homePageHostingCardTopNewPrice">
+                          <span>
+                            {calculateDiscountedPrice(item.price, item.discount)} <Manat className="topManat" />
+                          </span>
+                        </div>
+                        <div className="hostPriceLine" />
+                        <div className="homePageHostingCardTopMonth">
+                          <span>month</span>
+                        </div>
+                      </div>
+                      <div className="homePageHostingCardTopSelectPlanButton">
+                        <button>SELECT PLAN</button>
+                      </div>
+                    </div>
+                    <div id="cartTopBottomLine" />
+                    <div className="homePageHostingCardBottom">
+                      <div className="homePageHostingCardSpesificationsList">
+                        <ul>
+                          {item.package_parametrs?.map((param) => (
+                            <li key={param.id}>
+                              <Check />
+                              <span>{param.title}</span>
+                              <Ques />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <div id="cartTopBottomLine" />
+                    <div className="homePageHostingCardSeeMore">
+                      <Link href={hostingHref}>
+                        <span>See More</span>
+                      </Link>
+                    </div>
+                  </div>
+                </li>
+              );
+            })} 
           </ul>
         </div>
       </div>

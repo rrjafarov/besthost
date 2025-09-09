@@ -84,7 +84,7 @@ import React, { useState } from "react";
 import HomePageSelectHosting from "./HomePageSelectHosting";
 
 const HomePageHosting = ({backage, category}) => {
-  const [selected, setSelected] = useState(category?.data?.data?.[0]?.category_name || ""); // İlk category'yi default seç
+  const [selected, setSelected] = useState(category?.data?.data?.[0]?.category_name || ""); 
 
   return (
     <div className="homePageHosting">
@@ -101,7 +101,7 @@ const HomePageHosting = ({backage, category}) => {
           <div className="homePageHostingSelectButtons">
             {category?.data?.data?.map((cat) => (
               <div
-                key={cat.id} // Her item için unique key
+                key={cat.id} 
                 className={
                   "homePageHostingSelectButton" +
                   (selected === cat.category_name ? " active" : "")
