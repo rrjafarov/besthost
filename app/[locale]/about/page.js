@@ -212,7 +212,7 @@ const page = async () => {
         <AboutPageBreadCrumbs about={about} />
         <AboutPageWhyUs about={about} />
         <HomePageOurClients client={client} />
-        <HomePageLastGrid />
+        {/* <HomePageLastGrid /> */}
         <Footer contact={contact.data}  />
       </div>
     </div>

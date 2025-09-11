@@ -13,59 +13,92 @@
 // async function fetchTermsPageData() {
 //   const cookieStore = await cookies();
 //   const lang = cookieStore.get("NEXT_LOCALE");
-
-//   try {
-//     const { data: contact } = await axiosInstance.get(`/page-data/contact`, {
-//       // headers: { Lang: lang.value },
-//       cache: "no-store",
-//     });
-//     return contact;
-//   } catch (error) {
-//     throw error;
-//   }
+//   const { data: contact } = await axiosInstance.get(`/page-data/contact`, {
+//     cache: "no-store",
+//   });
+//   return contact;
 // }
 
-
-
-// async function fetchBackageData() {
+// async function fetchBackageData(categoryId) {
 //   const cookieStore = await cookies();
 //   const lang = cookieStore.get("NEXT_LOCALE");
-//   try {
-//     const { data: backage } = await axiosInstance.get(`/page-data/packages`, {
-//       // headers: { Lang: lang.value },
-//       cache: "no-store",
-//     });
-//     return backage;
-//   } catch (error) {
-//     console.error("Failed to fetch backage data", error);
-//     throw error;
+//   let url = `/page-data/packages?per_page=12`;
+//   if (categoryId) {
+//     url += `&filters[0][key]=category&filters[0][operator]=IN&filters[0][value][]=${encodeURIComponent(categoryId)}`;
 //   }
+//   const { data: backage } = await axiosInstance.get(url, {
+//     cache: "no-store",
+//   });
+//   return backage;
 // }
 
-
-
-
-// const page = async () => {
+// const page = async ({ searchParams }) => {
 //   const contact = await fetchTermsPageData();
-//   const backage = await fetchBackageData();
+
+//   const rawCategoryParam =
+//     searchParams?.["filters[0][value][]"] ||
+//     searchParams?.["filters[0][value]"] ||
+//     searchParams?.category ||
+//     null;
+
+//   const categoryId = Array.isArray(rawCategoryParam)
+//     ? rawCategoryParam[0]
+//     : rawCategoryParam;
+
+//   const backage = await fetchBackageData(categoryId);
+
 
 //   return (
 //     <div>
 //       <div className="hostingPageBannerVector">
-//         <Header contact={contact.data}  />
+//         <Header contact={contact.data} />
 //         <Hosting />
 //       </div>
-//       <HostingPagePlans />
+//       <HostingPagePlans backage={backage.data.data}  />
 //       <WordpressFeatures />
 //       <HostingGrid />
 //       <HostingSlider />
-//       <HomePageLastGrid />
-//       <Footer  contact={contact.data}  />
+//       {/* <HomePageLastGrid /> */}
+//       <Footer contact={contact.data} />
 //     </div>
 //   );
 // };
 
 // export default page;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -121,6 +154,17 @@ async function fetchBackageData(categoryId) {
   return backage;
 }
 
+// Yeni: comments endpointindən data çəkən funksiya
+async function fetchCommentsData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  // eyni pattern: cache no-store
+  const { data: comments } = await axiosInstance.get(`/page-data/comments`, {
+    cache: "no-store",
+  });
+  return comments;
+}
+
 const page = async ({ searchParams }) => {
   const contact = await fetchTermsPageData();
 
@@ -136,7 +180,26 @@ const page = async ({ searchParams }) => {
 
   const backage = await fetchBackageData(categoryId);
 
-  console.log(backage.data.data , "dadawdaw");
+  // Yeni: comments çək və URL-dən gələn categoryId ilə filtr et
+  const commentsResponse = await fetchCommentsData();
+  // commentsResponse strukturu: { data: { current_page, data: [ ... ] }, status_code, message }
+  const allComments = commentsResponse?.data?.data ?? [];
+
+  let filteredComments = [];
+  if (categoryId) {
+    filteredComments = allComments.filter((c) => {
+      const cats = Array.isArray(c.category) ? c.category : [];
+      return cats.some((cat) => String(cat.id) === String(categoryId));
+    });
+  } else {
+    // əgər URL-də categoryId yoxdursa, bütün kommentləri göndərmək istəyirsənsə:
+    // filteredComments = allComments;
+    // yoxsa boş array qaytarılır:
+    filteredComments = [];
+  }
+
+
+  console.log("firidun", backage.data.data);
 
   return (
     <div>
@@ -144,14 +207,19 @@ const page = async ({ searchParams }) => {
         <Header contact={contact.data} />
         <Hosting />
       </div>
-      <HostingPagePlans backage={backage.data.data}  />
+      {/* backage əvvəlki kimi, əlavə olaraq uyğun gələn kommentləri də göndərirəm */}
+      <HostingPagePlans backage={backage.data.data}  comments={filteredComments} />
       <WordpressFeatures />
       <HostingGrid />
-      <HostingSlider />
-      <HomePageLastGrid />
+      <HostingSlider comments={filteredComments} />
+      {/* <HomePageLastGrid /> */}
       <Footer contact={contact.data} />
     </div>
   );
 };
 
 export default page;
+
+
+
+
