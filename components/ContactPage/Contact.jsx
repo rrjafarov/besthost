@@ -9,7 +9,7 @@ import Phone from "@/public/icons/phone.svg";
 import Email from "@/public/icons/email.svg";
 import Location from "@/public/icons/location.svg";
 
-const Contact = ({ contact,t }) => {
+const Contact = ({ contact, t }) => {
   return (
     <div className="contactPage">
       <div className="container">
@@ -25,7 +25,7 @@ const Contact = ({ contact,t }) => {
 
         <div className="contactLetsTalk">
           <span>{t?.contactPageHeader || "Contact"}</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
           <div className="contactLetsTalkIcons">
             <div className="contactLetsTalkIcon">
               <img src="/icons/contact1.svg" alt="" />
@@ -118,10 +118,10 @@ const Contact = ({ contact,t }) => {
               </div>
             </div>
 
-            <div className="xl-6 lg-6 md-6 sm-12">
+            <div className="xl-6 lg-6 md-6 sm-12" id="contactIMGrid">
               <img
                 className="notMobileContact"
-                src="/images/lastGridLeft.png"
+                src={`https://admin-besthost.onestudio.az/storage/${contact?.image}`}
                 alt=""
               />
             </div>
@@ -130,24 +130,28 @@ const Contact = ({ contact,t }) => {
         <div className="contactForm">
           <div className="contactFormItems">
             <div className="contactFormItem">
-              <span>SUALLARINIZ</span>
+              <span>{t?.contactPageYourQuesions || "Suallar"}</span>
               <p>
-                Əgər sizin sualınız siyahıda yoxdursa, o zaman sualınızı bizə
-                ünvanlayın, ən qısa zaman ərzində cavablayaq.
+                {t?.contactPageFormText ||
+                  "Suallarınız varsa, bizə müraciət etməkdən çəkinməyin."}
               </p>
 
               <form>
-                <input type="text" name="name" placeholder="Ad Soyad" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder={t?.contactPageFormName}
+                />
 
                 <input
                   type="email"
                   name="email"
-                  placeholder="loremipsum01@mail.ru"
+                  placeholder={t?.contactPageFormEmail || "Email"}
                 />
 
-                <textarea name="message" placeholder="Mətn" />
+                <textarea name="message" placeholder={t?.contactPageFormText} />
 
-                <button type="submit">GÖNDƏR</button>
+                <button type="submit">{t?.contactSendButton}</button>
               </form>
             </div>
           </div>

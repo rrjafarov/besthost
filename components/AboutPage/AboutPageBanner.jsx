@@ -1,11 +1,11 @@
 import React from "react";
 
-const AboutPageBanner = () => {
+const AboutPageBanner = ({t}) => {
   return (
     <div id="aboutPageBanner">
       <div className="aboutPageBannerContent">
-        <span>About BestHost</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <span>{t?.aboutBestHost || "about BestHost"}</span>
+        <p>{t?.aboutPageSubTitle || "about sub title"}</p>
       </div>
     </div>
   );

@@ -1,12 +1,14 @@
 // "use client";
 // import Link from "next/link";
 // import { usePathname } from "next/navigation";
+// import { useState, useEffect } from "react";
 // import Header from "@/components/Header/Header";
 // import Arrow from "@/public/icons/arrow.svg";
 // import Terms from "@/public/icons/supportTerms.svg";
 // import Privacy from "@/public/icons/supportPrivacy.svg";
 // import Video from "@/public/icons/supportVideo.svg";
 // import Footer from "@/components/Footer/Footer";
+// import axiosInstance from "@/lib/axios"; // Adjust the import path as needed
 
 // const SupportPage = ({ children }) => {
 //   // 1) URL’den son segmenti al
@@ -33,13 +35,34 @@
 //     },
 //   };
 
-//   // 3) Eğer bilinmeyen bir key gelirse privacy’yi varsayılan olarak ata
 //   const currentPage = pageConfig[currentKey] || pageConfig.privacy;
+
+//   const [contact, setContact] = useState(null);
+
+//   useEffect(() => {
+//     async function fetchTermsPageData() {
+//       try {
+//         const { data: contactData } = await axiosInstance.get(`/page-data/contact`, {
+//           // headers: { Lang: lang.value },
+//           cache: "no-store",
+//         });
+//         setContact(contactData);
+//       } catch (error) {
+//         console.error(error);
+//       }
+//     }
+
+//     fetchTermsPageData();
+//   }, []);
+
+//   if (!contact) {
+//     return <div></div>;
+//   }
 
 //   return (
 //     <>
 //       <div className="background">
-//         <Header />
+//         <Header contact={contact.data} />
 //         <div className="besthostSupportPages">
 //           <div className="container">
 //             {/* Breadcrumbs */}
@@ -116,13 +139,18 @@
 //             </div>
 //           </div>
 //         </div>
-//         <Footer />
+//         <Footer contact={contact.data} />
 //       </div>
 //     </>
 //   );
 // };
 
 // export default SupportPage;
+
+
+
+
+
 
 
 
@@ -152,36 +180,50 @@ import Footer from "@/components/Footer/Footer";
 import axiosInstance from "@/lib/axios"; // Adjust the import path as needed
 
 const SupportPage = ({ children }) => {
-  // 1) URL’den son segmenti al
+  // 1) URL'den son segmenti al
   const pathname = usePathname(); // e.g. "/support/privacy"
   const segments = pathname?.split("/") || [];
   const currentKey = segments[segments.length - 1] || "privacy";
 
-  // 2) Her sayfa için konfigürasyon map’i
-  const pageConfig = {
-    terms: {
-      href: "/support/terms",
-      label: "Terms of Service",
-      title: "Terms of Service",
-    },
-    privacy: {
-      href: "/support/privacy",
-      label: "Privacy Policy",
-      title: "Privacy Policy",
-    },
-    video: {
-      href: "/support/video",
-      label: "Video tutorials",
-      title: "Video tutorials",
-    },
+  const [contact, setContact] = useState(null);
+  const [t, setT] = useState(null);
+
+  // 2) Her sayfa için konfigürasyon map'i - translations kullanacak
+  const getPageConfig = () => {
+    if (!t) return {};
+    
+    return {
+      terms: {
+        href: "/support/terms",
+        label: t?.terms,
+        title: t?.terms,
+      },
+      privacy: {
+        href: "/support/privacy",
+        label: t?.privacy,
+        title: t?.privacy,
+      },
+      video: {
+        href: "/support/video",
+        label: t?.video,
+        title: t?.video,
+      },
+    };
   };
 
-  // 3) Eğer bilinmeyen bir key gelirse privacy’yi varsayılan olarak ata
+  const pageConfig = getPageConfig();
   const currentPage = pageConfig[currentKey] || pageConfig.privacy;
 
-  const [contact, setContact] = useState(null);
-
   useEffect(() => {
+    async function fetchTranslations() {
+      try {
+        const { data: translations } = await axiosInstance.get("/translation-list");
+        setT(translations);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
     async function fetchTermsPageData() {
       try {
         const { data: contactData } = await axiosInstance.get(`/page-data/contact`, {
@@ -194,17 +236,18 @@ const SupportPage = ({ children }) => {
       }
     }
 
+    fetchTranslations();
     fetchTermsPageData();
   }, []);
 
-  if (!contact) {
+  if (!contact || !t) {
     return <div></div>;
   }
 
   return (
     <>
       <div className="background">
-        <Header contact={contact.data} />
+        <Header contact={contact.data} t={t} />
         <div className="besthostSupportPages">
           <div className="container">
             {/* Breadcrumbs */}
@@ -214,14 +257,14 @@ const SupportPage = ({ children }) => {
                   <span>BestHost</span>
                 </Link>
                 <Arrow className="breadCrumbsArrow" />
-                <Link href={currentPage.href}>
-                  <strong>{currentPage.label}</strong>
+                <Link href={currentPage?.href}>
+                  <strong>{currentPage?.label}</strong>
                 </Link>
               </div>
             </div>
 
             {/* Dinamik başlık */}
-            <div className="supportPrivacyTitle">{currentPage.title}</div>
+            <div className="supportPrivacyTitle">{currentPage?.title}</div>
 
             {/* İçerik */}
             <div className="supportPrivacyContent">
@@ -241,7 +284,7 @@ const SupportPage = ({ children }) => {
                             }}
                             href="/support/terms"
                           >
-                            Terms of Service
+                            {t?.terms}
                           </Link>
                         </li>
                         <li>
@@ -255,7 +298,7 @@ const SupportPage = ({ children }) => {
                             }}
                             href="/support/privacy"
                           >
-                            Privacy Policy
+                            {t?.privacy}
                           </Link>
                         </li>
                         <li>
@@ -269,7 +312,7 @@ const SupportPage = ({ children }) => {
                             }}
                             href="/support/video"
                           >
-                            Video tutorials
+                            {t?.video}
                           </Link>
                         </li>
                       </ul>
@@ -281,11 +324,10 @@ const SupportPage = ({ children }) => {
             </div>
           </div>
         </div>
-        <Footer contact={contact.data} />
+        <Footer contact={contact.data} t={t} />
       </div>
     </>
   );
 };
 
 export default SupportPage;
-

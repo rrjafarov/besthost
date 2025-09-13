@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const HomePageOurClients = ({ client }) => {
+const HomePageOurClients = ({t, client }) => {
   return (
     <div
       id="homePageOurClients"
@@ -9,10 +9,9 @@ const HomePageOurClients = ({ client }) => {
     >
       <div className="container">
         <div className="homePageOurClientsHeaderText">
-          <span>Our Clients</span>
+          <span>{t?.aboutPageClientsTitle || "Our Clients"}</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur or sit amet,
-            consectetursuspendisse sit in eetiam venenatis.
+            {t?.aboutPageClientsSubTitle || "Our Clients"}
           </p>
         </div>
         <div className="homePageOurClientCards">

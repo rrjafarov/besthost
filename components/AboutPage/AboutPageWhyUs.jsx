@@ -4,12 +4,12 @@ import Statistic from "@/public/icons/statistic.svg";
 import ServicePath from "@/public/icons/sevicePath.svg";
 import Image from "next/image";
 
-const AboutPageWhyUs = ({ about }) => {
+const AboutPageWhyUs = ({ about, t }) => {
   return (
     <div id="aboutPageWhyUs">
       <div className="container">
         <div className="aboutPageWhyUsItem">
-          <span>Why us?</span>
+          <span>{t?.aboutWhyUS || "Why us?"}</span>
           <div className="aboutPageWhyUsCards">
             <div className="row">
               <div className="xl-4 lg-4 md-6 sm-12">

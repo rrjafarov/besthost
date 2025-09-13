@@ -1500,6 +1500,7 @@ $BestHostMainColor: #4a2682;
   }
   .homePageOurClientCards {
     padding-top: 2.2rem;
+    margin-bottom: 5rem;
     .homePageOurClientCard {
       border-radius: 2rem;
       background: #fff;
@@ -3616,6 +3617,9 @@ $BestHostMainColor: #4a2682;
   }
   .notMobileContact {
     display: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
   }
   .contactForm {
     display: flex;
@@ -3625,6 +3629,13 @@ $BestHostMainColor: #4a2682;
     .contactFormItems {
       width: 100% !important;
     }
+  }
+}
+#contactIMGrid{
+  img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
   }
 }
 // * contact PAGE<><><><><><><><<>
