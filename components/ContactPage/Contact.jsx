@@ -9,7 +9,7 @@ import Phone from "@/public/icons/phone.svg";
 import Email from "@/public/icons/email.svg";
 import Location from "@/public/icons/location.svg";
 
-const Contact = ({ contact }) => {
+const Contact = ({ contact,t }) => {
   return (
     <div className="contactPage">
       <div className="container">
@@ -19,12 +19,12 @@ const Contact = ({ contact }) => {
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="/contact">
-            <strong>Contact us</strong>
+            <strong>{t?.contactPageTitle || "Contact"}</strong>
           </Link>
         </div>
 
         <div className="contactLetsTalk">
-          <span>Let`s Talk</span>
+          <span>{t?.contactPageHeader || "Contact"}</span>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <div className="contactLetsTalkIcons">
             <div className="contactLetsTalkIcon">

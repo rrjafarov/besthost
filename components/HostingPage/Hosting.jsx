@@ -2,7 +2,7 @@ import React from "react";
 import Arrow from "@/public/icons/arrow.svg";
 import Link from "next/link";
 
-const Hosting = () => {
+const Hosting = ({ categoryData }) => {
   return (
     <div className="hostingPageBannerVectora">
       <div className="container">
@@ -10,10 +10,12 @@ const Hosting = () => {
           <div className="row">
             <div className="xl-6 lg-6 md-6 sm-12">
               <div className="hostingPageBannerBlockLeft">
-                <span>Everything you need for WordPress Hosting</span>
+                <span>{categoryData[0].title}</span>
                 <p>
-                  Quick and secure, guaranteed 99.99% uptime, feature-rich
-                  WordPress hosting solution
+                  {/* <div
+                    dangerouslySetInnerHTML={{ __html: }}
+                  ></div> */}
+                  {categoryData[0].sub_title }
                 </p>
                 <button>Start Now</button>
               </div>
@@ -25,14 +27,14 @@ const Hosting = () => {
             </div>
           </div>
           <div className="aboutPageBreadCrumbs">
-          <Link href="/">
-            <span>BestHost</span>
-          </Link>
-          <Arrow className="breadCrumbsArrow" />
-          <Link href="/about">
-            <strong>Hosting</strong>
-          </Link>
-        </div>
+            <Link href="/">
+              <span>BestHost</span>
+            </Link>
+            <Arrow className="breadCrumbsArrow" />
+            <Link href="/about">
+              <strong>Hosting</strong>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

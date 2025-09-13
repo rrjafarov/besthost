@@ -32,6 +32,15 @@
 //   return backage;
 // }
 
+// async function fetchCommentsData() {
+//   const cookieStore = await cookies();
+//   const lang = cookieStore.get("NEXT_LOCALE");
+//   const { data: comments } = await axiosInstance.get(`/page-data/comments`, {
+//     cache: "no-store",
+//   });
+//   return comments;
+// }
+
 // const page = async ({ searchParams }) => {
 //   const contact = await fetchTermsPageData();
 
@@ -47,55 +56,53 @@
 
 //   const backage = await fetchBackageData(categoryId);
 
+//   const commentsResponse = await fetchCommentsData();
+//   const allComments = commentsResponse?.data?.data ?? [];
+
+//   let filteredComments = [];
+//   if (categoryId) {
+//     filteredComments = allComments.filter((c) => {
+//       const cats = Array.isArray(c.category) ? c.category : [];
+//       return cats.some((cat) => String(cat.id) === String(categoryId));
+//     });
+//   } else {
+//     filteredComments = [];
+//   }
+
+//   const rawBackageItems = backage?.data?.data ?? [];
+
+//   const flattenedCategories = rawBackageItems.flatMap((item) =>
+//     Array.isArray(item.category) ? item.category : []
+//   );
+
+//   const uniqueCategories = [];
+//   const seenCategoryIds = new Set();
+//   for (const cat of flattenedCategories) {
+//     if (cat && (cat.id !== undefined && cat.id !== null)) {
+//       const idStr = String(cat.id);
+//       if (!seenCategoryIds.has(idStr)) {
+//         seenCategoryIds.add(idStr);
+//         uniqueCategories.push(cat);
+//       }
+//     }
+//   }
 
 //   return (
 //     <div>
 //       <div className="hostingPageBannerVector">
-//         <Header contact={contact.data} />
-//         <Hosting />
+//         <Header contact={contact.data} categoryData={backage.data.data} />
+//         <Hosting categoryData={uniqueCategories} />
 //       </div>
-//       <HostingPagePlans backage={backage.data.data}  />
-//       <WordpressFeatures />
-//       <HostingGrid />
-//       <HostingSlider />
-//       {/* <HomePageLastGrid /> */}
+//       <HostingPagePlans backage={backage.data.data} comments={filteredComments} />
+//       <WordpressFeatures categoryData={uniqueCategories}  />
+//       <HostingGrid  categoryData={uniqueCategories}  />
+//       <HostingSlider comments={filteredComments} />
 //       <Footer contact={contact.data} />
 //     </div>
 //   );
 // };
 
 // export default page;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -154,15 +161,86 @@ async function fetchBackageData(categoryId) {
   return backage;
 }
 
-// Yeni: comments endpointindən data çəkən funksiya
 async function fetchCommentsData() {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
-  // eyni pattern: cache no-store
   const { data: comments } = await axiosInstance.get(`/page-data/comments`, {
     cache: "no-store",
   });
   return comments;
+}
+
+export async function generateMetadata({ searchParams }) {
+  const contact = await fetchTermsPageData();
+
+  const rawCategoryParam =
+    searchParams?.["filters[0][value][]"] ||
+    searchParams?.["filters[0][value]"] ||
+    searchParams?.category ||
+    null;
+
+  const categoryId = Array.isArray(rawCategoryParam)
+    ? rawCategoryParam[0]
+    : rawCategoryParam;
+
+  const backage = await fetchBackageData(categoryId);
+
+  const rawBackageItems = backage?.data?.data ?? [];
+
+  const flattenedCategories = rawBackageItems.flatMap((item) =>
+    Array.isArray(item.category) ? item.category : []
+  );
+
+  const uniqueCategories = [];
+  const seenCategoryIds = new Set();
+  for (const cat of flattenedCategories) {
+    if (cat && (cat.id !== undefined && cat.id !== null)) {
+      const idStr = String(cat.id);
+      if (!seenCategoryIds.has(idStr)) {
+        seenCategoryIds.add(idStr);
+        uniqueCategories.push(cat);
+      }
+    }
+  }
+
+  const seoItem = uniqueCategories?.[0];
+  const imageUrl = seoItem?.image;
+  const imageAlt = seoItem?.meta_title || "Gipstar";
+  const canonicalUrl = "https://gipstar.az";
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+
+  return {
+    title: seoItem?.meta_title,
+    description: seoItem?.meta_description,
+    openGraph: {
+      title: seoItem?.meta_title || "Gipstar",
+      description: seoItem?.meta_description,
+      url: canonicalUrl,
+      images: [
+        {
+          url: imageUrl ? `https://admin.gipstar.az/storage${imageUrl}` : undefined,
+          alt: imageAlt,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      site_name: "gipstar.az",
+      type: "website",
+      locale: lang?.value,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seoItem?.meta_title || "Gipstar",
+      description: seoItem?.meta_description || "Gipstar",
+      creator: "@gipstar",
+      site: "@gipstar",
+      images: imageUrl ? [imageUrl] : [],
+    },
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
 }
 
 const page = async ({ searchParams }) => {
@@ -180,9 +258,7 @@ const page = async ({ searchParams }) => {
 
   const backage = await fetchBackageData(categoryId);
 
-  // Yeni: comments çək və URL-dən gələn categoryId ilə filtr et
   const commentsResponse = await fetchCommentsData();
-  // commentsResponse strukturu: { data: { current_page, data: [ ... ] }, status_code, message }
   const allComments = commentsResponse?.data?.data ?? [];
 
   let filteredComments = [];
@@ -192,34 +268,40 @@ const page = async ({ searchParams }) => {
       return cats.some((cat) => String(cat.id) === String(categoryId));
     });
   } else {
-    // əgər URL-də categoryId yoxdursa, bütün kommentləri göndərmək istəyirsənsə:
-    // filteredComments = allComments;
-    // yoxsa boş array qaytarılır:
     filteredComments = [];
   }
 
+  const rawBackageItems = backage?.data?.data ?? [];
 
-  console.log("firidun", backage.data.data);
+  const flattenedCategories = rawBackageItems.flatMap((item) =>
+    Array.isArray(item.category) ? item.category : []
+  );
+
+  const uniqueCategories = [];
+  const seenCategoryIds = new Set();
+  for (const cat of flattenedCategories) {
+    if (cat && (cat.id !== undefined && cat.id !== null)) {
+      const idStr = String(cat.id);
+      if (!seenCategoryIds.has(idStr)) {
+        seenCategoryIds.add(idStr);
+        uniqueCategories.push(cat);
+      }
+    }
+  }
 
   return (
     <div>
       <div className="hostingPageBannerVector">
-        <Header contact={contact.data} />
-        <Hosting />
+        <Header contact={contact.data} categoryData={backage.data.data} />
+        <Hosting categoryData={uniqueCategories} />
       </div>
-      {/* backage əvvəlki kimi, əlavə olaraq uyğun gələn kommentləri də göndərirəm */}
-      <HostingPagePlans backage={backage.data.data}  comments={filteredComments} />
-      <WordpressFeatures />
-      <HostingGrid />
+      <HostingPagePlans backage={backage.data.data} comments={filteredComments} />
+      <WordpressFeatures categoryData={uniqueCategories}  />
+      <HostingGrid  categoryData={uniqueCategories}  />
       <HostingSlider comments={filteredComments} />
-      {/* <HomePageLastGrid /> */}
       <Footer contact={contact.data} />
     </div>
   );
 };
 
 export default page;
-
-
-
-

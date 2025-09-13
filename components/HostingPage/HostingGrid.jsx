@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const HostingGrid = () => {
+const HostingGrid = ({categoryData}) => {
   return (
     <div className="hostingGridSection">
       <div className="container">
@@ -19,11 +19,11 @@ const HostingGrid = () => {
           </div>
           <div className="xl-5 lg-6 md-6 sm-12">
             <div className="homeGridContent">
-              <span>Why choose Best Host?</span>
+              <span>{categoryData[0].title_3}</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. tetur
-                adipiscin Luctus facilisis cursus ctus facilisis cursusut
-                pellentesque sit volutpat ut.
+                <div
+                    dangerouslySetInnerHTML={{ __html: categoryData[0].content_2}}
+                  ></div>
               </p>
               <Link href="#">
                 <span>Learn more</span>
