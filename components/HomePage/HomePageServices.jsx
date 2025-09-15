@@ -1,15 +1,14 @@
 import React from "react";
 import Service from "@/public/icons/service.svg";
 import Link from "next/link";
-const HomePageServices = ({ servicesData }) => {
+const HomePageServices = ({t, servicesData }) => {
   return (
     <div className="homePageServices">
       <div className="container">
         <div className="homePageServicesTopText">
-          <span>Our Services</span>
+          <span>{t?.servicesPageOurServices || "Our Services "}</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur or sit amet,
-            consectetursuspendisse sit in eetiam venenatis.
+            {t?.servicesPageHeaderSubTitle || "Explore our wide range of services designed to meet your needs."}
           </p>
         </div>
         <div className="homePageServicesCards">
@@ -32,7 +31,7 @@ const HomePageServices = ({ servicesData }) => {
         </div>
         <div className="homePageServicesCardsViewMore">
           <Link href="/services">
-            <span>View more</span>
+            <span>{t?.viewMore}</span>
           </Link>
         </div>
       </div>

@@ -83,18 +83,16 @@
 import React, { useState } from "react";
 import HomePageSelectHosting from "./HomePageSelectHosting";
 
-const HomePageHosting = ({backage, category}) => {
+const HomePageHosting = ({t,backage, category}) => {
   const [selected, setSelected] = useState(category?.data?.data?.[0]?.category_name || ""); 
 
   return (
     <div className="homePageHosting">
       <div className="container">
         <div className="homePageHostingHeaderText">
-          <span>The Best Hosting For your Websites</span>
+          <span>{t?.homePageWebsiteTitle || "Lorem ipsum dolor sit amet"}</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem arcu
-            urna dolor sit amet, consectetursuspenet, consectetursusdisse sit in
-            or sit amet, consectetursuspendisse sit in eetiam venenatis.
+            {t?.homePageWebsiteSubTitle || "Lorem ipsum dolor sit amet."}
           </p>
         </div>
         <div className="homePageHostingHeaderButtons">
@@ -115,11 +113,11 @@ const HomePageHosting = ({backage, category}) => {
         </div>
         
         <div className="homePageHostingForWebsite">
-          <span>The Best Hosting For your Websites</span>
-          <p>From small business to enterprise, we've got you covered!</p>
+          <span>{t?.homePageHostingTitle}</span>
+          <p>{t?.homePageHostingSubTitle}</p>
         </div>
 
-        <HomePageSelectHosting backage={backage} selected={selected} />
+        <HomePageSelectHosting t={t} backage={backage} selected={selected} />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import Twitter from "@/public/icons/twitterWhite.svg";
 import Instagram from "@/public/icons/instagramWhite.svg";
 import Wp from "@/public/icons/wpWhite.svg";
 
-const BlogDetailPage = ({ blog, otherBlogs }) => {
+const BlogDetailPage = ({ t, blog, otherBlogs }) => {
   return (
     <div id="blogDetailPage">
       <div className="container">
@@ -16,7 +16,7 @@ const BlogDetailPage = ({ blog, otherBlogs }) => {
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="/blog">
-            <strong>Blogs</strong>
+            <strong>{t?.blogPageTitle}</strong>
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="#">
@@ -52,7 +52,7 @@ const BlogDetailPage = ({ blog, otherBlogs }) => {
                 </div>
                 <div className="blogDetailPageMainLeftContent">
                   <span>
-                    How to Choose an Affordable SEO Package for Your Startup
+                    {blog.title}
                   </span>
                   {/* <div className="div">
                     <span className="middleLink">
@@ -64,7 +64,7 @@ const BlogDetailPage = ({ blog, otherBlogs }) => {
                   </div> */}
                   <div className="blogDPline"></div>
                   <div className="blogDetailPageMainLeftContentDesc">
-                    <span>Why entrepreneurial diversity matters</span>
+                    <span>{blog.sub_title}</span>
                     <div
                       dangerouslySetInnerHTML={{
                         __html: blog.content,
@@ -77,8 +77,6 @@ const BlogDetailPage = ({ blog, otherBlogs }) => {
                       />
                     </div>
 
-
-                    
                     {/* <p>
                       Imagine coming to the office every day and opening your
                       laptop to find hundreds of emails from prospects who are
@@ -88,8 +86,6 @@ const BlogDetailPage = ({ blog, otherBlogs }) => {
                       fraction of those users to reach your website through
                       Search Engine
                     </p> */}
-
-
 
                     {/* <div className="blogDetailPageMainLeftContentImages">
                       <img src="/icons/serviceDPLeft.png" alt="" />
@@ -119,26 +115,28 @@ const BlogDetailPage = ({ blog, otherBlogs }) => {
                   <img src="/images/servicesDP2.png" alt="" />
                 </div>
 
-                <div className="blogDetailPageMainRightOtherBlogs">
-                  <span className="allBlogs">All Blogs</span>
-                  <div className="blogDetailPageMainRightOtherBlogsCards">
-                    {otherBlogs.map((other) => (
-                      <div
-                        className="blogDetailPageMainRightOtherBlogsCard"
-                        key={other.id}
-                      >
-                        <Link
-                          href={`/blog/${other.url_slug}-${other.id}`}
+                {otherBlogs.length > 0 && (
+                  <div className="blogDetailPageMainRightOtherBlogs">
+                    <span className="allBlogs">{t?.blogPageTitle}</span>
+                    <div className="blogDetailPageMainRightOtherBlogsCards">
+                      {otherBlogs.map((other) => (
+                        <div
+                          className="blogDetailPageMainRightOtherBlogsCard"
+                          key={other.id}
                         >
-                          <span className="otherBlogTitle">{other.title}</span>
-                          <span className="otherBlogSubTitle">
-                            {other.sub_title}
-                          </span>
-                        </Link>
-                      </div>
-                    ))}
+                          <Link href={`/blog/${other.url_slug}-${other.id}`}>
+                            <span className="otherBlogTitle">
+                              {other.title}
+                            </span>
+                            <span className="otherBlogSubTitle">
+                              {other.sub_title}
+                            </span>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>

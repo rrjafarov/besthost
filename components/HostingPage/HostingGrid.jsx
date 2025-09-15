@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const HostingGrid = ({categoryData}) => {
+const HostingGrid = ({categoryData ,t}) => {
   return (
     <div className="hostingGridSection">
       <div className="container">
@@ -26,7 +26,7 @@ const HostingGrid = ({categoryData}) => {
                   ></div>
               </p>
               <Link href="#">
-                <span>Learn more</span>
+                <span>{t?.seeMore}</span>
               </Link>
             </div>
           </div>

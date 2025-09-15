@@ -2,7 +2,7 @@ import React from "react";
 import Arrow from "@/public/icons/arrow.svg";
 import Link from "next/link";
 
-const ServicesPageBanner = () => {
+const ServicesPageBanner = ({t}) => {
   return (
     <div id="servicesPageBanner">
       <div className="servicesPageBanner">
@@ -10,12 +10,13 @@ const ServicesPageBanner = () => {
           <div className="row">
             <div className="xl-6 lg-6 md-6 sm-12">
               <div className="servivesBannerLeftContent">
-                <strong>Everything you need for WordPress Hosting</strong>
+                <strong>{t?.servicesPageBannerTitle || "Banner Title"}</strong>
                 <span>
-                  Quick and secure, guaranteed 99.99% uptime, feature-rich
-                  WordPress hosting solution
+                  
+
+                  {t?.servicesPageBannerSubTitle || "Banner Sub Title"}
                 </span>
-                <button>Start Now</button>
+                {/* <button>Start Now</button> */}
               </div>
             </div>
             <div className="xl-6 lg-6 md-6 sm-12">
@@ -33,7 +34,7 @@ const ServicesPageBanner = () => {
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="/services">
-            <strong>Services</strong>
+            <strong>{t?.servicesPageTitle}</strong>
           </Link>
         </div>
       </div>

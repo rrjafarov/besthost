@@ -16,7 +16,6 @@ async function fetchBlogsData() {
     });
     return blogs;
   } catch (error) {
-    console.error("Failed to fetch blogs data", error);
     throw error;
   }
 }
@@ -32,7 +31,6 @@ async function fetchBlogPageInfoData() {
     });
     return blogInfo;
   } catch (error) {
-    console.error("Failed to fetch blog page info data", error);
     throw error;
   }
 }
@@ -93,16 +91,29 @@ export async function generateMetadata() {
   };
 }
 
+
+async function getTranslations() {
+  try {
+    const data = axiosInstance.get("/translation-list");
+    return data;
+  } catch (err) {
+  }
+}
+
 const page = async () => {
   const blogs = await fetchBlogsData();
   const blogsData = blogs.data.data;
   const contact = await fetchTermsPageData();
 
+
+  const translations = await getTranslations();
+  const t = translations?.data;
+
   return (
     <div>
       <Header contact={contact.data} />
       <div className="background">
-        <BlogPage blogsData={blogsData} />
+        <BlogPage t={t} blogsData={blogsData} />
         <Footer contact={contact.data} />
       </div>
     </div>

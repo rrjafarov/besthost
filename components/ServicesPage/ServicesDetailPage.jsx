@@ -6,7 +6,7 @@ import Twitter from "@/public/icons/twitterWhite.svg";
 import Instagram from "@/public/icons/instagramWhite.svg";
 import Wp from "@/public/icons/wpWhite.svg";
 
-const ServicesDetailPage = ({ service, otherServices }) => {
+const ServicesDetailPage = ({ t, service, otherServices }) => {
   return (
     <div id="servicesDetailPage">
       <div className="container">
@@ -16,7 +16,7 @@ const ServicesDetailPage = ({ service, otherServices }) => {
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="/services">
-            <strong>Services</strong>
+            <strong>{t?.servicesPageTitle}</strong>
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="#">
@@ -50,9 +50,7 @@ const ServicesDetailPage = ({ service, otherServices }) => {
                   </div>
                 </div>
                 <div className="servicesDetailPageMainLeftContent">
-                  <span>
-                    How to Choose an Affordable SEO Package for Your Startup
-                  </span>
+                  <span>{service.title}</span>
 
                   {/* <div className="div">
                     <span className="middleLink">
@@ -65,7 +63,7 @@ const ServicesDetailPage = ({ service, otherServices }) => {
 
                   <div className="servicesDPline"></div>
                   <div className="servicesDetailPageMainLeftContentDesc">
-                    <span>Why entrepreneurial diversity matters</span>
+                    <span> {service.sub_title}</span>
                     <div
                       dangerouslySetInnerHTML={{
                         __html: service.content,
@@ -115,17 +113,17 @@ const ServicesDetailPage = ({ service, otherServices }) => {
                         <div className="servicesDetailPageMainRightOtherServiceCardItem">
                           <div className="servicesDetailPageMainRightOtherServiceCardImg">
                             <img
-                              //  src="/icons/service.svg" 
-                              src={`https://admin-besthost.onestudio.az/storage/${other.icon}`}  
+                              //  src="/icons/service.svg"
+                              src={`https://admin-besthost.onestudio.az/storage/${other.icon}`}
                               alt=""
                             />
                           </div>
                           <div className="servicesDetailPageMainRightOtherServiceCardContent">
                             <h2>{other.title}</h2>
                             <span>{other.sub_title}</span>
-                            <div className="dprihtline"></div>
+                            {/* <div className="dprihtline"></div> */}
                             <div className="servicesDetailPageMainRightOtherServiceCardBottom">
-                              <span>2 min read </span>
+                              {/* <span>2 min read </span> */}
                               <img src="/icons/rightServiceArrow.svg" alt="" />
                             </div>
                           </div>

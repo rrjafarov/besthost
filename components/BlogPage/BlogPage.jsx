@@ -3,7 +3,7 @@ import Arrow from "@/public/icons/arrow.svg";
 import Link from "next/link";
 import BasicPagination from "@/components/BasicPagination"; // ①
 
-const BlogPage = ({ blogsData }) => {
+const BlogPage = ({ blogsData, t }) => {
   return (
     <div>
       <div className="container">
@@ -13,15 +13,13 @@ const BlogPage = ({ blogsData }) => {
           </Link>
           <Arrow className="breadCrumbsArrow" />
           <Link href="/blog">
-            <strong>Blog</strong>
+            <strong>{t?.blogPageTitle || "Blogs"}</strong>
           </Link>
         </div>
         <div className="blogPageHeaderText">
-          <span>All the WordPress Tutorials You’ll Ever Need</span>
+          <span>{t?.blogPageHeaderTitle || " Blog text"}</span>
           <p>
-            From getting started with WordPress, to knowing what Hotlinking is
-            and how to prevent it, our comprehensive list of WordPress Tutorials
-            covers it all!
+            {t?.blogPageHeaderSubTitle || " Blog subtitle text"}
           </p>
         </div>
 

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const HomePageGridCards = ({ home }) => {
+const HomePageGridCards = ({ t,home }) => {
   return (
     <div className="homeGridSection">
       <div className="container">
@@ -10,7 +10,6 @@ const HomePageGridCards = ({ home }) => {
           <div className="xl-7 lg-6 md-6 sm-12">
             <div className="homeGridImages">
               <Image
-                // src="/images/homeGridX7.png"
                 src={`https://admin-besthost.onestudio.az/storage/${home.image_1}`}
                 alt="grid"
                 width={550}
@@ -29,7 +28,7 @@ const HomePageGridCards = ({ home }) => {
                 pellentesque sit volutpat ut.
               </p> */}
               <Link href="#">
-                <span>Learn more</span>
+                <span>{t?.viewMore}</span>
               </Link>
             </div>
           </div>
@@ -47,7 +46,7 @@ const HomePageGridCards = ({ home }) => {
                 pellentesque sit volutpat ut.
               </p> */}
               <Link href="#">
-                <span>Learn more</span>
+                <span>{t?.viewMore}</span>
               </Link>
             </div>
           </div>
@@ -87,7 +86,7 @@ const HomePageGridCards = ({ home }) => {
                 pellentesque sit volutpat ut.
               </p> */}
               <Link href="#">
-                <span>Learn more</span>
+                <span>{t?.viewMore}</span>
               </Link>
             </div>
           </div>

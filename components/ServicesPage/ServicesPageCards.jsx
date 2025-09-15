@@ -2,19 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ServicesPageCards = ({ services }) => {
+const ServicesPageCards = ({ services, t }) => {
   return (
     <div>
       <div className="container">
         <div className="servicesPageCardsHeaderText">
-          <h2>Services that keep your business in mind</h2>
+          <h2>{t?.servicesPageHeaderTitle}</h2>
           <span>
-            From small business to enterpriseFrom small business to enterprise,
-            we've got you covered!, we've got you covered!
+            {t?.servicesPageHeaderSubTitle}
           </span>
         </div>
         <div className="servicesPageCards">
-          <h2>Our Services</h2>
+          <h2></h2>
           <div className="row">
             {services.map((service) => (
               <div className="xl-4 lg-4 md-6 sm-6" key={service.id}>

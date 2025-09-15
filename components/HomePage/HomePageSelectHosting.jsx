@@ -159,7 +159,7 @@ import Link from "next/link";
 import { TbCurrencyManat } from "react-icons/tb";
   
 
-const HomePageSelectHosting = ({ backage, selected }) => {
+const HomePageSelectHosting = ({t, backage, selected }) => {
   const adjustSlideHeights = (splide) => {
     const activeIndex = splide.index;
     const slides = splide.Components.Slides.getSlides();
@@ -245,11 +245,11 @@ const HomePageSelectHosting = ({ backage, selected }) => {
                         </div>
                         <div className="hostPriceLine" />
                         <div className="homePageHostingCardTopMonth">
-                          <span>month</span>
+                          <span>{t?.month}</span>
                         </div>
                       </div>
                       <div className="homePageHostingCardTopSelectPlanButton">
-                        <button>SELECT PLAN</button>
+                        <button>{t?.selectPlan}</button>
                       </div>
                     </div>
                     <div id="cartTopBottomLine" />
@@ -269,7 +269,7 @@ const HomePageSelectHosting = ({ backage, selected }) => {
                     <div id="cartTopBottomLine" />
                     <div className="homePageHostingCardSeeMore">
                       <Link href={hostingHref}>
-                        <span>See More</span>
+                        <span>{t?.seeMore}</span>
                       </Link>
                     </div>
                   </div>

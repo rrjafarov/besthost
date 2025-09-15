@@ -39,7 +39,6 @@ async function fetchServicesData() {
     });
     return services;
   } catch (error) {
-    console.error("Failed to fetch services data", error);
     throw error;
   }
 }
@@ -54,7 +53,6 @@ async function fetchHomePageData() {
     });
     return home;
   } catch (error) {
-    console.error("Failed to fetch home data", error);
     throw error;
   }
 }
@@ -71,7 +69,6 @@ async function fetchBackageData() {
     });
     return backage;
   } catch (error) {
-    console.error("Failed to fetch backage data", error);
     throw error;
   }
 }
@@ -85,7 +82,6 @@ async function fetchCategoryData() {
     });
     return category;
   } catch (error) {
-    console.error("Failed to fetch category data", error);
     throw error;
   }
 }
@@ -132,6 +128,14 @@ export async function generateMetadata() {
   };
 }
 
+
+async function getTranslations() {
+  try {
+    const data = axiosInstance.get("/translation-list");
+    return data;
+  } catch (err) {}
+}
+
 const page = async () => {
   const contact = await fetchContactPageData();
   const home = await fetchHomePageData();
@@ -140,17 +144,21 @@ const page = async () => {
   const backage = await fetchBackageData();
   const category = await fetchCategoryData();
 
+
+  const translations = await getTranslations();
+  const t = translations?.data;
+
   return (
     <div className="background">
       <Header contact={contact.data} />
       <HeroSlider home={home.data} />
-      <BrandBottomHero />
-      <HomePageHosting category={category} backage ={backage.data.data} />
-      <HomePageServices servicesData={servicesData} />
-      <HomePageGridCards home={home.data} />
-      <HomePageLastGrid />
-      <HomePageOurClients />
-      <HomePageSeo home={home.data} />
+      <BrandBottomHero t={t} />
+      <HomePageHosting t={t} category={category} backage ={backage.data.data} />
+      <HomePageServices t={t} servicesData={servicesData} />
+      <HomePageGridCards t={t} home={home.data} />
+      <HomePageLastGrid t={t} />
+      <HomePageOurClients t={t} />
+      <HomePageSeo t={t} home={home.data} />
       <Footer contact={contact.data} />
     </div>
   );

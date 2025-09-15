@@ -2,7 +2,7 @@ import React from "react";
 import Arrow from "@/public/icons/arrow.svg";
 import Link from "next/link";
 
-const Hosting = ({ categoryData }) => {
+const Hosting = ({ categoryData,t }) => {
   return (
     <div className="hostingPageBannerVectora">
       <div className="container">
@@ -32,7 +32,7 @@ const Hosting = ({ categoryData }) => {
             </Link>
             <Arrow className="breadCrumbsArrow" />
             <Link href="/about">
-              <strong>Hosting</strong>
+              <strong>{t?.hostingPageTitle}</strong>
             </Link>
           </div>
         </div>

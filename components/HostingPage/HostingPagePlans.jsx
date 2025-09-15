@@ -103,7 +103,7 @@ import React from "react";
 import Tick from "@/public/icons/tick.svg";
 import X from "@/public/icons/x.svg";
 
-const HostingPagePlans = ({ backage }) => {
+const HostingPagePlans = ({ backage,t }) => {
   const packagesArray = Array.isArray(backage)
     ? backage
     : (backage && (Array.isArray(backage.data) ? backage.data : backage.data?.data)) || [];
@@ -136,12 +136,12 @@ const HostingPagePlans = ({ backage }) => {
   return (
     <div className="container">
       <div className="hostingPagePlans">
-        <span>Compare All WordPress Hosting Plans</span>
+        <span>{t?.hostingPageCompareTitle}</span>
       </div>
       <div className="hostingPagePlansVerticalSection">
         <div className="hostingPagePlansVertical">
           <div className="planFeaturesColumn">
-            <div className="planFeaturesHeader">Plan Features</div>
+            <div className="planFeaturesHeader">{t?.planFeatures}</div>
             {features.map((f, i) => (
               <div className="featureItem" key={f + i}>
                 {f}
@@ -195,7 +195,7 @@ const HostingPagePlans = ({ backage }) => {
                 })}
 
                 <button className={`selectPlanBtn ${pkg.isActive ? "active" : ""}`.trim()}>
-                  SELECT PLAN
+                  {t?.selectPlan}
                 </button>
               </div>
             );
