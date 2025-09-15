@@ -152,7 +152,7 @@ const page = async () => {
     <div className="background">
       <Header t={t} contact={contact.data} />
       <HeroSlider home={home.data} />
-      <BrandBottomHero t={t} />
+      {/* <BrandBottomHero t={t} /> */}
       <HomePageHosting t={t} category={category} backage ={backage.data.data} />
       <HomePageServices t={t} servicesData={servicesData} />
       <HomePageGridCards t={t} home={home.data} />
