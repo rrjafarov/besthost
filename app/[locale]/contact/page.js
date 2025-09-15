@@ -98,9 +98,9 @@ const page = async () => {
   return (
     <div>
       <div className="background">
-        <Header contact={contact.data} />
+        <Header t={t} contact={contact.data} />
         <Contact t={t} contact={contact.data} />
-        <Footer contact={contact.data} />
+        <Footer t={t} contact={contact.data} />
       </div>
     </div>
   );

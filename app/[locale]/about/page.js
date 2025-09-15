@@ -115,13 +115,13 @@ const page = async () => {
   return (
     <div>
       <div className="background">
-        <Header contact={contact.data} />
+        <Header t={t} contact={contact.data} />
         <AboutPageBanner t={t} />
         <AboutPageBreadCrumbs t={t} about={about} />
         <AboutPageWhyUs t={t} about={about} />
         <HomePageOurClients t={t} client={client} />
         {/* <HomePageLastGrid /> */}
-        <Footer contact={contact.data} />
+        <Footer t={t} contact={contact.data} />
       </div>
     </div>
   );

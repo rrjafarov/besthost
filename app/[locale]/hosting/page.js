@@ -175,7 +175,7 @@ const page = async ({ searchParams }) => {
   return (
     <div>
       <div className="hostingPageBannerVector">
-        <Header contact={contact.data} categoryData={backage.data.data} />
+        <Header t={t} contact={contact.data} categoryData={backage.data.data} />
         <Hosting t={t} categoryData={uniqueCategories} />
       </div>
       <HostingPagePlans
@@ -185,8 +185,8 @@ const page = async ({ searchParams }) => {
       />
       <WordpressFeatures t={t} categoryData={uniqueCategories} />
       <HostingGrid t={t} categoryData={uniqueCategories} />
-      <HostingSlider comments={filteredComments} />
-      <Footer contact={contact.data} />
+      <HostingSlider t={t} comments={filteredComments} />
+      <Footer t={t} contact={contact.data} />
     </div>
   );
 };

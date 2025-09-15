@@ -1,14 +1,17 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Logo from "@/public/icons/besthostLogo.svg";
 import Arrow from "@/public/icons/arrow.svg";
 import Drop from "@/public/icons/dropdown.svg";
 import MenuIcon from "@/public/icons/menu.svg";
+import HeaderMobileMenu from "@/components/HeaderMobileMenu";
 
 import Link from "next/link";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
-const Header = ({ contact }) => {
+const Header = ({ contact, t }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const router = useRouter();
   const pathname = usePathname() || "/";
   const searchParams = useSearchParams();
@@ -77,132 +80,153 @@ const Header = ({ contact }) => {
     router.replace(target);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <div id="header">
-      <div className="container">
-        <div className="headerTop">
-          {visibleLocales.map((l, idx) => (
-            <React.Fragment key={l}>
-              <span
-                role="button"
-                tabIndex={0}
-                onClick={() => changeLocale(l)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") changeLocale(l);
-                }}
-              >
-                {l.toUpperCase()}
-              </span>
-              {idx !== visibleLocales.length - 1 && <div className="langLine"></div>}
-            </React.Fragment>
-          ))}
-        </div>
-
-        <div className="headerMain">
-          <div className="headerLogo">
-            <Link href={buildHref("/")}>
-              <Logo />
-            </Link>
+    <>
+      <div id="header">
+        <div className="container">
+          <div className="headerTop">
+            {visibleLocales.map((l, idx) => (
+              <React.Fragment key={l}>
+                <span
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => changeLocale(l)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") changeLocale(l);
+                  }}
+                >
+                  {l.toUpperCase()}
+                </span>
+                {idx !== visibleLocales.length - 1 && (
+                  <div className="langLine"></div>
+                )}
+              </React.Fragment>
+            ))}
           </div>
 
-          <div className="headerLinks">
-            <ul>
-              <li className="dropdown">
-                <Link href={buildHref("/")}>
-                  <span>Hosting</span> <Arrow className="activeRotate" />
-                </Link>
-
-                <div className="dropdownMenu">
-                  <ul>
-                    <li>
-                      <Link href={buildHref("/")}>
-                        <div className="linkIconDrop">
-                          <Drop />
-                        </div>
-                        <div className="linkTextDrop">
-                          <span>Cloud Hosting</span>
-                          <strong>For large scale projects</strong>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={buildHref("/")}>
-                        <div className="linkIconDrop">
-                          <Drop />
-                        </div>
-                        <div className="linkTextDrop">
-                          <span>Cloud Hosting</span>
-                          <strong>For large scale projects</strong>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={buildHref("/")}>
-                        <div className="linkIconDrop">
-                          <Drop />
-                        </div>
-                        <div className="linkTextDrop">
-                          <span>Cloud Hosting</span>
-                          <strong>For large scale projects</strong>
-                        </div>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={buildHref("/")}>
-                        <div className="linkIconDrop">
-                          <Drop />
-                        </div>
-                        <div className="linkTextDrop">
-                          <span>Cloud Hosting</span>
-                          <strong>For large scale projects</strong>
-                        </div>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              <li>
-                <Link href={buildHref("/")}>
-                  <span>Domains</span> <Arrow className="activeRotate" />
-                </Link>
-              </li>
-
-              <li>
-                <Link href={buildHref("/services")}>
-                  <span>Services</span> 
-                </Link>
-              </li>
-
-              <li>
-                <Link href={buildHref("/")}>
-                  <span>Website</span>
-                </Link>
-              </li>
-
-              <li>
-                <Link href={buildHref("/blog")}>
-                  <span>Blog</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="headerContact">
-            <div className="headerContactItem">
-              <Link href={`tel:${contact?.phone || ""}`}>
-                <span>Dəstək xətti :</span>
-                <strong>{contact?.phone || "-"}</strong>
+          <div className="headerMain">
+            <div className="headerLogo">
+              <Link href={buildHref("/")}>
+                <Logo />
               </Link>
             </div>
-          </div>
 
-          <div className="mobileMenuIcon">
-            <MenuIcon />
+            <div className="headerLinks">
+              <ul>
+                <li className="dropdown">
+                  <Link href={buildHref("/")}>
+                    <span>Hosting</span> <Arrow className="activeRotate" />
+                  </Link>
+
+                  <div className="dropdownMenu">
+                    <ul>
+                      <li>
+                        <Link href={buildHref("/")}>
+                          <div className="linkIconDrop">
+                            <Drop />
+                          </div>
+                          <div className="linkTextDrop">
+                            <span>Cloud Hosting</span>
+                            <strong>For large scale projects</strong>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href={buildHref("/")}>
+                          <div className="linkIconDrop">
+                            <Drop />
+                          </div>
+                          <div className="linkTextDrop">
+                            <span>Cloud Hosting</span>
+                            <strong>For large scale projects</strong>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href={buildHref("/")}>
+                          <div className="linkIconDrop">
+                            <Drop />
+                          </div>
+                          <div className="linkTextDrop">
+                            <span>Cloud Hosting</span>
+                            <strong>For large scale projects</strong>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href={buildHref("/")}>
+                          <div className="linkIconDrop">
+                            <Drop />
+                          </div>
+                          <div className="linkTextDrop">
+                            <span>Cloud Hosting</span>
+                            <strong>For large scale projects</strong>
+                          </div>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li>
+                  <Link href={buildHref("/")}>
+                    <span>Domains</span> <Arrow className="activeRotate" />
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={buildHref("/services")}>
+                    <span>Services</span>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={buildHref("/")}>
+                    <span>Website</span>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={buildHref("/blog")}>
+                    <span>Blog</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="headerContact">
+              <div className="headerContactItem">
+                <Link href={`tel:${contact?.phone || ""}`}>
+                  <span>{t?.supportLine} :</span>
+                  <strong>{contact?.phone || "-"}</strong>
+                </Link>
+              </div>
+            </div>
+
+            <div className="mobileMenuIcon" onClick={toggleMobileMenu}>
+              <MenuIcon />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Mobile Menu */}
+      <HeaderMobileMenu
+        t={t}
+        isOpen={isMobileMenuOpen}
+        onClose={closeMobileMenu}
+        buildHref={buildHref}
+        contact={contact}
+      />
+    </>
   );
 };
 

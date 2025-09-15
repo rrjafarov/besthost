@@ -111,10 +111,10 @@ const page = async () => {
 
   return (
     <div>
-      <Header contact={contact.data} />
+      <Header t={t} contact={contact.data} />
       <div className="background">
         <BlogPage t={t} blogsData={blogsData} />
-        <Footer contact={contact.data} />
+        <Footer t={t} contact={contact.data} />
       </div>
     </div>
   );

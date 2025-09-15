@@ -124,10 +124,10 @@ export default async function Page({ params }) {
   // yalnız doğru servisi və digərlərini prop kimi veririk
   return (
     <div>
-      <Header contact={contact.data} />
+      <Header t={t} contact={contact.data} />
       <div className="background">
         <ServicesDetailPage t={t} service={service} otherServices={otherServices} />
-        <Footer contact={contact.data} />
+        <Footer t={t} contact={contact.data} />
       </div>
     </div>
   );

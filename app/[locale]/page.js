@@ -150,7 +150,7 @@ const page = async () => {
 
   return (
     <div className="background">
-      <Header contact={contact.data} />
+      <Header t={t} contact={contact.data} />
       <HeroSlider home={home.data} />
       <BrandBottomHero t={t} />
       <HomePageHosting t={t} category={category} backage ={backage.data.data} />
@@ -159,7 +159,7 @@ const page = async () => {
       <HomePageLastGrid t={t} />
       <HomePageOurClients t={t} />
       <HomePageSeo t={t} home={home.data} />
-      <Footer contact={contact.data} />
+      <Footer t={t} contact={contact.data} />
     </div>
   );
 };
