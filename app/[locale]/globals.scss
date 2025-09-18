@@ -2194,7 +2194,7 @@ $BestHostMainColor: #4a2682;
     }
   }
   .homePageOurClients02 {
-    margin-top: 40rem !important;
+    margin-top: 5rem !important;
   }
 }
 // ! HomePage AboutPageWhyUs.jsx  ---FINISH---
@@ -3764,6 +3764,7 @@ $BestHostMainColor: #4a2682;
   display: flex;
   justify-content: center;
   overflow-x: auto;
+  scrollbar-width: none
 }
 
 .hostingPagePlansVertical {
@@ -3945,6 +3946,23 @@ $BestHostMainColor: #4a2682;
 .rightButton {
   right: -3rem; /* -30px */
 }
+@media (max-width: 768px) {
+  .leftButton {
+    left: -1rem !important; /* -10px */
+  }
+
+  .rightButton {
+    right: -1rem !important; /* -10px */
+  }
+  .videoContainerOLder{
+    width: 100% !important;
+
+  }
+  .supportPrivacyContentLeft{
+    display: flex;
+    justify-content: flex-start !important;
+  }
+}
 
 .slideContent {
   display: flex;
@@ -4065,8 +4083,6 @@ $BestHostMainColor: #4a2682;
     height: 35rem;
     flex-shrink: 0;
     border-radius: 0.8rem;
-    // opacity: 0.7;
-    // background: #d9d2e2;
     img {
       width: 100%;
       height: 100%;
@@ -4103,6 +4119,21 @@ $BestHostMainColor: #4a2682;
       line-height: 2.2rem; /* 137.5% */
       letter-spacing: 0.01rem;
       opacity: 0.5;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hostSliderContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .hostSliderContentImg,
+    .hostSliderContentText {
+      width: 100%;
+    }
+    .hostSliderContentImg {
+      height: auto;
     }
   }
 }

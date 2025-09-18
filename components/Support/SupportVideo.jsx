@@ -24,6 +24,7 @@ const SupportVideo = ({terms}) => {
           margin: "2.7rem 0 7.2rem",
         }}
         onClick={() => setIsPlaying(true)}
+        className="videoContainerOLder"
       >
         {!isPlaying ? (
           <>
