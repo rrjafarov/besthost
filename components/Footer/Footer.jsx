@@ -9,7 +9,7 @@ import Phone from "@/public/icons/phone.svg";
 import Email from "@/public/icons/email.svg";
 import Location from "@/public/icons/location.svg";
 
-const Footer = ({ contact }) => {
+const Footer = ({ contact, t }) => {
   return (
     <div id="footer">
       <div className="footerItem">
@@ -21,9 +21,7 @@ const Footer = ({ contact }) => {
                   <Logo />
                 </Link>
                 <p>
-                  Our mission is to make life easier for website developers and
-                  their customers. We do it by offering easy to use, fast and
-                  reliable web hosting services.
+                  {t?.footerSeoText || "Besthost is a leading provider of web hosting"}
                 </p>
                 <div className="footerSocialNetwork footerNotMobile">
                   <Link href={contact.facebook}>
@@ -254,9 +252,7 @@ const Footer = ({ contact }) => {
             </Link>
             <Link href="#">
               <Location />
-              <span>  
-                {contact.address}
-              </span>
+              <span>{contact.address}</span>
             </Link>
           </div>
         </div>

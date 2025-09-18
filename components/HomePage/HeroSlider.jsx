@@ -153,7 +153,7 @@ const HeroSlider = ({home}) => {
                     <span className="heroSliderContentSubText">
                       {home?.banner_sub_title || "Get a Free .COM domain with Premium Plan"}
                     </span>
-                    <div className="heroSliderContentHost">
+                    {/* <div className="heroSliderContentHost">
                       <span>https://</span>
                       <div className="heroSliderContentHostDomain">
                         <span>yourdoctor.az</span>
@@ -161,7 +161,7 @@ const HeroSlider = ({home}) => {
                       <div className="heroSliderContentHostIcon">
                         <HostIcon id="host" />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
