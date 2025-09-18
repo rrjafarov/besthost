@@ -33,7 +33,7 @@ const AboutPageWhyUs = ({ about, t }) => {
                     />
                   </div>
                   <strong>{about?.data?.statistica_2}</strong>
-                  <p>{about?.data?.statistica_2_title}</p>
+                  <p>{about?.data?.statistica_3_title}</p>
                 </div>
               </div>
               <div className="xl-4 lg-4 md-6 sm-12">
