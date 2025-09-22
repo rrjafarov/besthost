@@ -676,14 +676,18 @@ $BestHostMainColor: #4a2682;
       mix-blend-mode: multiply;
     }
   }
+
   .heroSliderContent {
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 2;
-    transform: translate(-40%, -50%);
+    transform: translate(-50%, -50%);
     color: white;
-    width: 100%;
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
     h4 {
       color: #fcfcfc;
@@ -695,7 +699,6 @@ $BestHostMainColor: #4a2682;
       width: 55rem;
     }
     span {
-      // width: 45.1rem;
       color: #fcfcfc;
       font-feature-settings: "liga" off;
       font-size: 1.6rem;
@@ -705,6 +708,12 @@ $BestHostMainColor: #4a2682;
       letter-spacing: 0.16rem;
     }
     .heroSliderContentHost {
+      a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+      }
       padding-top: 3.2rem;
       display: flex;
       justify-content: flex-start;
@@ -759,6 +768,7 @@ $BestHostMainColor: #4a2682;
     position: absolute;
     top: 50%;
     left: 40% !important;
+    width: 80% !important;
     h4 {
       font-size: 5rem !important;
       width: 100% !important;
@@ -792,10 +802,13 @@ $BestHostMainColor: #4a2682;
     }
   }
   .heroSliderImage {
-    display: none !important;
+    display: block !important;
   }
   .heroSliderImageMobile {
-    display: block !important;
+    display: none !important;
+  }
+  .heroSliderContentImage {
+    display: none !important;
   }
 }
 // ! HomePage HeroSlider.jsx  ---FINISH---
@@ -3764,7 +3777,7 @@ $BestHostMainColor: #4a2682;
   display: flex;
   justify-content: center;
   overflow-x: auto;
-  scrollbar-width: none
+  scrollbar-width: none;
 }
 
 .hostingPagePlansVertical {
@@ -3954,11 +3967,10 @@ $BestHostMainColor: #4a2682;
   .rightButton {
     right: -1rem !important; /* -10px */
   }
-  .videoContainerOLder{
+  .videoContainerOLder {
     width: 100% !important;
-
   }
-  .supportPrivacyContentLeft{
+  .supportPrivacyContentLeft {
     display: flex;
     justify-content: flex-start !important;
   }
@@ -4523,5 +4535,14 @@ $BestHostMainColor: #4a2682;
 
   #header .headerMain .headerContact {
     display: none;
+  }
+}
+
+.partnersImageLogo {
+  height: 12.8rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

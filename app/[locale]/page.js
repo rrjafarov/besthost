@@ -27,6 +27,20 @@ async function fetchContactPageData() {
     throw error;
   }
 }
+async function fetchBannerData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+
+  try {
+    const { data: contact } = await axiosInstance.get(`/page-data/banners`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return contact;
+  } catch (error) {
+    throw error;
+  }
+}
 
 async function fetchServicesData() {
   const cookieStore = await cookies();
@@ -85,26 +99,38 @@ async function fetchCategoryData() {
     throw error;
   }
 }
-
+async function fetchPartnersData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: category } = await axiosInstance.get(`/page-data/partners`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return category;
+  } catch (error) {
+    throw error;
+  }
+}
 
 export async function generateMetadata() {
   const home = await fetchHomePageData();
   const imageUrl = home?.data.banner; // Using banner image from homepage data
-  const imageAlt = home?.data.meta_title || "Gipstar";
-  const canonicalUrl = "https://gipstar.az";
+  const imageAlt = home?.data.meta_title || "Besthost";
+  const canonicalUrl = "https://besthost.az";
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
 
   return {
-    title: home?.data.meta_title || "Gipstar",
+    title: home?.data.meta_title || "Besthost",
     description: home?.data.meta_description || "",
     openGraph: {
-      title: home?.data.meta_title || "Gipstar",
+      title: home?.data.meta_title || "Besthost",
       description: home?.data.meta_description || "",
       url: canonicalUrl,
       images: [
         {
-          url: imageUrl ? `https://admin.gipstar.az/storage${imageUrl}` : "",
+          url: imageUrl ? `https://admin.besthost.az/storage${imageUrl}` : "",
           alt: imageAlt,
           width: 1200,
           height: 630,
@@ -116,10 +142,10 @@ export async function generateMetadata() {
     },
     twitter: {
       card: "summary_large_image",
-      title: home?.data.meta_title || "Gipstar",
-      description: home?.data.meta_description || "Gipstar",
-      creator: "@gipstar",
-      site: "@gipstar",
+      title: home?.data.meta_title || "Besthost",
+      description: home?.data.meta_description || "Besthost",
+      creator: "@besthost",
+      site: "@besthost",
       images: [imageUrl],
     },
     alternates: {
@@ -139,20 +165,21 @@ async function getTranslations() {
 const page = async () => {
   const contact = await fetchContactPageData();
   const home = await fetchHomePageData();
+  const banner = await fetchBannerData();
+  const partner = await fetchPartnersData();
+  
   const services = await fetchServicesData();
   const servicesData = services.data.data;
   const backage = await fetchBackageData();
   const category = await fetchCategoryData();
-
-
   const translations = await getTranslations();
   const t = translations?.data;
 
   return (
     <div className="background">
       <Header t={t} contact={contact.data} />
-      <HeroSlider home={home.data} />
-      {/* <BrandBottomHero t={t} /> */}
+      <HeroSlider banner={banner} home={home.data} />
+      <BrandBottomHero partner={partner} t={t} />
       <HomePageHosting t={t} category={category} backage ={backage.data.data} />
       <HomePageServices t={t} servicesData={servicesData} />
       <HomePageGridCards t={t} home={home.data} />
