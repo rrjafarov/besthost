@@ -25,6 +25,7 @@ const HeroSlider = ({ home, partner }) => {
 
   return (
     <div className="container">
+
       <div id="main-slider" className="splide">
         <div className="splide__track">
           <ul className="splide__list">
@@ -35,7 +36,7 @@ const HeroSlider = ({ home, partner }) => {
                     width={500}
                     height={500}
                     alt="brand"
-                    src={`https://admin-besthost.onestudio.az/storage/${item.logo}`}
+                    src={`https://admin-besthost.onestudio.az/storage/${item.logo}` || "/images/brandsHero.png"}
                   />
                 </div>
               </li>

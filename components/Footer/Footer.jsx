@@ -9,6 +9,7 @@ import Phone from "@/public/icons/phone.svg";
 import Email from "@/public/icons/email.svg";
 import Location from "@/public/icons/location.svg";
 
+
 const Footer = ({ contact, t }) => {
   return (
     <div id="footer">

@@ -72,6 +72,20 @@ async function fetchHomePageData() {
 }
 
 
+async function fetchStaticSupportData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: home } = await axiosInstance.get(`/page-data/support`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return home;
+  } catch (error) {
+    throw error;
+  }
+}
+
 
 async function fetchBackageData() {
   const cookieStore = await cookies();
@@ -155,6 +169,8 @@ export async function generateMetadata() {
 }
 
 
+
+
 async function getTranslations() {
   try {
     const data = axiosInstance.get("/translation-list");
@@ -167,6 +183,7 @@ const page = async () => {
   const home = await fetchHomePageData();
   const banner = await fetchBannerData();
   const partner = await fetchPartnersData();
+  const staticSupport = await fetchStaticSupportData();
   
   const services = await fetchServicesData();
   const servicesData = services.data.data;
@@ -183,7 +200,7 @@ const page = async () => {
       <HomePageHosting t={t} category={category} backage ={backage.data.data} />
       <HomePageServices t={t} servicesData={servicesData} />
       <HomePageGridCards t={t} home={home.data} />
-      <HomePageLastGrid t={t} />
+      <HomePageLastGrid t={t} staticSupport={staticSupport} />
       <HomePageOurClients t={t} />
       <HomePageSeo t={t} home={home.data} />
       <Footer t={t} contact={contact.data} />

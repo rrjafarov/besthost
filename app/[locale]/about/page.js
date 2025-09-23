@@ -105,10 +105,26 @@ async function getTranslations() {
   } catch (err) {}
 }
 
+async function fetchStaticSupportData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: home } = await axiosInstance.get(`/page-data/support`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return home;
+  } catch (error) {
+    throw error;
+  }
+}
+
 const page = async () => {
   const translations = await getTranslations();
   const t = translations?.data;
   const about = await fetchAboutPageData();
+  const staticSupport = await fetchStaticSupportData();
+
   const client = await fetchClientsData();
   const contact = await fetchTermsPageData();
 
@@ -120,7 +136,7 @@ const page = async () => {
         <AboutPageBreadCrumbs t={t} about={about} />
         <AboutPageWhyUs t={t} about={about} />
         <HomePageOurClients t={t} client={client} />
-        {/* <HomePageLastGrid /> */}
+        <HomePageLastGrid t={t} staticSupport={staticSupport}/>
         <Footer t={t} contact={contact.data} />
       </div>
     </div>

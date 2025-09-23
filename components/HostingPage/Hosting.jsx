@@ -12,9 +12,6 @@ const Hosting = ({ categoryData,t }) => {
               <div className="hostingPageBannerBlockLeft">
                 <span>{categoryData[0].title}</span>
                 <p>
-                  {/* <div
-                    dangerouslySetInnerHTML={{ __html: }}
-                  ></div> */}
                   {categoryData[0].sub_title }
                 </p>
                 <button>Start Now</button>
