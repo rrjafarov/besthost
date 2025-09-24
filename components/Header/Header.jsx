@@ -433,6 +433,7 @@ const Header = ({ contact, category, t }) => {
         onClose={closeMobileMenu}
         buildHref={buildHref}
         contact={contact}
+        category={category} 
       />
     </>
   );

@@ -204,7 +204,7 @@ const page = async () => {
       <HomePageLastGrid t={t} staticSupport={staticSupport} />
       <HomePageOurClients t={t} />
       <HomePageSeo t={t} home={home.data} />
-      <Footer t={t} contact={contact.data} />
+      <Footer category={category} servicesData={servicesData} t={t} contact={contact.data} />
     </div>
   );
 };
