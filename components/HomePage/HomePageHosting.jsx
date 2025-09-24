@@ -83,7 +83,7 @@
 import React, { useState } from "react";
 import HomePageSelectHosting from "./HomePageSelectHosting";
 
-const HomePageHosting = ({t,backage, category}) => {
+const HomePageHosting = ({t,backage, category, contact}) => {
   const [selected, setSelected] = useState(category?.data?.data?.[0]?.category_name || ""); 
 
   return (
@@ -117,7 +117,7 @@ const HomePageHosting = ({t,backage, category}) => {
           <p>{t?.homePageHostingSubTitle}</p>
         </div>
 
-        <HomePageSelectHosting t={t} backage={backage} selected={selected} />
+        <HomePageSelectHosting t={t} backage={backage} selected={selected} contact={contact} />
       </div>
     </div>
   );

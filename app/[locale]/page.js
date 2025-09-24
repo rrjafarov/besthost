@@ -27,6 +27,7 @@ async function fetchContactPageData() {
     throw error;
   }
 }
+
 async function fetchBannerData() {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
@@ -197,7 +198,7 @@ const page = async () => {
       <Header t={t} contact={contact.data} />
       <HeroSlider banner={banner} home={home.data} />
       <BrandBottomHero partner={partner} t={t} />
-      <HomePageHosting t={t} category={category} backage ={backage.data.data} />
+      <HomePageHosting t={t} category={category} backage ={backage.data.data} contact={contact.data} />
       <HomePageServices t={t} servicesData={servicesData} />
       <HomePageGridCards t={t} home={home.data} />
       <HomePageLastGrid t={t} staticSupport={staticSupport} />

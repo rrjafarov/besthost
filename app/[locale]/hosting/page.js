@@ -265,6 +265,7 @@ async function fetchTermsPageData() {
   return contact;
 }
 
+
 async function fetchFuturesData() {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
@@ -297,6 +298,9 @@ async function fetchCommentsData() {
   });
   return comments;
 }
+
+
+
 
 export async function generateMetadata({ searchParams }) {
   const contact = await fetchTermsPageData();
@@ -443,8 +447,6 @@ const page = async ({ searchParams }) => {
   } else {
     filteredFutures = allFutures;
   }
-
-  console.log("Filtered Futures:", filteredFutures);
   return (
     <div>
       <div className="hostingPageBannerVector">
@@ -455,6 +457,7 @@ const page = async ({ searchParams }) => {
         t={t}
         backage={backage.data.data}
         comments={filteredComments}
+        contact={contact.data} 
       />
       <WordpressFeatures t={t} categoryData={uniqueCategories} futuresData={filteredFutures} />
       <HostingGrid t={t} categoryData={uniqueCategories} />
