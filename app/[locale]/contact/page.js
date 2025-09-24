@@ -98,7 +98,7 @@ const page = async () => {
   return (
     <div>
       <div className="background">
-        <Header t={t} contact={contact.data} />
+        <Header category={category}  t={t} contact={contact.data} />
         <Contact t={t} contact={contact.data} />
         <Footer t={t} contact={contact.data} />
       </div>

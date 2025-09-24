@@ -117,7 +117,7 @@ const page = async () => {
   return (
     <div>
       <div className="background">
-        <Header t={t} contact={contact.data} />
+        <Header category={category}  t={t} contact={contact.data} />
         <ServicesPageBanner  t={t} />
         <ServicesPageCards t={t} services={servicesData} />
         {/* <HomePageLastGrid /> */}

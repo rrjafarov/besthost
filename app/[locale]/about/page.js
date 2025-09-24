@@ -131,7 +131,7 @@ const page = async () => {
   return (
     <div>
       <div className="background">
-        <Header t={t} contact={contact.data} />
+        <Header category={category}  t={t} contact={contact.data} />
         <AboutPageBanner t={t} />
         <AboutPageBreadCrumbs t={t} about={about} />
         <AboutPageWhyUs t={t} about={about} />

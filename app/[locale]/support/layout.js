@@ -78,7 +78,7 @@ const SupportPage = ({ children }) => {
   return (
     <>
       <div className="background">
-        <Header contact={contact.data} t={t} />
+        <Header category={category}  contact={contact.data} t={t} />
         <div className="besthostSupportPages">
           <div className="container">
             {/* Breadcrumbs */}

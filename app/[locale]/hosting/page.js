@@ -450,7 +450,7 @@ const page = async ({ searchParams }) => {
   return (
     <div>
       <div className="hostingPageBannerVector">
-        <Header t={t} contact={contact.data} categoryData={backage.data.data} />
+        <Header category={category}  t={t} contact={contact.data} categoryData={backage.data.data} />
         <Hosting t={t} categoryData={uniqueCategories} />
       </div>
       <HostingPagePlans

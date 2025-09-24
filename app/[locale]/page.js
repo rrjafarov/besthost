@@ -195,7 +195,7 @@ const page = async () => {
 
   return (
     <div className="background">
-      <Header t={t} contact={contact.data} />
+      <Header t={t} contact={contact.data} category={category}  />
       <HeroSlider banner={banner} home={home.data} />
       <BrandBottomHero partner={partner} t={t} />
       <HomePageHosting t={t} category={category} backage ={backage.data.data} contact={contact.data} />

@@ -126,7 +126,7 @@ export default async function Page({ params }) {
 
   return (
     <div>
-      <Header t={t} contact={contact.data} />
+      <Header category={category}  t={t} contact={contact.data} />
       <div className="background">
         <BlogDetailPage t={t} blog={blog} otherBlogs={otherBlogs} />
         <Footer t={t} contact={contact.data} />
