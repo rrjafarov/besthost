@@ -206,22 +206,6 @@
 
 // export default Header;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 import React, { useState } from "react";
 import Logo from "@/public/icons/besthostLogo.svg";
@@ -397,14 +381,13 @@ const Header = ({ contact, category, t }) => {
                 </li>
 
                 <li>
-                  <Link href={buildHref("#")}>
-                    <span>{t?.domains}</span>
-                  </Link>
-                </li>
-
-                <li>
                   <Link href={buildHref("/blog")}>
                     <span>{t?.blogPageTitle}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={buildHref("/contact")}>
+                    <span>{t?.contactPageTitle}</span>
                   </Link>
                 </li>
               </ul>
@@ -433,7 +416,7 @@ const Header = ({ contact, category, t }) => {
         onClose={closeMobileMenu}
         buildHref={buildHref}
         contact={contact}
-        category={category} 
+        category={category}
       />
     </>
   );
