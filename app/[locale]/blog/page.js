@@ -20,6 +20,35 @@ async function fetchBlogsData() {
   }
 }
 
+
+async function fetchServicesData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+
+  try {
+    const { data: services } = await axiosInstance.get(`/page-data/services`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return services;
+  } catch (error) {
+    throw error;
+  }
+}
+async function fetchCategoryData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: category } = await axiosInstance.get(`/page-data/categories`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return category;
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function fetchBlogPageInfoData() {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
@@ -104,7 +133,10 @@ const page = async () => {
   const blogs = await fetchBlogsData();
   const blogsData = blogs.data.data;
   const contact = await fetchTermsPageData();
+  const services = await fetchServicesData();
+  const servicesData = services.data.data;
 
+  const category = await fetchCategoryData();
 
   const translations = await getTranslations();
   const t = translations?.data;
@@ -114,7 +146,7 @@ const page = async () => {
       <Header category={category}  t={t} contact={contact.data} />
       <div className="background">
         <BlogPage t={t} blogsData={blogsData} />
-        <Footer t={t} contact={contact.data} />
+        <Footer category={category} servicesData={servicesData} t={t} contact={contact.data} />
       </div>
     </div>
   );

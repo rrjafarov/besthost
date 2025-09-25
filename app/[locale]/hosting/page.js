@@ -289,6 +289,20 @@ async function fetchBackageData(categoryId) {
   });
   return backage;
 }
+async function fetchServicesData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+
+  try {
+    const { data: services } = await axiosInstance.get(`/page-data/services`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return services;
+  } catch (error) {
+    throw error;
+  }
+}
 
 async function fetchCommentsData() {
   const cookieStore = await cookies();
@@ -297,6 +311,19 @@ async function fetchCommentsData() {
     cache: "no-store",
   });
   return comments;
+}
+async function fetchCategoryData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: category } = await axiosInstance.get(`/page-data/categories`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return category;
+  } catch (error) {
+    throw error;
+  }
 }
 
 
@@ -387,6 +414,9 @@ async function getTranslations() {
 const page = async ({ searchParams }) => {
   const contact = await fetchTermsPageData();
   const translations = await getTranslations();
+  const category = await fetchCategoryData();
+  const services = await fetchServicesData();
+  const servicesData = services.data.data;
   const t = translations?.data;
 
   const rawCategoryParam =
@@ -462,7 +492,7 @@ const page = async ({ searchParams }) => {
       <WordpressFeatures t={t} categoryData={uniqueCategories} futuresData={filteredFutures} />
       <HostingGrid t={t} categoryData={uniqueCategories} />
       <HostingSlider t={t} comments={filteredComments} />
-      <Footer t={t} contact={contact.data} />
+      <Footer category={category} servicesData={servicesData} t={t} contact={contact.data} />
     </div>
   );
 };

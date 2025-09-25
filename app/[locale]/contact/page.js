@@ -44,7 +44,33 @@ async function getTranslations() {
   } catch (err) {
   }
 }
+async function fetchCategoryData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: category } = await axiosInstance.get(`/page-data/categories`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return category;
+  } catch (error) {
+    throw error;
+  }
+}
+async function fetchServicesData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
 
+  try {
+    const { data: services } = await axiosInstance.get(`/page-data/services`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return services;
+  } catch (error) {
+    throw error;
+  }
+}
 export async function generateMetadata() {
   const seo = await fetchContactSeoPageData();
   const imageUrl = seo?.data?.og_image;
@@ -94,13 +120,16 @@ const page = async () => {
   const contact = await fetchTermsPageData();
   const seo = await fetchContactSeoPageData();
   const seoData = seo.data;
+  const category = await fetchCategoryData();
+  const services = await fetchServicesData();
+  const servicesData = services.data.data;
 
   return (
     <div>
       <div className="background">
         <Header category={category}  t={t} contact={contact.data} />
         <Contact t={t} contact={contact.data} />
-        <Footer t={t} contact={contact.data} />
+        <Footer category={category} servicesData={servicesData} t={t} contact={contact.data} />
       </div>
     </div>
   );

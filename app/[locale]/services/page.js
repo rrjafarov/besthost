@@ -21,6 +21,19 @@ async function fetchServicesData() {
     throw error;
   }
 }
+async function fetchCategoryData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: category } = await axiosInstance.get(`/page-data/categories`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return category;
+  } catch (error) {
+    throw error;
+  }
+}
 
 async function fetchServicePageInfoData() {
   const cookieStore = await cookies();
@@ -107,12 +120,15 @@ async function getTranslations() {
 
 const page = async () => {
   const services = await fetchServicesData();
+  // const servicesData = services.data.data;
   const servicesData = services.data.data;
-  const contact = await fetchTermsPageData();
 
+  const contact = await fetchTermsPageData();
+  const category = await fetchCategoryData();
 
   const translations = await getTranslations();
   const t = translations?.data;
+
 
   return (
     <div>
@@ -121,7 +137,7 @@ const page = async () => {
         <ServicesPageBanner  t={t} />
         <ServicesPageCards t={t} services={servicesData} />
         {/* <HomePageLastGrid /> */}
-        <Footer t={t} contact={contact.data} />
+        <Footer category={category} servicesData={servicesData} t={t} contact={contact.data} /> 
       </div>
     </div>
   );

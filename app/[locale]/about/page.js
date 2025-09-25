@@ -55,6 +55,34 @@ async function fetchClientsData() {
   }
 }
 
+async function fetchCategoryData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+  try {
+    const { data: category } = await axiosInstance.get(`/page-data/categories`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return category;
+  } catch (error) {
+    throw error;
+  }
+}
+async function fetchServicesData() {
+  const cookieStore = await cookies();
+  const lang = cookieStore.get("NEXT_LOCALE");
+
+  try {
+    const { data: services } = await axiosInstance.get(`/page-data/services`, {
+      // headers: { Lang: lang.value },
+      cache: "no-store",
+    });
+    return services;
+  } catch (error) {
+    throw error;
+  }
+}
+
 export async function generateMetadata() {
   const seo = await fetchAboutPageData();
   const imageUrl = seo?.data.og_image;
@@ -128,6 +156,10 @@ const page = async () => {
   const client = await fetchClientsData();
   const contact = await fetchTermsPageData();
 
+  const category = await fetchCategoryData();
+  const services = await fetchServicesData();
+  const servicesData = services.data.data;
+
   return (
     <div>
       <div className="background">
@@ -137,7 +169,7 @@ const page = async () => {
         <AboutPageWhyUs t={t} about={about} />
         <HomePageOurClients t={t} client={client} />
         <HomePageLastGrid t={t} staticSupport={staticSupport}/>
-        <Footer t={t} contact={contact.data} />
+        <Footer category={category} servicesData={servicesData} t={t} contact={contact.data} />
       </div>
     </div>
   );

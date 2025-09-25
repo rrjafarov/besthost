@@ -3088,7 +3088,7 @@ $BestHostMainColor: #4a2682;
         margin-top: 3rem;
         background-image: url("/icons/homeGrid.svg");
         background-repeat: no-repeat;
-        background-size: auto;
+        background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -3096,7 +3096,7 @@ $BestHostMainColor: #4a2682;
         top: 0;
         flex-shrink: 0;
         width: 100%;
-        width: 56.9rem;
+        // width: 56.9rem;
         // height: 35rem;
         img {
           width: 100%;
@@ -4538,11 +4538,31 @@ $BestHostMainColor: #4a2682;
   }
 }
 
+.partnersSliderWrapper {
+  padding: 2rem 0;
+}
+
 .partnersImageLogo {
-  height: 12.8rem;
+  height: 14rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
   img {
     width: 100%;
+    border-radius: 1rem;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    filter: grayscale(100%) blur(0.2px);
+    transition: filter 0.4s ease;
   }
+  &:hover img {
+    filter: none;
+    transition: filter 0.4s ease;
+  }
+}
+
+.partnersImageWrapper {
+  padding: 2rem 0;
+  display: flex;
+  gap: 2rem;
 }

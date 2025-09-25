@@ -399,7 +399,7 @@ const Footer = ({ contact, t, category, servicesData }) => {
 
             <div className="xl-9 lg-9 md-6 sm-12">
               <div className="row">
-                <div className="xl-3 lg-4 md-6 sm-6">
+                <div className="xl-4 lg-4 md-6 sm-6">
                   <div className="footerLinks">
                     <ul>
                       <span>{t?.hostingPageTitle}</span>
@@ -421,7 +421,7 @@ const Footer = ({ contact, t, category, servicesData }) => {
                   </div>
                 </div>
 
-                <div className="xl-3 lg-2 md-6 sm-6">
+                <div className="xl-4 lg-2 md-6 sm-6">
                   <div className="footerLinks">
                     <ul>
                       <span>{t?.servicesPageTitle}</span>
@@ -466,24 +466,21 @@ const Footer = ({ contact, t, category, servicesData }) => {
                     </ul>
                   </div>
                 </div>
-                <div className="xl-3 lg-4 md-6 sm-6">
+                <div className="xl-4 lg-4 md-6 sm-6">
                   <div className="footerLinks">
                     <ul>
-                      <span>Services</span>
+                      <span>{t?.supportPageTitle}</span>
                       <li>
-                        <Link href="#">Web Hosting </Link>
+                        <Link href="/support/terms">{t?.terms}</Link>
                       </li>
                       <li>
-                        <Link href="#">VPS Hosting </Link>
+                        <Link href="/support/privacy">{t?.privacy} </Link>
                       </li>
                       <li>
-                        <Link href="#">Minecraft Server Hosting </Link>
-                      </li>
-                      <li>
-                        <Link href="#">Website Builder </Link>
+                        <Link href="/support/video">{t?.video}</Link>
                       </li>
                     </ul>
-                    <ul>
+                    {/* <ul>
                       <span>Company</span>
                       <li>
                         <Link href="#">Domain Checker </Link>
@@ -491,10 +488,13 @@ const Footer = ({ contact, t, category, servicesData }) => {
                       <li>
                         <Link href="#">Domain Transfer </Link>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
                 </div>
-                <div className="xl-3 lg-4 md-6 sm-6">
+
+
+
+                {/* <div className="xl-3 lg-4 md-6 sm-6">
                   <div className="footerLinks">
                     <ul>
                       <span>Support</span>
@@ -521,7 +521,9 @@ const Footer = ({ contact, t, category, servicesData }) => {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </div> */}
+
+
               </div>
             </div>
           </div>
