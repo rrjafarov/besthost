@@ -21,9 +21,9 @@ const HomePageGridCards = ({ t,home }) => {
             <div className="homeGridContent">
               <span>{home.title_1}</span>
               <div dangerouslySetInnerHTML={{ __html: home?.content_1 }}></div>
-              <Link href="#">
+              {/* <Link href="#">
                 <span>{t?.viewMore}</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -33,9 +33,9 @@ const HomePageGridCards = ({ t,home }) => {
             <div className="homeGridContent">
               <span>{home.title_2}</span>
               <div dangerouslySetInnerHTML={{ __html: home?.content_2 }}></div>
-              <Link href="#">
+              {/* <Link href="#">
                 <span>{t?.viewMore}</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className="xl-6 lg-6 md-6 sm-12" id="order2">
@@ -65,9 +65,9 @@ const HomePageGridCards = ({ t,home }) => {
             <div className="homeGridContent">
               <span>{home.title_3}</span>
               <div dangerouslySetInnerHTML={{ __html: home?.content_3 }}></div>
-              <Link href="#">
+              {/* <Link href="#">
                 <span>{t?.viewMore}</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

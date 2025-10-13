@@ -25,9 +25,9 @@ const HostingGrid = ({categoryData ,t}) => {
                     dangerouslySetInnerHTML={{ __html: categoryData[0].content_2}}
                   ></div>
               </p>
-              <Link href="#">
+              {/* <Link href="#">
                 <span>{t?.seeMore}</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

@@ -338,8 +338,6 @@ const Header = ({ contact, category, t }) => {
                   <div className="dropdownMenu">
                     <ul>
                       {category?.data?.data?.map((categoryItem) => {
-                        // burada HomePageSelectHosting-dəki məntiqin eynisini tətbiq edirik:
-                        // kateqoriya id-si varsa onu query-də göndər, yoxdursa sadəcə /hosting-ə apar
                         const categoryId = categoryItem?.id;
                         const hostingHref = categoryId
                           ? buildHref(
