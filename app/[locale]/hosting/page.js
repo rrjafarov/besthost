@@ -219,31 +219,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React from "react";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
@@ -265,7 +240,6 @@ async function fetchTermsPageData() {
   return contact;
 }
 
-
 async function fetchFuturesData() {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
@@ -275,27 +249,21 @@ async function fetchFuturesData() {
   return contact;
 }
 
-async function fetchBackageData(categoryId) {
+async function fetchBackageData() {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
-  let url = `/page-data/packages?per_page=12`;
-  if (categoryId) {
-    url += `&filters[0][key]=category&filters[0][operator]=IN&filters[0][value][]=${encodeURIComponent(
-      categoryId
-    )}`;
-  }
-  const { data: backage } = await axiosInstance.get(url, {
+  const { data: backage } = await axiosInstance.get(`/page-data/packages?per_page=100`, {
     cache: "no-store",
   });
   return backage;
 }
+
 async function fetchServicesData() {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
 
   try {
     const { data: services } = await axiosInstance.get(`/page-data/services`, {
-      // headers: { Lang: lang.value },
       cache: "no-store",
     });
     return services;
@@ -312,12 +280,12 @@ async function fetchCommentsData() {
   });
   return comments;
 }
+
 async function fetchCategoryData() {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE");
   try {
     const { data: category } = await axiosInstance.get(`/page-data/categories`, {
-      // headers: { Lang: lang.value },
       cache: "no-store",
     });
     return category;
@@ -326,27 +294,20 @@ async function fetchCategoryData() {
   }
 }
 
-
-
-
 export async function generateMetadata({ searchParams }) {
   const contact = await fetchTermsPageData();
-
-  const rawCategoryParam =
-    searchParams?.["filters[0][value][]"] ||
-    searchParams?.["filters[0][value]"] ||
-    searchParams?.category ||
-    null;
-
-  const categoryId = Array.isArray(rawCategoryParam)
-    ? rawCategoryParam[0]
-    : rawCategoryParam;
-
-  const backage = await fetchBackageData(categoryId);
+  const categorySlug = searchParams?.category || null;
+  const backage = await fetchBackageData();
 
   const rawBackageItems = backage?.data?.data ?? [];
 
-  const flattenedCategories = rawBackageItems.flatMap((item) =>
+  const filteredBySlug = rawBackageItems.filter((item) => {
+    if (!categorySlug) return false;
+    const cats = Array.isArray(item.category) ? item.category : [];
+    return cats.some((cat) => cat.url_slug === categorySlug);
+  });
+
+  const flattenedCategories = filteredBySlug.flatMap((item) =>
     Array.isArray(item.category) ? item.category : []
   );
 
@@ -419,18 +380,19 @@ const page = async ({ searchParams }) => {
   const servicesData = services.data.data;
   const t = translations?.data;
 
-  const rawCategoryParam =
-    searchParams?.["filters[0][value][]"] ||
-    searchParams?.["filters[0][value]"] ||
-    searchParams?.category ||
-    null;
+  const categorySlug = searchParams?.category || null;
 
-  const categoryId = Array.isArray(rawCategoryParam)
-    ? rawCategoryParam[0]
-    : rawCategoryParam;
+  const backage = await fetchBackageData();
+  const allPackages = backage?.data?.data ?? [];
 
-  const backage = await fetchBackageData(categoryId);
-  
+  // URL-dən gələn slug-a görə paketləri filtrləyin
+  const filteredBackage = categorySlug
+    ? allPackages.filter((item) => {
+        const cats = Array.isArray(item.category) ? item.category : [];
+        return cats.some((cat) => cat.url_slug === categorySlug);
+      })
+    : allPackages;
+
   // Futures datasını fetch et
   const futuresData = await fetchFuturesData();
 
@@ -438,18 +400,16 @@ const page = async ({ searchParams }) => {
   const allComments = commentsResponse?.data?.data ?? [];
 
   let filteredComments = [];
-  if (categoryId) {
+  if (categorySlug) {
     filteredComments = allComments.filter((c) => {
       const cats = Array.isArray(c.category) ? c.category : [];
-      return cats.some((cat) => String(cat.id) === String(categoryId));
+      return cats.some((cat) => cat.url_slug === categorySlug);
     });
   } else {
     filteredComments = [];
   }
 
-  const rawBackageItems = backage?.data?.data ?? [];
-
-  const flattenedCategories = rawBackageItems.flatMap((item) =>
+  const flattenedCategories = filteredBackage.flatMap((item) =>
     Array.isArray(item.category) ? item.category : []
   );
 
@@ -465,29 +425,30 @@ const page = async ({ searchParams }) => {
     }
   }
 
-  // Futures datasını category ID-yə görə filter et
+  // Futures datasını category slug-a görə filter et
   const allFutures = futuresData?.data?.data ?? [];
   let filteredFutures = [];
-  
-  if (categoryId) {
+
+  if (categorySlug) {
     filteredFutures = allFutures.filter((future) => {
       const cats = Array.isArray(future.category) ? future.category : [];
-      return cats.some((cat) => String(cat.id) === String(categoryId));
+      return cats.some((cat) => cat.url_slug === categorySlug);
     });
   } else {
     filteredFutures = allFutures;
   }
+
   return (
     <div>
       <div className="hostingPageBannerVector">
-        <Header category={category}  t={t} contact={contact.data} categoryData={backage.data.data} />
+        <Header category={category} t={t} contact={contact.data} categoryData={filteredBackage} />
         <Hosting t={t} categoryData={uniqueCategories} />
       </div>
       <HostingPagePlans
         t={t}
-        backage={backage.data.data}
+        backage={filteredBackage}
         comments={filteredComments}
-        contact={contact.data} 
+        contact={contact.data}
       />
       <WordpressFeatures t={t} categoryData={uniqueCategories} futuresData={filteredFutures} />
       <HostingGrid t={t} categoryData={uniqueCategories} />
@@ -498,3 +459,288 @@ const page = async ({ searchParams }) => {
 };
 
 export default page;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import Footer from "@/components/Footer/Footer";
+// import Header from "@/components/Header/Header";
+// import Hosting from "@/components/HostingPage/Hosting";
+// import HostingPagePlans from "@/components/HostingPage/HostingPagePlans";
+// import WordpressFeatures from "@/components/HostingPage/WordpressFeatures";
+// import HomePageLastGrid from "@/components/HomePage/HomePageLastGrid";
+// import HostingGrid from "@/components/HostingPage/HostingGrid";
+// import HostingSlider from "@/components/HostingPage/HostingSlider";
+// import { cookies } from "next/headers";
+// import axiosInstance from "@/lib/axios";
+
+// async function fetchTermsPageData() {
+//   const cookieStore = await cookies();
+//   const lang = cookieStore.get("NEXT_LOCALE");
+//   const { data: contact } = await axiosInstance.get(`/page-data/contact`, {
+//     cache: "no-store",
+//   });
+//   return contact;
+// }
+
+
+// async function fetchFuturesData() {
+//   const cookieStore = await cookies();
+//   const lang = cookieStore.get("NEXT_LOCALE");
+//   const { data: contact } = await axiosInstance.get(`/page-data/futures`, {
+//     cache: "no-store",
+//   });
+//   return contact;
+// }
+
+// async function fetchBackageData(categoryId) {
+//   const cookieStore = await cookies();
+//   const lang = cookieStore.get("NEXT_LOCALE");
+//   let url = `/page-data/packages?per_page=12`;
+//   if (categoryId) {
+//     url += `&filters[0][key]=category&filters[0][operator]=IN&filters[0][value][]=${encodeURIComponent(
+//       categoryId
+//     )}`;
+//   }
+//   const { data: backage } = await axiosInstance.get(url, {
+//     cache: "no-store",
+//   });
+//   return backage;
+// }
+// async function fetchServicesData() {
+//   const cookieStore = await cookies();
+//   const lang = cookieStore.get("NEXT_LOCALE");
+
+//   try {
+//     const { data: services } = await axiosInstance.get(`/page-data/services`, {
+//       // headers: { Lang: lang.value },
+//       cache: "no-store",
+//     });
+//     return services;
+//   } catch (error) {
+//     throw error;
+//   }
+// }
+
+// async function fetchCommentsData() {
+//   const cookieStore = await cookies();
+//   const lang = cookieStore.get("NEXT_LOCALE");
+//   const { data: comments } = await axiosInstance.get(`/page-data/comments`, {
+//     cache: "no-store",
+//   });
+//   return comments;
+// }
+// async function fetchCategoryData() {
+//   const cookieStore = await cookies();
+//   const lang = cookieStore.get("NEXT_LOCALE");
+//   try {
+//     const { data: category } = await axiosInstance.get(`/page-data/categories`, {
+//       // headers: { Lang: lang.value },
+//       cache: "no-store",
+//     });
+//     return category;
+//   } catch (error) {
+//     throw error;
+//   }
+// }
+
+
+
+
+// export async function generateMetadata({ searchParams }) {
+//   const contact = await fetchTermsPageData();
+
+//   const rawCategoryParam =
+//     searchParams?.["filters[0][value][]"] ||
+//     searchParams?.["filters[0][value]"] ||
+//     searchParams?.category ||
+//     null;
+
+//   const categoryId = Array.isArray(rawCategoryParam)
+//     ? rawCategoryParam[0]
+//     : rawCategoryParam;
+
+//   const backage = await fetchBackageData(categoryId);
+
+//   const rawBackageItems = backage?.data?.data ?? [];
+
+//   const flattenedCategories = rawBackageItems.flatMap((item) =>
+//     Array.isArray(item.category) ? item.category : []
+//   );
+
+//   const uniqueCategories = [];
+//   const seenCategoryIds = new Set();
+//   for (const cat of flattenedCategories) {
+//     if (cat && cat.id !== undefined && cat.id !== null) {
+//       const idStr = String(cat.id);
+//       if (!seenCategoryIds.has(idStr)) {
+//         seenCategoryIds.add(idStr);
+//         uniqueCategories.push(cat);
+//       }
+//     }
+//   }
+
+//   const seoItem = uniqueCategories?.[0];
+//   const imageUrl = seoItem?.image;
+//   const imageAlt = seoItem?.meta_title || "Gipstar";
+//   const canonicalUrl = "https://gipstar.az";
+//   const cookieStore = await cookies();
+//   const lang = cookieStore.get("NEXT_LOCALE");
+
+//   return {
+//     title: seoItem?.meta_title,
+//     description: seoItem?.meta_description,
+//     openGraph: {
+//       title: seoItem?.meta_title || "Gipstar",
+//       description: seoItem?.meta_description,
+//       url: canonicalUrl,
+//       images: [
+//         {
+//           url: imageUrl
+//             ? `https://admin.gipstar.az/storage${imageUrl}`
+//             : undefined,
+//           alt: imageAlt,
+//           width: 1200,
+//           height: 630,
+//         },
+//       ],
+//       site_name: "gipstar.az",
+//       type: "website",
+//       locale: lang?.value,
+//     },
+//     twitter: {
+//       card: "summary_large_image",
+//       title: seoItem?.meta_title || "Gipstar",
+//       description: seoItem?.meta_description || "Gipstar",
+//       creator: "@gipstar",
+//       site: "@gipstar",
+//       images: imageUrl ? [imageUrl] : [],
+//     },
+//     alternates: {
+//       canonical: canonicalUrl,
+//     },
+//   };
+// }
+
+// async function getTranslations() {
+//   try {
+//     const data = axiosInstance.get("/translation-list");
+//     return data;
+//   } catch (err) {}
+// }
+
+// const page = async ({ searchParams }) => {
+//   const contact = await fetchTermsPageData();
+//   const translations = await getTranslations();
+//   const category = await fetchCategoryData();
+//   const services = await fetchServicesData();
+//   const servicesData = services.data.data;
+//   const t = translations?.data;
+
+//   const rawCategoryParam =
+//     searchParams?.["filters[0][value][]"] ||
+//     searchParams?.["filters[0][value]"] ||
+//     searchParams?.category ||
+//     null;
+
+//   const categoryId = Array.isArray(rawCategoryParam)
+//     ? rawCategoryParam[0]
+//     : rawCategoryParam;
+
+//   const backage = await fetchBackageData(categoryId);
+  
+//   // Futures datasını fetch et
+//   const futuresData = await fetchFuturesData();
+
+//   const commentsResponse = await fetchCommentsData();
+//   const allComments = commentsResponse?.data?.data ?? [];
+
+//   let filteredComments = [];
+//   if (categoryId) {
+//     filteredComments = allComments.filter((c) => {
+//       const cats = Array.isArray(c.category) ? c.category : [];
+//       return cats.some((cat) => String(cat.id) === String(categoryId));
+//     });
+//   } else {
+//     filteredComments = [];
+//   }
+
+//   const rawBackageItems = backage?.data?.data ?? [];
+
+//   const flattenedCategories = rawBackageItems.flatMap((item) =>
+//     Array.isArray(item.category) ? item.category : []
+//   );
+
+//   const uniqueCategories = [];
+//   const seenCategoryIds = new Set();
+//   for (const cat of flattenedCategories) {
+//     if (cat && cat.id !== undefined && cat.id !== null) {
+//       const idStr = String(cat.id);
+//       if (!seenCategoryIds.has(idStr)) {
+//         seenCategoryIds.add(idStr);
+//         uniqueCategories.push(cat);
+//       }
+//     }
+//   }
+
+//   // Futures datasını category ID-yə görə filter et
+//   const allFutures = futuresData?.data?.data ?? [];
+//   let filteredFutures = [];
+  
+//   if (categoryId) {
+//     filteredFutures = allFutures.filter((future) => {
+//       const cats = Array.isArray(future.category) ? future.category : [];
+//       return cats.some((cat) => String(cat.id) === String(categoryId));
+//     });
+//   } else {
+//     filteredFutures = allFutures;
+//   }
+//   return (
+//     <div>
+//       <div className="hostingPageBannerVector">
+//         <Header category={category}  t={t} contact={contact.data} categoryData={backage.data.data} />
+//         <Hosting t={t} categoryData={uniqueCategories} />
+//       </div>
+//       <HostingPagePlans
+//         t={t}
+//         backage={backage.data.data}
+//         comments={filteredComments}
+//         contact={contact.data} 
+//       />
+//       <WordpressFeatures t={t} categoryData={uniqueCategories} futuresData={filteredFutures} />
+//       <HostingGrid t={t} categoryData={uniqueCategories} />
+//       <HostingSlider t={t} comments={filteredComments} />
+//       <Footer category={category} servicesData={servicesData} t={t} contact={contact.data} />
+//     </div>
+//   );
+// };
+
+// export default page;

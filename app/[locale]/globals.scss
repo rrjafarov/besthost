@@ -989,7 +989,8 @@ $BestHostMainColor: #4a2682;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 5.3rem 0 2.4rem;
+    padding: 4.3rem 0 1.4rem;
+    height: 28rem;
     .homePageHostingCardTopText {
       display: flex;
       justify-content: center;
@@ -1014,7 +1015,7 @@ $BestHostMainColor: #4a2682;
         line-height: normal;
         letter-spacing: 0.065rem;
         text-align: center;
-        padding: 1rem 1rem 0 1rem;
+        padding: 1rem 2.5rem 0 2.5rem;
       }
     }
     .homePageHostingCardTopPriceArea {
@@ -1112,7 +1113,7 @@ $BestHostMainColor: #4a2682;
       ul {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
         gap: 1.5rem;
         li {
@@ -3701,7 +3702,7 @@ $BestHostMainColor: #4a2682;
     gap: 1.8rem;
     align-items: flex-start;
     justify-content: flex-start;
-    span {
+    h2 {
       color: var(--05, #2a0d56);
       font-size: 5.2rem;
       font-style: normal;
@@ -3717,6 +3718,9 @@ $BestHostMainColor: #4a2682;
       line-height: normal;
       letter-spacing: 0.16rem;
       font-size: 2rem;
+    }
+    a{
+
     }
     button {
       // width: 24rem;
@@ -3752,7 +3756,7 @@ $BestHostMainColor: #4a2682;
   display: flex;
   justify-content: center;
   align-items: center;
-  span {
+  h1 {
     color: var(--05, #2a0d56);
     font-feature-settings: "liga" off;
     font-size: 3.6rem;
@@ -3854,13 +3858,12 @@ $BestHostMainColor: #4a2682;
 .planHeader {
   text-align: center;
   display: flex;
-  // flex-direction: column;
   gap: 0.5rem;
 }
 .planName,
 .planPrice {
   color: #2a0d56;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 600;
 }
 /* Plan değerleri (metin ve ikon) */

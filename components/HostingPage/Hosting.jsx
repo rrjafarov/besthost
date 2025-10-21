@@ -2,7 +2,7 @@ import React from "react";
 import Arrow from "@/public/icons/arrow.svg";
 import Link from "next/link";
 
-const Hosting = ({ categoryData,t }) => {
+const Hosting = ({ categoryData, t }) => {
   return (
     <div className="hostingPageBannerVectora">
       <div className="container">
@@ -10,11 +10,11 @@ const Hosting = ({ categoryData,t }) => {
           <div className="row">
             <div className="xl-6 lg-6 md-6 sm-12">
               <div className="hostingPageBannerBlockLeft">
-                <span>{categoryData[0].title}</span>
-                <p>
-                  {categoryData[0].sub_title }
-                </p>
-                <button>Start Now</button>
+                <h2>{categoryData[0].title}</h2>
+                <p>{categoryData[0].sub_title}</p>
+                <Link href="#start">
+                  <button>{t?.startnow}</button>
+                </Link>
               </div>
             </div>
             <div className="xl-6 lg-6 md-6 sm-12">
@@ -32,6 +32,7 @@ const Hosting = ({ categoryData,t }) => {
               <strong>{t?.hostingPageTitle}</strong>
             </Link>
           </div>
+          <section id="start"></section>
         </div>
       </div>
     </div>
