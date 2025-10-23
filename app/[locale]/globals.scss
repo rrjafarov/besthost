@@ -3719,8 +3719,7 @@ $BestHostMainColor: #4a2682;
       letter-spacing: 0.16rem;
       font-size: 2rem;
     }
-    a{
-
+    a {
     }
     button {
       // width: 24rem;
@@ -3780,9 +3779,12 @@ $BestHostMainColor: #4a2682;
   flex-shrink: 0;
   gap: 1.3rem;
   .planFeaturesColumn {
-    padding: 2rem 0 2rem 1.5rem;
+    // padding: 2rem 0 2rem 1.5rem;
     border-radius: 0.8rem;
     background: #f0f2ff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
   }
 }
@@ -3822,12 +3824,14 @@ $BestHostMainColor: #4a2682;
   justify-content: space-between; /* Başlık en üstte, buton/placeholder en altta */
   align-items: center;
   flex: 0 0 25rem; /* Sabit genişlik: 25rem */
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
 }
 
 /* --- Özellikler Sütunu --- */
 .planFeaturesColumn {
   background: #f0f2ff;
-  padding: 2rem 1.5rem;
+  // padding: 2rem 1.5rem;
   border-radius: 0.8rem;
   gap: 3rem; /* Özellikler arası 3rem */
 }
@@ -3840,25 +3844,52 @@ $BestHostMainColor: #4a2682;
 /* Özellik başlığı */
 .planFeaturesHeader {
   color: #2a0d56;
-  font-size: 2.25rem;
   font-weight: 600;
-  // margin-bottom: 3rem;
+  color: var(--05, #2a0d56);
+  font-family: Mulish;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.12rem;
+  height: 7.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 0.08rem solid rgba(255, 255, 255, 0.6);
 }
 /* Özellik satırları */
 .featureItem {
-  font-size: 1.6rem;
-  color: #4a4a4a;
+  color: var(--05, #2a0d56);
+  font-family: Mulish;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.075rem;
+  text-align: start !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 /* --- Plan Sütunları --- */
 .planColumn {
-  padding: 2rem 1rem;
+  // padding: 0rem 0rem 1rem;
   gap: 1.5rem;
+  padding-bottom: 2rem;
 }
 /* Plan başlıkları */
 .planHeader {
   text-align: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   gap: 0.5rem;
+  height: 7.8rem;
+  width: 100%;
+  border-bottom: 0.08rem solid #e5e5e5;
 }
 .planName,
 .planPrice {
@@ -3870,7 +3901,18 @@ $BestHostMainColor: #4a2682;
 .planValue {
   font-size: 1.6rem;
   color: #4a4a4a;
-  text-align: center;
+  color: var(--05, #2a0d56);
+  font-family: Mulish;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.09rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1.9rem;
+  // text-align: center;
 }
 .planValue.checkmark {
   color: #6e43f8;
@@ -3882,21 +3924,23 @@ $BestHostMainColor: #4a2682;
 }
 /* --- Seç Butonları --- */
 .selectPlanBtn {
-  width: 23.5rem; /* Tam genişlik */
+  width: 22.5rem; /* Tam genişlik */
   height: 5.6rem; /* Tam yükseklik */
   margin: 0 auto;
+  // padding-bottom: 2rem;
   font-size: 1.6rem;
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
-  border: 2px solid #2a0d56;
+  border: 1px solid #2a0d56;
   background: transparent;
   color: #2a0d56;
   border-radius: 3rem; /* Tüm butonlar 3rem yarıçaplı */
   transition: background-color 0.3s, color 0.3s;
 }
 .selectPlanBtn:hover {
-  background: #2a0d56;
+  background: #ff8e2b;
+  border: none;
   color: #ffffff;
 }
 /* Aktif buton */
@@ -3947,6 +3991,25 @@ $BestHostMainColor: #4a2682;
 }
 .hostingGridSection {
   padding: 2rem 0 0rem;
+}
+
+.featureItem {
+  text-align: start !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 1.9rem;
+}
+.planFeaturesColumn {
+  // padding: 2rem 0 2rem 1.5rem;
+  border-radius: 0.8rem;
+  background: #f0f2ff;
+  display: flex !important;
+  justify-content: flex-start !important;
+  // align-items: center;
+  box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+  padding-bottom: 2rem;
 }
 // !<><><><><><>wordpressFeatures<><><><><><<
 
@@ -4588,4 +4651,113 @@ $BestHostMainColor: #4a2682;
   padding: 2rem 0;
   display: flex;
   gap: 2rem;
+}
+
+// !  COMIIITER
+
+/* Swiper konteynerinə tənzimləmələr */
+.hosting-swiper {
+  height: auto !important;
+  width: 100%;
+}
+
+.hosting-swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch !important;
+  height: auto !important;
+}
+
+.hosting-swiper .swiper-slide {
+  height: auto !important;
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.homePageHostingSwiper .swiper-slide {
+  transition: transform 0.3s ease;
+}
+
+.homePageHostingSwiper .swiper-slide .homePageHostingCard {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.homePageHostingSwiper .swiper-slide-active .homePageHostingCard {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* Bütün kartların eyni hündürlüyə malik olması */
+.homePageHostingCard {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Kartın top hissəsi - sabit hündürlük */
+.homePageHostingCardTop {
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+}
+
+.homePageHostingCardTopText,
+.homePageHostingCardTopPriceArea,
+.homePageHostingCardTopSelectPlanButton {
+  flex-shrink: 0 !important;
+}
+
+/* Kartın alt hissəsi - elastik, boş sahəni doldurur */
+.homePageHostingCardBottom {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100px;
+}
+
+/* Spesifikasiya listinin container-i */
+.homePageHostingCardSpesificationsList {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.homePageHostingCardSpesificationsList ul {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.homePageHostingCardSpesificationsList ul li {
+  flex-shrink: 0 !important;
+}
+
+/* "Daha çox bax" bölməsi - həmişə aşağıda */
+.homePageHostingCardSeeMore {
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  margin-top: auto !important;
+}
+
+/* Line elementləri - sabit */
+#cartTopBottomLine {
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+}
+
+#nprogress .bar {
+  height: 6px !important; // default 2px-dir
+  border-radius: 1rem !important;
+}
+
+#nprogress .bar {
+  background: #8787e6 !important; // Burada istədiyin rəngi yaz (məs: #08316F, red, green)
+}
+
+/* Spinner varsa, onu da dəyişə bilərsən */
+#nprogress .spinner-icon {
+  border-top-color: red;
+  border-left-color: red;
 }

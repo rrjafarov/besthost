@@ -19,7 +19,7 @@ const Hosting = ({ categoryData, t }) => {
             </div>
             <div className="xl-6 lg-6 md-6 sm-12">
               <div className="hostingPageBannerBlockRight">
-                <img src="/images/hostingPageBanner.png" alt="" />
+                <img src="/images/homeGridX7.png" alt="" />
               </div>
             </div>
           </div>
