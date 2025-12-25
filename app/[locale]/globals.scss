@@ -702,19 +702,19 @@ $BestHostMainColor: #4a2682;
     z-index: 2;
     transform: translate(-50%, -50%);
     color: white;
-    // width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    gap: 2rem;
     h4 {
       color: #fcfcfc;
-      font-size: 6.4rem;
+      font-size: 5rem !important;
       font-style: normal;
       font-weight: 800;
       line-height: 118%; /* 7.552rem */
       letter-spacing: 0.32rem;
-      width: 55rem;
+      width: 60rem;
+      margin-bottom: 2rem;
     }
     span {
       color: #fcfcfc;
@@ -781,6 +781,128 @@ $BestHostMainColor: #4a2682;
 .heroSliderImageMobile {
   display: none;
 }
+
+// ! 2ci sector
+.heroSlider {
+  width: 100%;
+  position: relative;
+
+  .heroSliderImage {
+    width: 100%;
+    height: 59.6rem;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .heroSliderOverlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #2a5a8e 12.68%, #cdd0ef 78.06%);
+      background-blend-mode: multiply;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  /* YALNIZ sağ-sol ortalı, dikey hündürlük 100% */
+  .heroSliderContent {
+    position: absolute;
+    top: 0; /* dikeyi sən idarə edirsən; ortada saxlayırıq */
+    left: 50%;
+    transform: translateX(-50%); /* yalnız üfüqi mərkəz */
+    height: 100%; /* slayder boyu */
+    z-index: 2;
+    color: #fff;
+
+    display: flex;
+    align-items: center; /* mətn blokunu dikey mərkəzlə */
+    justify-content: center;
+    gap: 2rem;
+
+    h4 {
+      color: #fcfcfc;
+      font-size: 4.8rem !important;
+      font-weight: 800;
+      // line-height: 118%;
+      letter-spacing: 0.32rem;
+      width: 60rem;
+      margin-bottom: 2rem;
+    }
+
+    span {
+      color: #fcfcfc;
+      font-feature-settings: "liga" off;
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 144%;
+      letter-spacing: 0.16rem;
+    }
+
+    .heroSliderContentHost {
+      padding-top: 3.2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      span {
+        color: #fcfcfc;
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.18rem;
+      }
+
+      .heroSliderContentHostDomain {
+        border-radius: 3rem;
+        background: #f2f2f2;
+        height: 6.3rem;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          padding: 2rem 4.4rem;
+          color: var(--03, #0a001e);
+          text-align: center;
+          font-kerning: none;
+          font-size: 1.8rem;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.18rem;
+        }
+      }
+
+      .heroSliderContentHostIcon {
+        border-radius: 3rem;
+        border: 1px solid #f2f2f2;
+        width: 12.5rem;
+        height: 6.3rem;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  /* Şəkil alt xəttə bitişik dursun */
+  .heroSliderContentImage {
+    align-self: flex-end; /* konteynerin dibinə yapış */
+    display: flex;
+    align-items: flex-end; /* içdəkini də dibə sıx */
+  }
+}
+// ! 2ci sector
+
 @media only screen and (max-width: 767.9px) {
   .heroSliderContent {
     position: absolute;
@@ -794,7 +916,7 @@ $BestHostMainColor: #4a2682;
     }
     .heroSliderContentSubText {
       width: 100% !important;
-      padding: 2rem 4rem !important;
+      padding-left: 12rem;
     }
     .heroSliderContentHost {
       padding: 0 3rem !important;
@@ -1153,6 +1275,17 @@ $BestHostMainColor: #4a2682;
   }
 }
 // ! HomePage HomePageSelectHosting.jsx  ---FINISH---
+
+// *top manat
+
+@media only screen and (max-width: 767.9px) {
+  .topManat {
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+  }
+}
+
+// *top manat
 
 // ! HomePage HomePageServices.jsx  ---START---
 .homePageServices {
@@ -3903,7 +4036,7 @@ $BestHostMainColor: #4a2682;
   color: #4a4a4a;
   color: var(--05, #2a0d56);
   font-family: Mulish;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -4625,14 +4758,18 @@ $BestHostMainColor: #4a2682;
 }
 
 .partnersSliderWrapper {
-  padding: 2rem 0;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
 }
 
 .partnersImageLogo {
-  height: 14rem;
+  height: 10rem;
   width: 100%;
   overflow: hidden;
   border-radius: 1rem;
+  padding: 2rem 3rem 3rem 3rem;
+  cursor: pointer;
+
   img {
     width: 100%;
     border-radius: 1rem;
@@ -4641,10 +4778,10 @@ $BestHostMainColor: #4a2682;
     filter: grayscale(100%) blur(0.2px);
     transition: filter 0.4s ease;
   }
-  &:hover img {
-    filter: none;
-    transition: filter 0.4s ease;
-  }
+  // &:hover img {
+  //   filter: none;
+  //   transition: filter 0.4s ease;
+  // }
 }
 
 .partnersImageWrapper {

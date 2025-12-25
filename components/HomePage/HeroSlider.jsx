@@ -35,9 +35,8 @@ const HeroSlider = ({ home, banner }) => {
                   <div className="heroSliderImage">
                     <Image
                       src={
-                        item?.image_bg
-                          ? `https://admin-besthost.onestudio.az/storage/${item.image_bg}`
-                          : "/images/heroBanner.png"
+                        item?.image_bg &&
+                        `https://admin-besthost.onestudio.az/storage/${item.image_bg}`
                       }
                       alt="banner"
                       width={1500}

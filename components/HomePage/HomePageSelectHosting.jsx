@@ -324,18 +324,18 @@ const HomePageSelectHosting = ({ t, backage, selected, contact }) => {
         observeParents={true}
         breakpoints={{
           0: {
-            slidesPerView: 1,
+            slidesPerView: 1.5,
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 1,
+            slidesPerView: 1.5,
             spaceBetween: 10,
           },
           1024: {
             slidesPerView: 2,
             spaceBetween: 15,
           },
-          1025: {
+          1225: {
             slidesPerView: 3,
             spaceBetween: 20,
           },
