@@ -17,7 +17,7 @@ const BlogPage = ({ blogsData, t }) => {
           </Link>
         </div>
         <div className="blogPageHeaderText">
-          <span>{t?.blogPageHeaderTitle || " Blog text"}</span>
+          <h1>{t?.blogPageHeaderTitle || " Blog text"}</h1>
           <p>
             {t?.blogPageHeaderSubTitle || " Blog subtitle text"}
           </p>

@@ -706,7 +706,7 @@ $BestHostMainColor: #4a2682;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    h4 {
+    h1 {
       color: #fcfcfc;
       font-size: 5rem !important;
       font-style: normal;
@@ -978,7 +978,7 @@ $BestHostMainColor: #4a2682;
     align-items: center;
     flex-direction: column;
     gap: 1.6rem;
-    span {
+    h2 {
       color: var(--01, #4a2682);
       font-feature-settings: "liga" off;
       font-size: 3.6rem;
@@ -1045,7 +1045,7 @@ $BestHostMainColor: #4a2682;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    span {
+    h2 {
       color: var(--01, #4a2682);
       font-feature-settings: "liga" off;
       font-size: 3.6rem;
@@ -1070,7 +1070,7 @@ $BestHostMainColor: #4a2682;
 @media only screen and (max-width: 767.9px) {
   .homePageHostingHeaderText {
     padding: 4rem 0rem !important;
-    span {
+    h2 {
       text-align: center !important;
     }
     p {
@@ -1088,7 +1088,7 @@ $BestHostMainColor: #4a2682;
   }
   .homePageHostingForWebsite {
     padding: 2.4rem 0 4rem 0;
-    span {
+    h2 {
       text-align: center !important;
     }
     p {
@@ -1297,7 +1297,7 @@ $BestHostMainColor: #4a2682;
     align-items: center;
     flex-direction: column;
     gap: 1.6rem;
-    span {
+    h2 {
       color: var(--01, #4a2682);
       text-align: center;
       font-feature-settings: "liga" off;
@@ -1382,7 +1382,7 @@ $BestHostMainColor: #4a2682;
 @media only screen and (max-width: 767.9px) {
   .homePageServices {
     .homePageServicesTopText {
-      span {
+      h2 {
         font-size: 4.6rem !important;
       }
       p {
@@ -1449,7 +1449,7 @@ $BestHostMainColor: #4a2682;
   align-items: flex-start;
   flex-direction: column;
   gap: 1.6rem;
-  span {
+  h3 {
     color: var(--01, #4a2682);
     font-feature-settings: "liga" off;
     font-size: 4.8rem;
@@ -1651,7 +1651,7 @@ $BestHostMainColor: #4a2682;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    span {
+    h2 {
       color: var(--01, #4a2682);
       text-align: center;
       font-feature-settings: "liga" off;
@@ -2076,7 +2076,7 @@ $BestHostMainColor: #4a2682;
     align-items: center;
     flex-direction: column;
     gap: 1.6rem;
-    span {
+    h1 {
       color: #fcfcfc;
       font-feature-settings: "liga" off;
       font-size: 6.4rem;
@@ -2100,7 +2100,7 @@ $BestHostMainColor: #4a2682;
 
 @media only screen and (max-width: 767.9px) {
   .aboutPageBannerContent {
-    span {
+    h1 {
       font-size: 5rem !important;
     }
   }
@@ -2109,7 +2109,7 @@ $BestHostMainColor: #4a2682;
     justify-content: center !important;
     align-items: center !important;
     flex-direction: column !important;
-    span {
+    h2 {
       font-size: 3.6rem;
       text-align: center !important;
     }
@@ -2166,7 +2166,7 @@ $BestHostMainColor: #4a2682;
   align-items: center;
   flex-direction: column;
   gap: 1.2rem;
-  span {
+  h2 {
     color: var(--01, #4a2682);
     font-feature-settings: "liga" off;
     font-size: 3.6rem;
@@ -2260,7 +2260,7 @@ $BestHostMainColor: #4a2682;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      span {
+      h3 {
         color: var(--05, #2a0d56);
         font-size: 3.6rem;
         font-style: normal;
@@ -2332,7 +2332,7 @@ $BestHostMainColor: #4a2682;
       justify-content: center !important;
       align-items: center !important;
       flex-direction: column !important;
-      span {
+      h3 {
         font-size: 3.6rem !important;
         text-align: center !important;
       }
@@ -2384,7 +2384,7 @@ $BestHostMainColor: #4a2682;
     justify-content: center;
     align-items: flex-start;
     gap: 1.6rem;
-    strong {
+    h1 {
       color: var(--05, #2a0d56);
       font-size: 4.7rem;
       font-style: normal;
@@ -2732,7 +2732,7 @@ $BestHostMainColor: #4a2682;
           display: flex;
           flex-direction: column;
           gap: 1.2rem;
-          span {
+          h1 {
             color: var(--01, #4a2682);
             width: 61.7rem;
             font-feature-settings: "liga" off;
@@ -2741,15 +2741,62 @@ $BestHostMainColor: #4a2682;
             font-weight: 700;
             line-height: normal;
             letter-spacing: 0.28rem;
+            padding-bottom: 1rem;
           }
-          p {
-            color: var(--05, #2a0d56);
+          h2 {
+            color: var(--01, #4a2682);
+            width: 61.7rem;
+            font-feature-settings: "liga" off;
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.28rem;
+            margin-top: 2rem;
+          }
+          h3 {
+            color: var(--01, #4a2682);
+            width: 61.7rem;
             font-feature-settings: "liga" off;
             font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.28rem;
+
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+          }
+
+          h3::before {
+            content: "";
+            width: 1rem; /* xətin uzunluğu */
+            height: 0.2rem; /* xətin qalınlığı */
+            background-color: var(--01, #4a2682);
+            display: block;
+          }
+
+          h4 {
+            color: var(--01, #4a2682);
+            width: 61.7rem;
+            font-feature-settings: "liga" off;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.28rem;
+          }
+          p,
+          li {
+            color: var(--05, #2a0d56);
+            font-feature-settings: "liga" off;
+            font-size: 1.5rem;
             font-style: normal;
             font-weight: 600;
             line-height: 3.2rem; /* 177.778% */
             letter-spacing: 0.02rem;
+            // padding-bottom: 1rem;
           }
         }
         .servicesDetailPageMainLeftContentImages {
@@ -2809,9 +2856,10 @@ $BestHostMainColor: #4a2682;
       .servicesDetailPageMainRightOtherServices {
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
         gap: 2rem;
         .servicesDetailPageMainRightOtherServiceCard {
-          width: 36rem;
+          width: 38rem;
           height: 25.8rem;
           border-radius: 0.8rem;
           background: #fff;
@@ -2841,7 +2889,7 @@ $BestHostMainColor: #4a2682;
             width: 100%;
             display: flex;
             flex-direction: column;
-            h2 {
+            span {
               color: var(--05, #2a0d56);
               font-feature-settings: "liga" off;
               font-size: 1.6rem;
@@ -2854,7 +2902,7 @@ $BestHostMainColor: #4a2682;
               -webkit-box-orient: vertical;
               overflow: hidden;
             }
-            span {
+            p {
               display: -webkit-box;
               -webkit-line-clamp: 2;
               -webkit-box-orient: vertical;
@@ -2994,7 +3042,7 @@ $BestHostMainColor: #4a2682;
   align-items: center;
   flex-direction: column;
   gap: 1.6rem;
-  span {
+  h1 {
     color: var(--05, #2a0d56);
     font-feature-settings: "liga" off;
     font-size: 3.6rem;
@@ -3178,11 +3226,17 @@ $BestHostMainColor: #4a2682;
           height: 0.08rem;
           margin: 2.4rem 0 3rem;
         }
+
+
+
+
+
+
         .blogDetailPageMainLeftContentDesc {
           display: flex;
           flex-direction: column;
           gap: 1.2rem;
-          span {
+          h1 {
             color: var(--01, #4a2682);
             width: 61.7rem;
             font-feature-settings: "liga" off;
@@ -3191,17 +3245,87 @@ $BestHostMainColor: #4a2682;
             font-weight: 700;
             line-height: normal;
             letter-spacing: 0.28rem;
+            padding-bottom: 1rem;
           }
-          p {
-            color: var(--05, #2a0d56);
+          h2 {
+            color: var(--01, #4a2682);
+            width: 61.7rem;
+            font-feature-settings: "liga" off;
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.28rem;
+            margin-top: 2rem;
+          }
+          h3 {
+            color: var(--01, #4a2682);
+            width: 61.7rem;
             font-feature-settings: "liga" off;
             font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.28rem;
+
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+          }
+
+          h3::before {
+            content: "";
+            width: 1rem; /* xətin uzunluğu */
+            height: 0.2rem; /* xətin qalınlığı */
+            background-color: var(--01, #4a2682);
+            display: block;
+          }
+
+          h4 {
+            color: var(--01, #4a2682);
+            width: 61.7rem;
+            font-feature-settings: "liga" off;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.28rem;
+          }
+          p,
+          li {
+            color: var(--05, #2a0d56);
+            font-feature-settings: "liga" off;
+            font-size: 1.5rem;
             font-style: normal;
             font-weight: 600;
             line-height: 3.2rem; /* 177.778% */
             letter-spacing: 0.02rem;
+            // padding-bottom: 1rem;
           }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .blogDetailPageMainLeftContentImages {
           width: 100%;
           height: 35.5rem;
@@ -3333,7 +3457,7 @@ $BestHostMainColor: #4a2682;
   .blogPageHeaderText {
     padding-top: 3rem !important;
     gap: 1.6rem;
-    span {
+    h1 {
       font-size: 3.6rem;
       text-align: center !important;
     }
@@ -3573,7 +3697,7 @@ $BestHostMainColor: #4a2682;
     gap: 1.5rem;
     justify-content: center;
     align-items: center;
-    span {
+    h1 {
       color: var(--05, #2a0d56);
       font-feature-settings: "liga" off;
       font-size: 3.6rem;
@@ -3683,7 +3807,7 @@ $BestHostMainColor: #4a2682;
         justify-content: center;
         align-items: center;
         gap: 1.6rem;
-        span {
+        h2 {
           color: var(--05, #2a0d56);
           text-align: center;
           font-size: 2.8rem;
@@ -3835,7 +3959,7 @@ $BestHostMainColor: #4a2682;
     gap: 1.8rem;
     align-items: flex-start;
     justify-content: flex-start;
-    h2 {
+    h1 {
       color: var(--05, #2a0d56);
       font-size: 5.2rem;
       font-style: normal;
@@ -3888,7 +4012,7 @@ $BestHostMainColor: #4a2682;
   display: flex;
   justify-content: center;
   align-items: center;
-  h1 {
+  h2 {
     color: var(--05, #2a0d56);
     font-feature-settings: "liga" off;
     font-size: 3.6rem;

@@ -17,7 +17,7 @@ const AboutPageBreadCrumbs = ({t, about}) => {
         </div>
 
         <div className="aboutPageForHosting">
-          <span>{about?.data?.title_1}</span>
+          <h2>{about?.data?.title_1}</h2>
            <div dangerouslySetInnerHTML={{ __html: about?.data?.content_1 }}></div>
         </div>
       </div>

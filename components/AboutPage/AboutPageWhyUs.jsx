@@ -55,7 +55,7 @@ const AboutPageWhyUs = ({ about, t }) => {
 
         <div className="aboutPageMiddleGrid">
           <div className="aboutPageMiddleGridItem">
-            <span>{about?.data?.title_2}</span>
+            <h3>{about?.data?.title_2}</h3>
             <p>{about?.data?.sub_title}</p>
           </div>
           <div className="row">

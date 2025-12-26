@@ -18,14 +18,11 @@ const Contact = ({ contact, t }) => {
             <span>BestHost</span>
           </Link>
           <Arrow className="breadCrumbsArrow" />
-          <Link href="/contact">
-            <strong>{t?.contactPageTitle || "Contact"}</strong>
-          </Link>
+          <strong>{t?.contactPageTitle || "Contact"}</strong>
         </div>
 
         <div className="contactLetsTalk">
-          <span>{t?.contactPageHeader || "Contact"}</span>
-          {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
+          <h1>{t?.contactPageHeader || "Contact"}</h1>
           <div className="contactLetsTalkIcons">
             <div className="contactLetsTalkIcon">
               <img src="/icons/contact1.svg" alt="" />
@@ -130,7 +127,7 @@ const Contact = ({ contact, t }) => {
         <div className="contactForm">
           <div className="contactFormItems">
             <div className="contactFormItem">
-              <span>{t?.contactPageYourQuesions || "Suallar"}</span>
+              <h2>{t?.contactPageYourQuesions || "Suallar"}</h2>
               <p>
                 {t?.contactPageFormText ||
                   "Suallarınız varsa, bizə müraciət etməkdən çəkinməyin."}

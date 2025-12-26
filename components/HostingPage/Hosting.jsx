@@ -10,7 +10,7 @@ const Hosting = ({ categoryData, t }) => {
           <div className="row">
             <div className="xl-6 lg-6 md-6 sm-12">
               <div className="hostingPageBannerBlockLeft">
-                <h2>{categoryData[0].title}</h2>
+                <h1>{categoryData[0].title}</h1>
                 <p>{categoryData[0].sub_title}</p>
                 <Link href="#start">
                   <button>{t?.startnow}</button>

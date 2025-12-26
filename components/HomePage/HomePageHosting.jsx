@@ -1,53 +1,3 @@
-// "use client";
-// import React, { useState } from "react";
-// import HomePageSelectHosting from "./HomePageSelectHosting";
-
-// const HomePageHosting = ({t,backage, category, contact}) => {
-//   const [selected, setSelected] = useState(category?.data?.data?.[0]?.category_name || ""); 
-
-//   return (
-//     <div className="homePageHosting">
-//       <div className="container">
-//         <div className="homePageHostingHeaderText">
-//           <span>{t?.homePageWebsiteTitle || "Lorem ipsum dolor sit amet"}</span>
-//           <p>
-//             {t?.homePageWebsiteSubTitle || "Lorem ipsum dolor sit amet."}
-//           </p>
-//         </div>
-//         <div className="homePageHostingHeaderButtons">
-//           <div className="homePageHostingSelectButtons">
-//             {category?.data?.data?.map((cat) => (
-//               <div
-//                 key={cat.id} 
-//                 className={
-//                   "homePageHostingSelectButton" +
-//                   (selected === cat.category_name ? " active" : "")
-//                 }
-//                 onClick={() => setSelected(cat.category_name)}
-//               >
-//                 <span>{cat.category_name}</span>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-        
-//         <div className="homePageHostingForWebsite">
-//           <span>{t?.homePageHostingTitle}</span>
-//           <p>{t?.homePageHostingSubTitle}</p>
-//         </div>
-
-//         <HomePageSelectHosting t={t} backage={backage} selected={selected} contact={contact} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HomePageHosting;
-
-
-
-
-
 
 "use client";
 import React, { useState, useRef, useEffect } from "react";
@@ -139,7 +89,7 @@ const HomePageHosting = ({ t, backage, category, contact }) => {
     <div className="homePageHosting">
       <div className="container">
         <div className="homePageHostingHeaderText">
-          <span>{t?.homePageWebsiteTitle || "Lorem ipsum dolor sit amet"}</span>
+          <h2>{t?.homePageWebsiteTitle || "Lorem ipsum dolor sit amet"}</h2>
           <p>{t?.homePageWebsiteSubTitle || "Lorem ipsum dolor sit amet."}</p>
         </div>
 
@@ -179,7 +129,7 @@ const HomePageHosting = ({ t, backage, category, contact }) => {
         </div>
 
         <div className="homePageHostingForWebsite">
-          <span>{t?.homePageHostingTitle}</span>
+          <h2>{t?.homePageHostingTitle}</h2>
           <p>{t?.homePageHostingSubTitle}</p>
         </div>
 

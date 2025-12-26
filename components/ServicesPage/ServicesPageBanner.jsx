@@ -10,7 +10,7 @@ const ServicesPageBanner = ({t}) => {
           <div className="row">
             <div className="xl-6 lg-6 md-6 sm-12">
               <div className="servivesBannerLeftContent">
-                <strong>{t?.servicesPageBannerTitle || "Banner Title"}</strong>
+                <h1>{t?.servicesPageBannerTitle || "Banner Title"}</h1>
                 <span>
                   
 

@@ -6,7 +6,7 @@ const HomePageServices = ({t, servicesData }) => {
     <div className="homePageServices">
       <div className="container">
         <div className="homePageServicesTopText">
-          <span>{t?.servicesPageOurServices || "Our Services "}</span>
+          <h2>{t?.servicesPageOurServices || "Our Services "}</h2>
           <p>
             {t?.servicesPageHeaderSubTitle || "Explore our wide range of services designed to meet your needs."}
           </p>

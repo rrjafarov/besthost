@@ -19,9 +19,7 @@ const BlogDetailPage = ({ t, blog, otherBlogs }) => {
             <strong>{t?.blogPageTitle}</strong>
           </Link>
           <Arrow className="breadCrumbsArrow" />
-          <Link href="#">
-            <strong>{blog.title}</strong>
-          </Link>
+          <strong>{blog.title}</strong>
         </div>
 
         <div className="blogDetailPageMain">
@@ -51,20 +49,10 @@ const BlogDetailPage = ({ t, blog, otherBlogs }) => {
                   </div>
                 </div>
                 <div className="blogDetailPageMainLeftContent">
-                  <span>
-                    {blog.title}
-                  </span>
-                  {/* <div className="div">
-                    <span className="middleLink">
-                      <Link href="#">Lorem ipsum</Link>
-                    </span>
-                    <span className="middleLink">
-                      <Link href="#">Lorem ipsum</Link>
-                    </span>
-                  </div> */}
+                  <span>{blog.title}</span>
                   <div className="blogDPline"></div>
                   <div className="blogDetailPageMainLeftContentDesc">
-                    <span>{blog.sub_title}</span>
+                    {/* <span>{blog.sub_title}</span> */}
                     <div
                       dangerouslySetInnerHTML={{
                         __html: blog.content,
@@ -76,44 +64,15 @@ const BlogDetailPage = ({ t, blog, otherBlogs }) => {
                         alt=""
                       />
                     </div>
-
-                    {/* <p>
-                      Imagine coming to the office every day and opening your
-                      laptop to find hundreds of emails from prospects who are
-                      hungry to do business with your startup. While this can be
-                      a dream for many startups, the reality is that millions of
-                      searches happen every day on Google and if you can get a
-                      fraction of those users to reach your website through
-                      Search Engine
-                    </p> */}
-
-                    {/* <div className="blogDetailPageMainLeftContentImages">
-                      <img src="/icons/serviceDPLeft.png" alt="" />
-                    </div> */}
-                    {/* 
-                    <div className="blogDetailPageMainLeftContentParanthez">
-                      <div className="blogDetailPageMainLeftContentParanthezIcon">
-                        <img src="/icons/paranthez.svg" alt="" />
-                        <img src="/icons/paranthez.svg" alt="" />
-                      </div>
-                      <div className="blogDetailPageMainLeftContentParanthezDesc">
-                        <p>
-                          Est tation latine aliquip id, mea ad tale illud
-                          definitiones. Periculis omittantur necessitatibus eum
-                          ad, pro eripuit minimum comprehensam ne, usu cu stet
-                          prompta reformidans.
-                        </p>
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               </div>
             </div>
             <div className="xl-4 lg-4 md-12 sm-12">
               <div className="blogDetailPageMainRight">
-                <div className="blogDetailPageMainRightTopImg">
+                {/* <div className="blogDetailPageMainRightTopImg">
                   <img src="/images/servicesDP2.png" alt="" />
-                </div>
+                </div> */}
 
                 {otherBlogs.length > 0 && (
                   <div className="blogDetailPageMainRightOtherBlogs">

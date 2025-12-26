@@ -47,7 +47,7 @@ const HeroSlider = ({ home, banner }) => {
                   <div className="container">
                     <div className="heroSliderContent">
                       <div className="heroSliderContentPlan">
-                        <h4>{item?.title || "Web Hosting for Your Mission"}</h4>
+                        <h1>{item?.title || "Web Hosting for Your Mission"}</h1>
                         <span className="heroSliderContentSubText">
                           {item?.banner_sub_title ||
                             "Get a Free .COM domain with Premium Plan"}

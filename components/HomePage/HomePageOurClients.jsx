@@ -9,7 +9,7 @@ const HomePageOurClients = ({t, client }) => {
     >
       <div className="container">
         <div className="homePageOurClientsHeaderText">
-          <span>{t?.aboutPageClientsTitle || "Our Clients"}</span>
+          <h2>{t?.aboutPageClientsTitle || "Our Clients"}</h2>
           <p>
             {t?.aboutPageClientsSubTitle || "Our Clients"}
           </p>

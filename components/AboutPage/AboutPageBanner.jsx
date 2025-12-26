@@ -4,7 +4,7 @@ const AboutPageBanner = ({t}) => {
   return (
     <div id="aboutPageBanner">
       <div className="aboutPageBannerContent">
-        <span>{t?.aboutBestHost || "about BestHost"}</span>
+        <h1>{t?.aboutBestHost || "about BestHost"}</h1>
         <p>{t?.aboutPageSubTitle || "about sub title"}</p>
       </div>
     </div>
