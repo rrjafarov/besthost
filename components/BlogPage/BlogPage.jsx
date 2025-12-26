@@ -12,15 +12,12 @@ const BlogPage = ({ blogsData, t }) => {
             <span>BestHost</span>
           </Link>
           <Arrow className="breadCrumbsArrow" />
-          <Link href="/blog">
-            <strong>{t?.blogPageTitle || "Blogs"}</strong>
-          </Link>
+
+          <strong>{t?.blogPageTitle || "Blogs"}</strong>
         </div>
         <div className="blogPageHeaderText">
           <h1>{t?.blogPageHeaderTitle || " Blog text"}</h1>
-          <p>
-            {t?.blogPageHeaderSubTitle || " Blog subtitle text"}
-          </p>
+          <p>{t?.blogPageHeaderSubTitle || " Blog subtitle text"}</p>
         </div>
 
         <div className="blogPageCards">

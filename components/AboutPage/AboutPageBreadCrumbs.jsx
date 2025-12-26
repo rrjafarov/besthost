@@ -2,7 +2,7 @@ import React from "react";
 import Arrow from "@/public/icons/arrow.svg";
 import Link from "next/link";
 
-const AboutPageBreadCrumbs = ({t, about}) => {
+const AboutPageBreadCrumbs = ({ t, about }) => {
   return (
     <div>
       <div className="container">
@@ -11,14 +11,15 @@ const AboutPageBreadCrumbs = ({t, about}) => {
             <span>BestHost</span>
           </Link>
           <Arrow className="breadCrumbsArrow" />
-          <Link href="/about">
-            <strong>{t?.aboutPageTitle || "About us"}</strong>
-          </Link>
+
+          <strong>{t?.aboutPageTitle || "About us"}</strong>
         </div>
 
         <div className="aboutPageForHosting">
           <h2>{about?.data?.title_1}</h2>
-           <div dangerouslySetInnerHTML={{ __html: about?.data?.content_1 }}></div>
+          <div
+            dangerouslySetInnerHTML={{ __html: about?.data?.content_1 }}
+          ></div>
         </div>
       </div>
     </div>
