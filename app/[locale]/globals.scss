@@ -506,7 +506,7 @@ $BestHostMainColor: #4a2682;
       display: flex !important;
       flex-direction: column;
       align-items: flex-start !important;
-      width: 95%;
+      width: 92%;
       &:hover {
         border-radius: 1rem;
         background: #fff;
@@ -515,7 +515,6 @@ $BestHostMainColor: #4a2682;
       a {
         padding: 0.5rem 1rem;
         display: flex;
-        // justify-content: flex-start !important;
         gap: 2rem;
         .linkTextDrop {
           display: flex;
