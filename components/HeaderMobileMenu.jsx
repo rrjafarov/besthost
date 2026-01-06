@@ -360,7 +360,7 @@ const HeaderMobileMenu = ({ isOpen, onClose, buildHref, contact, t, category }) 
                             </div>
                             <div className="mobile-dropdown-text">
                               <span>{categoryItem.title}</span>
-                              <strong>{categoryItem.sub_title}</strong>
+                              {/* <strong>{categoryItem.sub_title}</strong> */}
                             </div>
                           </div>
                         </Link>

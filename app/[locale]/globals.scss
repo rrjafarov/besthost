@@ -908,17 +908,20 @@ $BestHostMainColor: #4a2682;
     top: 50%;
     left: 40% !important;
     width: 80% !important;
-    h4 {
+    .heroSliderContentPlan{
+      padding-left: 3rem !important;
+    }
+    h1 {
       font-size: 5rem !important;
       width: 100% !important;
-      padding: 0 3rem !important;
+      // padding: 0 3rem !important;
     }
     .heroSliderContentSubText {
       width: 100% !important;
-      padding-left: 12rem;
+      // padding-left: 12rem;
     }
     .heroSliderContentHost {
-      padding: 0 3rem !important;
+      // padding: 0 3rem !important;
       padding-top: 3.2rem !important;
       gap: 1rem !important;
       span {
@@ -3226,11 +3229,6 @@ $BestHostMainColor: #4a2682;
           margin: 2.4rem 0 3rem;
         }
 
-
-
-
-
-
         .blogDetailPageMainLeftContentDesc {
           display: flex;
           flex-direction: column;
@@ -3302,28 +3300,6 @@ $BestHostMainColor: #4a2682;
             // padding-bottom: 1rem;
           }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         .blogDetailPageMainLeftContentImages {
           width: 100%;
@@ -4785,11 +4761,21 @@ $BestHostMainColor: #4a2682;
 
 .mobile-dropdown-icon {
   flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.mobile-dropdown-icon img {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  width: 100%;
+  height: 100%;
 }
 
 .mobile-dropdown-icon svg {
   width: 2.4rem;
   height: 2.4rem;
+  
   color: var(--05, #2a0d56);
 }
 
