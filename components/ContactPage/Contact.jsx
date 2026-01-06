@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import Arrow from "@/public/icons/arrow.svg";
 import Facebook from "@/public/icons/facebookWhite.svg";
@@ -10,6 +11,56 @@ import Email from "@/public/icons/email.svg";
 import Location from "@/public/icons/location.svg";
 
 const Contact = ({ contact, t }) => {
+  // form state
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [placeholders, setPlaceholders] = useState({});
+
+  const validate = () => {
+    const errs = {};
+    if (!name || !name.trim()) errs.name = t?.contactErrorName || "Zəhmət olmasa adınızı daxil edin";
+    const emailVal = (email || "").trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailVal) errs.email = t?.contactErrorEmail || "Zəhmət olmasa email daxil edin";
+    else if (!emailRegex.test(emailVal)) errs.email = t?.contactErrorEmailInvalid || "Düzgün email daxil edin";
+    if (!message || !message.trim()) errs.message = t?.contactErrorMessage || "Zəhmət olmasa mesaj yazın";
+
+    return errs;
+  };
+
+  const handleSend = () => {
+    const errs = validate();
+    if (Object.keys(errs).length === 0) {
+      // no validation errors — proceed (actual submit logic not implemented here)
+      // optionally clear placeholders
+      setPlaceholders({});
+      // you can implement sending logic here
+      console.log("send form", { name, email, message });
+      return;
+    }
+
+    // For fields with errors, clear their current value so placeholder becomes visible
+    if (errs.name) setName("");
+    if (errs.email) setEmail("");
+    if (errs.message) setMessage("");
+
+    setPlaceholders(errs);
+  };
+
+  const handleChangeName = (v) => {
+    setName(v);
+    if (placeholders.name) setPlaceholders((p) => ({ ...p, name: undefined }));
+  };
+  const handleChangeEmail = (v) => {
+    setEmail(v);
+    if (placeholders.email) setPlaceholders((p) => ({ ...p, email: undefined }));
+  };
+  const handleChangeMessage = (v) => {
+    setMessage(v);
+    if (placeholders.message) setPlaceholders((p) => ({ ...p, message: undefined }));
+  };
+
   return (
     <div className="contactPage">
       <div className="container">
@@ -133,23 +184,46 @@ const Contact = ({ contact, t }) => {
                   "Suallarınız varsa, bizə müraciət etməkdən çəkinməyin."}
               </p>
 
-              <form>
+              <form onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="text"
                   name="name"
-                  placeholder={t?.contactPageFormName}
+                  value={name}
+                  onChange={(e) => handleChangeName(e.target.value)}
+                  placeholder={placeholders.name || t?.contactPageFormName}
+                  className={placeholders.name ? "input-error" : ""}
+                  aria-invalid={!!placeholders.name}
                 />
 
                 <input
                   type="email"
                   name="email"
-                  placeholder={t?.contactPageFormEmail || "Email"}
+                  value={email}
+                  onChange={(e) => handleChangeEmail(e.target.value)}
+                  placeholder={placeholders.email || t?.contactPageFormEmail || "Email"}
+                  className={placeholders.email ? "input-error" : ""}
+                  aria-invalid={!!placeholders.email}
                 />
 
-                <textarea name="message" placeholder={t?.contactPageFormText} />
+                <textarea
+                  name="message"
+                  value={message}
+                  onChange={(e) => handleChangeMessage(e.target.value)}
+                  placeholder={placeholders.message || t?.contactPageFormText}
+                  className={placeholders.message ? "input-error" : ""}
+                  aria-invalid={!!placeholders.message}
+                />
 
-                <button type="submit">{t?.contactSendButton}</button>
+                <button type="button" onClick={handleSend}>{t?.contactSendButton}</button>
               </form>
+
+              {/* Placeholder-based validation styling */}
+              <style jsx>{`
+                .input-error::placeholder { color: #ec1f27 !important; opacity: 1; }
+                .input-error { caret-color: #ec1f27; }
+                button { cursor: pointer; }
+              `}</style>
+
             </div>
           </div>
         </div>
