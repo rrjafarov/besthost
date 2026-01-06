@@ -4079,7 +4079,7 @@ $BestHostMainColor: #4a2682;
   font-weight: 600;
   color: var(--05, #2a0d56);
   font-family: Mulish;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -4122,16 +4122,17 @@ $BestHostMainColor: #4a2682;
   height: 7.8rem;
   width: 100%;
   border-bottom: 0.08rem solid #e5e5e5;
+  padding: 0rem;
 }
 .planName,
 .planPrice {
   color: #2a0d56;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 /* Plan değerleri (metin ve ikon) */
 .planValue {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #4a4a4a;
   color: var(--05, #2a0d56);
   font-family: Mulish;
