@@ -1698,7 +1698,96 @@ $BestHostMainColor: #4a2682;
 }
 // ! HomePage HomePageOurClients.jsx  ---FINISH---
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ! HomePage HomePageOurClients.jsx  ---START---
+// #homePageSeo {
+//   padding-bottom: 7.6rem;
+//   padding-top: 2rem;
+//   .homePageSeoContent {
+//     span {
+//       color: var(--02, #ff8e2b);
+//       font-size: 1.8rem;
+//       font-style: normal;
+//       font-weight: 700;
+//       line-height: normal;
+//       letter-spacing: 0.09rem;
+//       text-transform: uppercase;
+//     }
+//     div {
+//       color: var(--05, #2a0d56);
+//       font-size: 1.4rem;
+//       font-style: normal;
+//       font-weight: 400;
+//       line-height: normal;
+//       letter-spacing: 0.07rem;
+//       margin-top: 1rem;
+//     }
+//     p {
+//       color: var(--05, #2a0d56);
+//       font-size: 1.4rem;
+//       font-style: normal;
+//       font-weight: 400;
+//       line-height: normal;
+//       letter-spacing: 0.07rem;
+//       margin-top: 1rem;
+//     }
+//     .seoViewMore {
+//       padding-top: 2.4rem;
+//       color: var(--01, #4a2682);
+//       font-feature-settings: "liga" off;
+//       font-size: 2.4rem;
+//       font-style: normal;
+//       font-weight: 400;
+//       line-height: normal;
+//       letter-spacing: 0.12rem;
+//       text-decoration: underline;
+//       text-decoration-color: #ff8e2b;
+//       text-underline-offset: 2px;
+//       cursor: pointer;
+//       strong {
+//         color: var(--02, #ff8e2b);
+//         font-feature-settings: "liga" off;
+//         font-size: 2.4rem;
+//         font-style: normal;
+//         font-weight: 400;
+//         line-height: normal;
+//         letter-spacing: 0.12rem;
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HomePageSeo.scss (sənin verdiyin stil eyni saxlanılıb, kiçik struktur dəyişiklikləri etdikdə də uyğun olsun) */
 #homePageSeo {
   padding-bottom: 7.6rem;
   padding-top: 2rem;
@@ -1739,10 +1828,14 @@ $BestHostMainColor: #4a2682;
       font-weight: 400;
       line-height: normal;
       letter-spacing: 0.12rem;
-      text-decoration: underline;
       text-decoration-color: #ff8e2b;
       text-underline-offset: 2px;
       cursor: pointer;
+      background: transparent;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
       strong {
         color: var(--02, #ff8e2b);
         font-feature-settings: "liga" off;
@@ -1753,9 +1846,37 @@ $BestHostMainColor: #4a2682;
         letter-spacing: 0.12rem;
       }
     }
+    .seoViewMoreWrapper {
+      padding-top: 0;
+    }
   }
 }
+
+
+
+
+
+
+
 // ! HomePage HomePageOurClients.jsx  ---FINISH---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ! HomePage Footer.jsx  ---START---
 #footer {
