@@ -229,6 +229,7 @@ const page = async ({ searchParams }) => {
         backage={filteredBackage}
         comments={filteredComments}
         contact={contact.data}
+        categoryData={uniqueCategories}
       />
       <WordpressFeatures t={t} categoryData={uniqueCategories} futuresData={filteredFutures} />
       <HostingGrid t={t} categoryData={uniqueCategories} />

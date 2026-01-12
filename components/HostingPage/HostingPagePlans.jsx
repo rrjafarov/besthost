@@ -4,7 +4,7 @@ import React from "react";
 import Tick from "@/public/icons/tick.svg";
 import X from "@/public/icons/x.svg";
 
-const HostingPagePlans = ({ backage, t, contact }) => {
+const HostingPagePlans = ({ backage, t, contact,categoryData }) => {
   const packagesArray = Array.isArray(backage)
     ? backage
     : backage && (Array.isArray(backage.data) ? backage.data : backage.data?.data) || [];
@@ -69,12 +69,12 @@ const HostingPagePlans = ({ backage, t, contact }) => {
   return (
     <div className="container">
       <div className="hostingPagePlans">
-        <h2>{t?.hostingPageCompareTitle}</h2>
+        <h2>{categoryData[0].title} {t?.hostingPageCompareTitle}</h2>
       </div>
       <div className="hostingPagePlansVerticalSection">
         <div className="hostingPagePlansVertical">
           <div className="planFeaturesColumn">
-            <div className="planFeaturesHeader">{t?.planFeatures}</div>
+            <div className="planFeaturesHeader"> {t?.planFeatures}</div>
             {features.map((f, i) => (
               <div className="featureItem" key={f + i}>
                 {f}

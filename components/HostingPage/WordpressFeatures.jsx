@@ -117,12 +117,6 @@ const WordpressFeatures = ({ categoryData, futuresData }) => {
               <div className="xl-4 lg-4 md-6 sm-12" key={feature?.id ?? feature?.title}>
                 <div className="featureCard">
                   <h3>{feature.title}</h3>
-                  {/* <p>
-                  We use LiteSpeed - the fastest web server in the industry.
-                  LiteSpeed Web Server delivers a variety of advanced features,
-                  exceptional scalability and first-class WordPress site
-                  performance.
-                </p> */}
                   <div
                     className="featureCard"
                     dangerouslySetInnerHTML={{

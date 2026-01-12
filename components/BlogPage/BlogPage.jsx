@@ -46,7 +46,7 @@ const BlogPage = ({ blogsData, t }) => {
               ))}
             </div>
           </div>
-          <BasicPagination />
+          {/* <BasicPagination /> */}
         </div>
       </div>
     </div>

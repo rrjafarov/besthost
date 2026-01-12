@@ -19,7 +19,7 @@ const HostingGrid = ({categoryData ,t}) => {
           </div>
           <div className="xl-5 lg-6 md-6 sm-12">
             <div className="homeGridContent">
-              <span>{categoryData[0].title_3}</span>
+              <h3>{categoryData[0].title_3}</h3>
               <p>
                 <div
                     dangerouslySetInnerHTML={{ __html: categoryData[0].content_2}}
