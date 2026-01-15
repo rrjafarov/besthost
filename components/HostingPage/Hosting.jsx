@@ -19,7 +19,11 @@ const Hosting = ({ categoryData, t }) => {
             </div>
             <div className="xl-6 lg-6 md-6 sm-12">
               <div className="hostingPageBannerBlockRight">
-                <img src="/images/homeGridX7.png" alt="" />
+                <img
+                  //  src="/images/homeGridX7.png"
+                  src={`https://admin-besthost.onestudio.az/storage/${categoryData[0].banner_image}`}
+                  alt=""
+                />
               </div>
             </div>
           </div>

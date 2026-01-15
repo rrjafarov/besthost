@@ -29,7 +29,7 @@ const TooltipQuestion = ({ description }) => {
             left: "100%",
             transform: "translateY(-50%)",
             marginLeft: "8px",
-            width: "10rem",
+            width: "15rem",
             height: "auto",
             minHeight: "3rem",
             backgroundColor: "#4a2682",

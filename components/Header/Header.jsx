@@ -146,7 +146,7 @@ const Header = ({ contact, category, t }) => {
                               </div>
                               <div className="linkTextDrop">
                                 <span>{categoryItem.title}</span>
-                                <strong>{categoryItem.sub_title}</strong>
+                                <strong>{categoryItem.menu_title}</strong>
                               </div>
                             </Link>
                           </li>

@@ -4123,6 +4123,17 @@ $BestHostMainColor: #4a2682;
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
 .hostingPagePlans {
   display: flex;
   justify-content: center;
@@ -4143,7 +4154,8 @@ $BestHostMainColor: #4a2682;
   align-items: center;
 }
 .hostingPagePlansVertical {
-  margin: 3rem 2rem;
+  // width: 90%;
+  margin: 3rem 0rem;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -4169,7 +4181,6 @@ $BestHostMainColor: #4a2682;
   font-size: 2.4rem;
   font-weight: 600;
 }
-
 /* --- Sütunları Yanyana Dizme --- */
 .hostingPagePlansVerticalSection {
   display: flex;
@@ -4177,7 +4188,6 @@ $BestHostMainColor: #4a2682;
   overflow-x: auto;
   scrollbar-width: none;
 }
-
 .hostingPagePlansVertical {
   display: flex;
   gap: 1.3rem; /* Plan sütunları arası yatay boşluk */
@@ -4187,7 +4197,6 @@ $BestHostMainColor: #4a2682;
   border-radius: 0.8rem;
   align-items: stretch; /* <-- Burada piksel-hassas eşit yükseklik */
 }
-
 /* --- Ortak Sütun Ayarları --- */
 .planFeaturesColumn,
 .planColumn {
@@ -4198,8 +4207,8 @@ $BestHostMainColor: #4a2682;
   flex: 0 0 25rem; /* Sabit genişlik: 25rem */
   border-radius: 0.8rem;
   box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+  
 }
-
 /* --- Özellikler Sütunu --- */
 .planFeaturesColumn {
   background: #f0f2ff;
@@ -4207,7 +4216,6 @@ $BestHostMainColor: #4a2682;
   border-radius: 0.8rem;
   gap: 3rem; /* Özellikler arası 3rem */
 }
-
 /* Placeholder buton alanı */
 .planFeaturesColumn .selectButtonPlaceholder {
   width: 23.5rem;
@@ -4322,6 +4330,302 @@ $BestHostMainColor: #4a2682;
   color: #ffffff;
   border: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hostingPagePlans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    color: var(--05, #2a0d56);
+    font-feature-settings: "liga" off;
+    font-size: 3.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.18rem;
+  }
+}
+.hostingPagePlansVerticalSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hostingPagePlansVertical {
+  // width: 90%;
+  margin: 3rem 0rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Bütün sütunları eyni yükseklikte saxlayır */
+  flex-shrink: 0;
+  gap: 1.3rem;
+  .planFeaturesColumn {
+    // padding: 2rem 0 2rem 1.5rem;
+    border-radius: 0.8rem;
+    background: #f0f2ff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+  }
+}
+.hostingPagePlans {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.hostingPagePlans span {
+  color: #2a0d56;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+/* --- Sütunları Yanyana Dizme --- */
+.hostingPagePlansVerticalSection {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.hostingPagePlansVertical {
+  display: flex;
+  gap: 1.3rem; /* Plan sütunları arası yatay boşluk */
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(185, 183, 183, 0.35);
+  border-radius: 0.8rem;
+  align-items: stretch; /* Piksel-hassas eşit yükseklik */
+}
+/* --- Ortak Sütun Ayarları --- */
+.planFeaturesColumn,
+.planColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Baştan başla, ama gap ile eşit aralık */
+  align-items: center;
+  flex: 0 0 28rem; /* Sabit genişlik: 25rem - Buradan dəyişir */
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
+  
+}
+/* --- Özellikler Sütunu --- */
+.planFeaturesColumn {
+  background: #f0f2ff;
+  // padding: 2rem 1.5rem;
+  border-radius: 0.8rem;
+  gap: 2rem; /* Özellikler arası 3rem */
+}
+/* Placeholder buton alanı */
+.planFeaturesColumn .selectButtonPlaceholder {
+  width: 23.5rem;
+  height: 5.6rem;
+  margin-top: auto; /* Sona yapışsın */
+}
+/* Özellik başlığı */
+.planFeaturesHeader {
+  color: #2a0d56;
+  font-weight: 600;
+  color: var(--05, #2a0d56);
+  font-family: Mulish;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.12rem;
+  height: 7.8rem;
+  min-height: 7.8rem; /* Sabit yükseklik */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 0.08rem solid rgba(255, 255, 255, 0.6);
+}
+/* Özellik satırları */
+.featureItem {
+  color: var(--05, #2a0d56);
+  font-family: Mulish;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.075rem;
+  text-align: start !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 3rem; /* Her feature item eyni yükseklikdə */
+}
+/* --- Plan Sütunları --- */
+.planColumn {
+  // padding: 0rem 0rem 1rem;
+  gap: 2rem; /* planFeaturesColumn ilə eyni gap */
+  padding-bottom: 2rem;
+}
+/* Plan başlıkları */
+.planHeader {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  height: 7.8rem;
+  min-height: 7.8rem; /* Sabit yükseklik */
+  width: 100%;
+  border-bottom: 0.08rem solid #e5e5e5;
+  padding: 0rem;
+}
+.planName,
+.planPrice {
+  color: #2a0d56;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+/* Plan değerleri (metin ve ikon) */
+.planValue {
+  color: #4a4a4a;
+  color: var(--05, #2a0d56);
+  font-family: Mulish;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.09rem;
+  width: 100%;
+  min-height: 3rem; /* Her value eyni yükseklikdə */
+  display: flex;
+  align-items: center; /* Dikey mərkəzləşdirmə */
+  justify-content: flex-start;
+  padding-left: 1.9rem;
+  // text-align: center;
+}
+.planValue.checkmark {
+  color: #6e43f8;
+  font-size: 2rem;
+}
+.planValue.cross {
+  color: #ff6b6b;
+  font-size: 2rem;
+}
+/* --- Seç Butonları --- */
+.selectPlanBtn {
+  max-width: 22.5rem; /* Tam genişlik */
+  height: 5.6rem; /* Tam yükseklik */
+  margin: auto auto 0 auto; /* Sona yapışsın */
+  // padding-bottom: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid #2a0d56;
+  background: transparent;
+  color: #2a0d56;
+  border-radius: 3rem; /* Tüm butonlar 3rem yarıçaplı */
+  transition: background-color 0.3s, color 0.3s;
+}
+.selectPlanBtn:hover {
+  background: #ff8e2b;
+  border: none;
+  color: #ffffff;
+}
+/* Aktif buton */
+.selectPlanBtn.active {
+  background: #ff8e2b;
+  color: #ffffff;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // !<><><><><><>wordpressFeatures<><><><><><<
 .wordpressFeatures {
   margin: 8rem 0 6rem;

@@ -195,11 +195,11 @@ const HomePageSelectHosting = ({ t, backage, selected, contact }) => {
                 <div className="homePageHostingCardBottom">
                   <div className="homePageHostingCardSpesificationsList">
                     <ul>
-                      {item.package_parametrs?.map((param) => (
+                      {item.homepage_parameters?.map((param) => (
                         <li key={param.id}>
                           <Check />
                           <span>{param.title}</span>
-                          <TooltipQuestion description={param.description} />
+                          <TooltipQuestion description={param.comment} />
                         </li>
                       ))}
                     </ul>
