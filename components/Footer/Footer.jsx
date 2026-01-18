@@ -404,11 +404,10 @@ const Footer = ({ contact, t, category, servicesData }) => {
                     <ul>
                       <span>{t?.hostingPageTitle}</span>
                       {category?.data?.data?.map((categoryItem) => {
-                        const categoryId = categoryItem?.id;
-                        const hostingHref = categoryId
-                          ? buildHref(
-                              `/hosting?per_page=12&filters[0][key]=category&filters[0][operator]=IN&filters[0][value][]=${categoryId}`
-                            )
+                        const categorySlug = categoryItem?.url_slug;
+
+                        const hostingHref = categorySlug
+                          ? buildHref(`/hosting?category=${categorySlug}`)
                           : buildHref("/hosting");
 
                         return (
@@ -434,7 +433,6 @@ const Footer = ({ contact, t, category, servicesData }) => {
                             {service.title}
                           </Link>
                         </li>
-                        
                       ))}
                       {/* <li>
                         <Link href="#">VPS Hosting </Link>
@@ -492,8 +490,6 @@ const Footer = ({ contact, t, category, servicesData }) => {
                   </div>
                 </div>
 
-
-
                 {/* <div className="xl-3 lg-4 md-6 sm-6">
                   <div className="footerLinks">
                     <ul>
@@ -522,8 +518,6 @@ const Footer = ({ contact, t, category, servicesData }) => {
                     </ul>
                   </div>
                 </div> */}
-
-
               </div>
             </div>
           </div>

@@ -273,16 +273,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -291,7 +281,14 @@ import Arrow from "@/public/icons/arrow.svg";
 import Drop from "@/public/icons/dropdown.svg";
 import X from "@/public/icons/x.svg";
 
-const HeaderMobileMenu = ({ isOpen, onClose, buildHref, contact, t, category }) => {
+const HeaderMobileMenu = ({
+  isOpen,
+  onClose,
+  buildHref,
+  contact,
+  t,
+  category,
+}) => {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   if (!isOpen) return null;
@@ -340,7 +337,7 @@ const HeaderMobileMenu = ({ isOpen, onClose, buildHref, contact, t, category }) 
                 }`}
               >
                 <ul>
-                  {category?.data?.data?.map((categoryItem) => {
+                  {/* {category?.data?.data?.map((categoryItem) => {
                     const categoryId = categoryItem?.id;
                     const hostingHref = categoryId
                       ? buildHref(
@@ -360,7 +357,34 @@ const HeaderMobileMenu = ({ isOpen, onClose, buildHref, contact, t, category }) 
                             </div>
                             <div className="mobile-dropdown-text">
                               <span>{categoryItem.title}</span>
-                              {/* <strong>{categoryItem.sub_title}</strong> */}
+                              <strong>{categoryItem.menu_title}</strong>
+                            </div>
+                          </div>
+                        </Link>
+                      </li>
+                    );
+                  })} */}
+
+                  {category?.data?.data?.map((categoryItem) => {
+                    const categorySlug = categoryItem?.url_slug;
+
+                    const hostingHref = categorySlug
+                      ? buildHref(`/hosting?category=${categorySlug}`)
+                      : buildHref("/hosting");
+
+                    return (
+                      <li key={categoryItem.id}>
+                        <Link href={hostingHref} onClick={onClose}>
+                          <div className="mobile-dropdown-item">
+                            <div className="mobile-dropdown-icon">
+                              <img
+                                src={`https://admin-besthost.onestudio.az/storage/${categoryItem.image}`}
+                                alt={categoryItem.title || ""}
+                              />
+                            </div>
+                            <div className="mobile-dropdown-text">
+                              <span>{categoryItem.title}</span>
+                              <strong>{categoryItem.menu_title}</strong>
                             </div>
                           </div>
                         </Link>
