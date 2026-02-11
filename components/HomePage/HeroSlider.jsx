@@ -55,12 +55,16 @@ const HeroSlider = ({ home, banner }) => {
 
                         <div className="heroSliderContentHost">
                           <Link href={item.url}>
-                            <span>https://</span>
+                            <span>{item.url_protocol}</span>
                             <div className="heroSliderContentHostDomain">
-                              <span>you.az</span>
+                              <span>{item.url_address}</span>
                             </div>
                             <div className="heroSliderContentHostIcon">
-                              <HostIcon id="host" />
+                              {/* <HostIcon id="host" /> */}
+                              <img
+                                src={`https://admin-besthost.onestudio.az/storage/${item.url_icon}`}
+                                alt="icon"
+                              />
                             </div>
                           </Link>
                         </div>

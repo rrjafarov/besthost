@@ -574,26 +574,20 @@ $BestHostMainColor: #4a2682;
   ul {
     position: relative;
 
-
-
     &::before {
-    content: "";
-    position: absolute;
-    top: -1.8rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4.8rem;
-    height: 1.8rem;
-    background: url("data:image/svg+xml;utf8,\
+      content: "";
+      position: absolute;
+      top: -1.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4.8rem;
+      height: 1.8rem;
+      background: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 18'>\
 <path d='M0 17.5C12.5 17.5 22.1667 5.66667 24 0C30.4839 14.8203 40.8287 17.3341 46.6898 17.5H48C47.5945 17.5115 47.1564 17.5132 46.6898 17.5H0Z' fill='%23F1EFFF'/>\
-</svg>") no-repeat center / contain;
-  }
-
-
-
-
-
+</svg>")
+        no-repeat center / contain;
+    }
 
     // &::before {
     //   content: "";
@@ -617,9 +611,6 @@ $BestHostMainColor: #4a2682;
     // border-radius: 1rem;
     // background: #f1efff;
     // padding: 1rem 0;
-
-
-
 
     li {
       margin: 0rem 1rem;
@@ -796,6 +787,10 @@ $BestHostMainColor: #4a2682;
         display: flex;
         justify-content: center;
         align-items: center;
+        img {
+          width: 3.3rem;
+          height: 3.3rem;
+        }
       }
     }
   }
@@ -1077,7 +1072,9 @@ $BestHostMainColor: #4a2682;
       font-style: normal;
       font-weight: 800;
       line-height: normal;
+      text-align: center;
       letter-spacing: 0.18rem;
+      padding: 0 6rem 1rem 6rem;
     }
     p {
       flex-shrink: 0;
@@ -1123,24 +1120,6 @@ $BestHostMainColor: #4a2682;
   }
 }
 // ! HomePage HomePageHosting.jsx  ---FINISH---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ! HomePage HomePageSelectHosting.jsx  ---START---
 .homePageHostingCard {
@@ -1319,36 +1298,6 @@ $BestHostMainColor: #4a2682;
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ! HomePage HomePageSelectHosting.jsx  ---FINISH---
 
@@ -1632,6 +1581,9 @@ $BestHostMainColor: #4a2682;
     flex-direction: column;
     gap: 1.6rem;
     padding: 0 1rem !important;
+    h3 {
+      text-align: center !important;
+    }
     span {
       text-align: center !important;
       font-size: 3rem !important;
@@ -4124,16 +4076,6 @@ $BestHostMainColor: #4a2682;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 .hostingPagePlans {
   display: flex;
   justify-content: center;
@@ -4207,7 +4149,6 @@ $BestHostMainColor: #4a2682;
   flex: 0 0 25rem; /* Sabit genişlik: 25rem */
   border-radius: 0.8rem;
   box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
-  
 }
 /* --- Özellikler Sütunu --- */
 .planFeaturesColumn {
@@ -4317,7 +4258,9 @@ $BestHostMainColor: #4a2682;
   background: transparent;
   color: #2a0d56;
   border-radius: 3rem; /* Tüm butonlar 3rem yarıçaplı */
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 .selectPlanBtn:hover {
   background: #ff8e2b;
@@ -4330,72 +4273,6 @@ $BestHostMainColor: #4a2682;
   color: #ffffff;
   border: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .hostingPagePlans {
   display: flex;
@@ -4470,7 +4347,6 @@ $BestHostMainColor: #4a2682;
   flex: 0 0 28rem; /* Sabit genişlik: 25rem - Buradan dəyişir */
   border-radius: 0.8rem;
   box-shadow: 0 4px 15px 0 rgba(185, 183, 183, 0.35);
-  
 }
 /* --- Özellikler Sütunu --- */
 .planFeaturesColumn {
@@ -4585,7 +4461,9 @@ $BestHostMainColor: #4a2682;
   background: transparent;
   color: #2a0d56;
   border-radius: 3rem; /* Tüm butonlar 3rem yarıçaplı */
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 .selectPlanBtn:hover {
   background: #ff8e2b;
@@ -4598,33 +4476,6 @@ $BestHostMainColor: #4a2682;
   color: #ffffff;
   border: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // !<><><><><><>wordpressFeatures<><><><><><<
 .wordpressFeatures {
@@ -4645,11 +4496,11 @@ $BestHostMainColor: #4a2682;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
-    height: 22rem;
+    height: 15rem;
     h3 {
       color: var(--05, #2a0d56);
       font-feature-settings: "liga" off;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-style: normal;
       font-weight: 800;
       line-height: normal;
@@ -4658,11 +4509,12 @@ $BestHostMainColor: #4a2682;
     p {
       color: var(--05, #2a0d56);
       font-feature-settings: "liga" off;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-style: normal;
       font-weight: 400;
-      line-height: 169%;
+      line-height: 130%;
       letter-spacing: 0.16rem;
+      padding: 0 2rem 0 0;
     }
   }
 }
@@ -5369,7 +5221,9 @@ $BestHostMainColor: #4a2682;
 }
 
 .homePageHostingSwiper .swiper-slide .homePageHostingCard {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .homePageHostingSwiper .swiper-slide-active .homePageHostingCard {
@@ -5451,4 +5305,39 @@ $BestHostMainColor: #4a2682;
 #nprogress .spinner-icon {
   border-top-color: red;
   border-left-color: red;
+}
+
+.notFound {
+  background-image: url("../../public/images/notfound.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  img {
+    width: 63rem;
+    height: 47.2rem;
+    margin-top: 10rem;
+    padding: 0 2rem;
+  }
+  a {
+    width: 23.5rem;
+    height: 5.6rem;
+    border-radius: 3rem;
+    background: var(--02, #ff8e2b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-family: Mulish;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.24rem;
+    text-transform: uppercase;
+  }
 }
