@@ -23,7 +23,7 @@ export default function BasicPagination() {
           "& .MuiPaginationItem-previousNext": {
             "& svg": {
               width: "3.9334rem",
-              height: "2.8667rem",
+              height: "2.8666rem",
               fill: "#FF8E2B",
               color: "#FF8E2B",
             },
