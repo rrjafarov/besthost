@@ -49,10 +49,8 @@ const ServicesDetailPage = ({ t, service, otherServices }) => {
                   </div>
                 </div>
 
-
-
                 <div className="servicesDetailPageMainLeftContent">
-                  <span>{service.title}</span>
+                  <h1>{service.title}</h1>
 
                   <div className="servicesDPline"></div>
                   <div className="servicesDetailPageMainLeftContentDesc">
@@ -73,44 +71,45 @@ const ServicesDetailPage = ({ t, service, otherServices }) => {
             </div>
 
 
-
-
-
-
-            <div className="xl-4 lg-4 md-12 sm-12">
-              <div className="servicesDetailPageMainRight">
-                {/* <div className="servicesDetailPageMainRightTopImg">
+            {otherServices.length > 0 && (
+              <div className="xl-4 lg-4 md-12 sm-12">
+                <div className="servicesDetailPageMainRight">
+                  {/* <div className="servicesDetailPageMainRightTopImg">
                   <img src="/images/servicesDP.png" alt="" />
                 </div> */}
 
-                <div className="servicesDetailPageMainRightOtherServices">
-                  {otherServices.map((other) => (
-                    <div className="servicesDetailPageMainRightOtherServiceCard">
-                      <Link href={`/services/${other.url_slug}-${other.id}`}>
-                        <div className="servicesDetailPageMainRightOtherServiceCardItem">
-                          <div className="servicesDetailPageMainRightOtherServiceCardImg">
-                            <img
-                              //  src="/icons/service.svg"
-                              src={`https://admin-besthost.onestudio.az/storage/${other.icon}`}
-                              alt=""
-                            />
-                          </div>
-                          <div className="servicesDetailPageMainRightOtherServiceCardContent">
-                            <span>{other.title}</span>
-                            <p>{other.sub_title}</p>
-                            {/* <div className="dprihtline"></div> */}
-                            <div className="servicesDetailPageMainRightOtherServiceCardBottom">
-                              {/* <span>2 min read </span> */}
-                              <img src="/icons/rightServiceArrow.svg" alt="" />
+                  <div className="servicesDetailPageMainRightOtherServices">
+                    {otherServices.map((other) => (
+                      <div className="servicesDetailPageMainRightOtherServiceCard">
+                        <Link href={`/services/${other.url_slug}-${other.id}`}>
+                          <div className="servicesDetailPageMainRightOtherServiceCardItem">
+                            <div className="servicesDetailPageMainRightOtherServiceCardImg">
+                              <img
+                                //  src="/icons/service.svg"
+                                src={`https://admin-besthost.onestudio.az/storage/${other.icon}`}
+                                alt=""
+                              />
+                            </div>
+                            <div className="servicesDetailPageMainRightOtherServiceCardContent">
+                              <span>{other.title}</span>
+                              <p>{other.sub_title}</p>
+                              {/* <div className="dprihtline"></div> */}
+                              <div className="servicesDetailPageMainRightOtherServiceCardBottom">
+                                {/* <span>2 min read </span> */}
+                                <img
+                                  src="/icons/rightServiceArrow.svg"
+                                  alt=""
+                                />
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Link>
-                    </div>
-                  ))}
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

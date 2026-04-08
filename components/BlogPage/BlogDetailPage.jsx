@@ -58,12 +58,17 @@ const BlogDetailPage = ({ t, blog, otherBlogs }) => {
                         __html: blog.content,
                       }}
                     ></div>
+
+
+
                     <div className="blogDetailPageMainLeftContentImages">
                       <img
                         src={`https://admin-besthost.onestudio.az/storage/${blog.image}`}
-                        alt=""
+                        alt="blogimage"
                       />
                     </div>
+
+
                   </div>
                 </div>
               </div>

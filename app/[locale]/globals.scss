@@ -2468,6 +2468,7 @@ $BestHostMainColor: #4a2682;
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
+  height: 58rem;
   flex-shrink: 0;
   .servicesPageBanner {
     padding: 7rem 0 0 3rem;
@@ -2512,16 +2513,16 @@ $BestHostMainColor: #4a2682;
   }
   .servicesBannerRightImg {
     background: url("/icons/homeGrid.svg");
-    background-size: cover;
+    // background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
     width: 100%;
-    // height: 50.5998rem;
     flex-shrink: 0;
     padding: 4rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    height: 46.5998rem;
     img {
       width: 44.4rem;
       height: 27.8rem;
@@ -2790,7 +2791,7 @@ $BestHostMainColor: #4a2682;
       }
       .servicesDetailPageMainLeftContent {
         padding: 5rem;
-        span {
+        h1 {
           color: var(--05, #2a0d56);
           font-feature-settings: "liga" off;
           font-size: 3.2rem;
@@ -2857,12 +2858,10 @@ $BestHostMainColor: #4a2682;
             font-weight: 700;
             line-height: normal;
             letter-spacing: 0.28rem;
-
             display: flex;
             align-items: center;
             gap: 1.2rem;
           }
-
           h3::before {
             content: "";
             width: 1rem; /* xətin uzunluğu */
@@ -2870,7 +2869,6 @@ $BestHostMainColor: #4a2682;
             background-color: var(--01, #4a2682);
             display: block;
           }
-
           h4 {
             color: var(--01, #4a2682);
             width: 61.7rem;
@@ -2890,17 +2888,19 @@ $BestHostMainColor: #4a2682;
             font-weight: 600;
             line-height: 3.2rem; /* 177.778% */
             letter-spacing: 0.02rem;
-            // padding-bottom: 1rem;
+            padding-bottom: 1rem;
           }
         }
         .servicesDetailPageMainLeftContentImages {
           width: 100%;
           height: 35.5rem;
           flex-shrink: 0;
+          border-radius: 0.8rem;
           img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            // object-fit: cover;
+            border-radius: 0.8rem;
           }
         }
         .servicesDetailPageMainLeftContentParanthez {
@@ -3397,10 +3397,11 @@ $BestHostMainColor: #4a2682;
           width: 100%;
           height: 35.5rem;
           flex-shrink: 0;
+          border-radius: 0.8rem;
           img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border-radius: 0.8rem;
           }
         }
         .blogDetailPageMainLeftContentParanthez {
