@@ -1,36 +1,29 @@
 import NavigationProgress from "@/components/NavigationProgress";
 import "./globals.scss";
 
-
 export const metadata = {
   title: "Best Host",
-  
   description: "Best Host",
 };
 
-export default function RootLayout({ children }) {
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
+
+export default async function RootLayout({ children, params }) {
+  const { locale } = await params;
   return (
-    <html lang="en">
+    <html lang={locale || "az"}>
       <body suppressHydrationWarning>
-         <NavigationProgress />
+        <NavigationProgress />
         {children}
       </body>
     </html>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
